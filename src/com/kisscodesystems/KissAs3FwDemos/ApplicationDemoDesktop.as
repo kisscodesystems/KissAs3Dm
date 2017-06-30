@@ -14,13 +14,15 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.0
+** Current version : 1.1
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
 **                   <https://openso.kisscodesystems.com>
 **
-** Changelog       :
+** Changelog       : 1.1 - 06.30.2017
+**                   the layers of the middleground have to be created
+**                   right after the replacement of propsApp and propsDyn
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
@@ -193,6 +195,8 @@ package com . kisscodesystems . KissAs3FwDemos
 // The properties objects too.
       propsApp = new PropsAppDemo ( ) ;
       propsDyn = new PropsDynDemo ( application ) ;
+// Now the layers should be created!
+      createLayers ( ) ;
 // The menu of this application:
       menuxml = " <?xml version=\"1.0\" encoding=\"UTF-8\"?>" + " <items>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE0 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE1 + "\"/>" + "   <item opened=\"1\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE2 + "\">" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE20 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE21 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE22 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE23 + "\"/>" + "     <item opened=\"1\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE24 + "\">" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE240 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE241 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE242 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE243 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE244 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE245 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE246 + "\"/>" + "       <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE247 + "\"/>" + "     </item>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE25 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE26 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE27 + "\"/>" + "   </item>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE3 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE4 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE5 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE6 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE7 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE8 + "\"/>" + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE9 + "\">" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE90 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE91 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE92 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE93 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE94 + "\"/>" + "     <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . VALUE95 + "\"/>" + "   </item>" + " </items>" ;
 // New elements may be added so it is necessary to update the lists.
