@@ -98,6 +98,7 @@ package com . kisscodesystems . KissAs3FwDemos . text
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_BRIGHT ] = [ "This is a single line label (bright)." , "Ez egy egy soros cimke (világos)." ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_MID_ENABLED_INPUT ] = [ "Input field is enabled (mid label):" , "Beviteli mező enabled (közepes cimke):" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_ENABLED_INPUT ] = [ "Input field is disabled (dark label):" , "Beviteli mező disabled (sötét cimke):" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT ] = [ "Password input field (dark label):" , "Jelszó beviteli mező (sötét cimke):" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . ENABLED_TEXT_INPUT ] = [ "I'm enabled." , "Enabled vagyok." ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . DISABLED_TEXT_INPUT ] = [ "I'm disabled." , "Disabled vagyok." ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . MULTIPLE_LINE_LABEL_TEXT_BOX ] = [ "A single multiline text:\n(Its html version is\nin the conponent usage.)" , "Egyszerű többsoros szöveg.\n(Ennek a html verziója van\na komponens használatban.)" ] ;

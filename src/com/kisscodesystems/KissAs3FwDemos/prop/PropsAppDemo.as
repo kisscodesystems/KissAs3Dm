@@ -28,7 +28,7 @@ package com . kisscodesystems . KissAs3FwDemos . prop
       applicationName = "Demo application" ;
       weightBackgroundPicture = 5 ;
       weightScrollContent = 5 ;
-      useEmbedFonts = false ;
+      useEmbedFonts = true ;
     }
   }
 }

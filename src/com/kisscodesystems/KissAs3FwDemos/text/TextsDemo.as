@@ -73,6 +73,7 @@ package com . kisscodesystems . KissAs3FwDemos . text
     public const SINGLE_LINE_LABEL_BRIGHT : String = _BTC + "SINGLE_LINE_LABEL_BRIGHT" + _ETC ;
     public const SINGLE_LINE_LABEL_MID_ENABLED_INPUT : String = _BTC + "SINGLE_LINE_LABEL_MID_ENABLED_INPUT" + _ETC ;
     public const SINGLE_LINE_LABEL_DARK_ENABLED_INPUT : String = _BTC + "SINGLE_LINE_LABEL_DARK_ENABLED_INPUT" + _ETC ;
+    public const SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT : String = _BTC + "SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT" + _ETC ;
     public const ENABLED_TEXT_INPUT : String = _BTC + "ENABLED_TEXT_INPUT" + _ETC ;
     public const DISABLED_TEXT_INPUT : String = _BTC + "DISABLED_TEXT_INPUT" + _ETC ;
     public const MULTIPLE_LINE_LABEL_TEXT_BOX : String = _BTC + "MULTIPLE_LINE_LABEL_TEXT_BOX" + _ETC ;

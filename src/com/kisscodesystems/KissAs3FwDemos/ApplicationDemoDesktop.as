@@ -14,7 +14,7 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.1
+** Current version : 1.2
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -23,6 +23,9 @@
 ** Changelog       : 1.1 - 06.30.2017
 **                   the layers of the middleground have to be created
 **                   right after the replacement of propsApp and propsDyn
+**                   1.2 - 07.02.2017
+**                   scrolling is enabled by mouse wheel
+**                   password input field example in the widget of input fields
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
@@ -115,8 +118,10 @@ package com . kisscodesystems . KissAs3FwDemos
     private var textLabelBright : TextLabel = null ;
     private var textLabelMid : TextLabel = null ;
     private var textLabelDark : TextLabel = null ;
+    private var textLabelDark2 : TextLabel = null ;
     private var textInputEnabled : TextInput = null ;
     private var textInputDisabled : TextInput = null ;
+    private var textInputPassword : TextInput = null ;
 // For the multi lined elements.
     private var widgetMultipleLineTexts : Widget = null ;
     private var widgetMultipleLineTextssw : int = 500 ;
@@ -284,6 +289,14 @@ package com . kisscodesystems . KissAs3FwDemos
       widgetSingleLineTexts . addToContent ( textInputDisabled , true , 5 ) ;
       textInputDisabled . setTextCode ( TextsDemo ( getTexts ( ) ) . DISABLED_TEXT_INPUT ) ;
       textInputDisabled . setEnabled ( false ) ;
+      textLabelDark2 = new TextLabel ( application ) ;
+      widgetSingleLineTexts . addToContent ( textLabelDark2 , false , 6 ) ;
+      textLabelDark2 . setTextCode ( TextsDemo ( getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT ) ;
+      textLabelDark2 . setTextType ( getTexts ( ) . TEXT_TYPE_DARK ) ;
+      textInputPassword = new TextInput ( application ) ;
+      widgetSingleLineTexts . addToContent ( textInputPassword , true , 7 ) ;
+      textInputPassword . setTextCode ( "Password" ) ;
+      textInputPassword . setDisplayAsPassword ( true ) ;
 // Here are an event listener too: the input fields has to follow the size of the widget. (not necessary, we want that.)
       widgetSingleLineTexts . getContentBaseEventDispatcher ( ) . addEventListener ( EVENT_SIZES_CHANGED , widgetSingleLineTextsContentResized ) ;
       widgetSingleLineTexts . setswh ( widgetSingleLineTextssw , widgetSingleLineTextssh ) ;
@@ -500,6 +513,10 @@ package com . kisscodesystems . KissAs3FwDemos
       {
         textInputDisabled . setsw ( widgetSingleLineTexts . getContentsw ( ) / 3 ) ;
       }
+      if ( textInputPassword != null )
+      {
+        textInputPassword . setsw ( textInputEnabled . getsw ( ) / 2 ) ;
+      }
     }
     private function widgetMultipleLineTextsContentResized ( e : Event ) : void
     {
@@ -623,8 +640,10 @@ package com . kisscodesystems . KissAs3FwDemos
       textLabelBright = null ;
       textLabelMid = null ;
       textLabelDark = null ;
+      textLabelDark2 = null ;
       textInputEnabled = null ;
       textInputDisabled = null ;
+      textInputPassword = null ;
       widgetMultipleLineTexts = null ;
       widgetMultipleLineTextssw = 0 ;
       widgetMultipleLineTextssh = 0 ;
