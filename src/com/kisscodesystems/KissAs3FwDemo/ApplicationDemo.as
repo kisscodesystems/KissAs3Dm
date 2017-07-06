@@ -14,7 +14,7 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.3
+** Current version : 1.4
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -30,6 +30,8 @@
 **                   the initialization of the demo app will be done in separated methods
 **                   new classes of each demo application
 **                   the embedded arial font is in the demo propsDyn class from now
+**                   1.4 - 07.06.2017
+**                   small improvements in the content moving
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
