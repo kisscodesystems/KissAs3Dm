@@ -69,6 +69,8 @@ package com . kisscodesystems . KissAs3FwDemo . text
     public const WIDGET_HEADER_DEMO_MULTIPLE_LINE_TEXTS : String = _BTC + "WIDGET_HEADER_DEMO_MULTIPLE_LINE_TEXTS" + _ETC ;
     public const WIDGET_HEADER_DEMO_BUTTONS : String = _BTC + "WIDGET_HEADER_DEMO_BUTTONS" + _ETC ;
     public const WIDGET_HEADER_DEMO_PICKERS : String = _BTC + "WIDGET_HEADER_DEMO_PICKERS" + _ETC ;
+    public const WIDGET_PICKERS_COLORS : String = _BTC + "WIDGET_PICKERS_COLORS" + _ETC ;
+    public const WIDGET_PICKERS_LISTS : String = _BTC + "WIDGET_PICKERS_LISTS" + _ETC ;
     public const WIDGET_HEADER_DEMO_OTHERS : String = _BTC + "WIDGET_HEADER_DEMO_OTHERS" + _ETC ;
     public const SINGLE_LINE_LABEL_BRIGHT : String = _BTC + "SINGLE_LINE_LABEL_BRIGHT" + _ETC ;
     public const SINGLE_LINE_LABEL_MID_ENABLED_INPUT : String = _BTC + "SINGLE_LINE_LABEL_MID_ENABLED_INPUT" + _ETC ;
@@ -91,8 +93,8 @@ package com . kisscodesystems . KissAs3FwDemo . text
     public const COLOR_PICKERS : String = _BTC + "COLOR_PICKERS" + _ETC ;
     public const LISTS : String = _BTC + "LISTS" + _ETC ;
     public const LIST_PICKERS : String = _BTC + "LIST_PICKERS" + _ETC ;
-    public const CHECKBOX_CHECKED : String = _BTC + "CHECKBOX_CHECKED" + _ETC ;
-    public const CHECKBOX_UNCHECKED : String = _BTC + "CHECKBOX_UNCHECKED" + _ETC ;
+    public const SWITCHER_UP : String = _BTC + "SWITCHER_UP" + _ETC ;
+    public const SWITCHER_DOWN : String = _BTC + "SWITCHER_DOWN" + _ETC ;
     public const POTMETS : String = _BTC + "POTMETS" + _ETC ;
     public const SELECTED_INDEXES : String = _BTC + "SELECTED_INDEXES" + _ETC ;
     public const HAS_BEEN_CLICKED : String = _BTC + "HAS_BEEN_CLICKED" + _ETC ;

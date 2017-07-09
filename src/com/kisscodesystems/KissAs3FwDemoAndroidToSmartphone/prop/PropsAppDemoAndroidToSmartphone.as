@@ -14,8 +14,8 @@
 */
 package com . kisscodesystems . KissAs3FwDemoAndroidToSmartphone . prop
 {
-  import com . kisscodesystems . KissAs3Fw . prop . PropsApp
-  public class PropsAppDemoAndroidToSmartphone extends PropsApp
+  import com . kisscodesystems . KissAs3FwDemo . prop . PropsAppDemo
+  public class PropsAppDemoAndroidToSmartphone extends PropsAppDemo
   {
 /*
 ** Constructor.
@@ -25,7 +25,6 @@ package com . kisscodesystems . KissAs3FwDemoAndroidToSmartphone . prop
     public function PropsAppDemoAndroidToSmartphone ( ) : void
     {
       super ( ) ;
-      applicationName = "Demo application" ;
       weightBackgroundPicture = 3 ;
       weightScrollContent = 3 ;
       useEmbedFonts = false ;

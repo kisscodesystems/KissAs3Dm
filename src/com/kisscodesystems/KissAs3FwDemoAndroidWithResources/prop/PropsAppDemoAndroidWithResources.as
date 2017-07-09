@@ -14,8 +14,8 @@
 */
 package com . kisscodesystems . KissAs3FwDemoAndroidWithResources . prop
 {
-  import com . kisscodesystems . KissAs3Fw . prop . PropsApp
-  public class PropsAppDemoAndroidWithResources extends PropsApp
+  import com . kisscodesystems . KissAs3FwDemo . prop . PropsAppDemo
+  public class PropsAppDemoAndroidWithResources extends PropsAppDemo
   {
 /*
 ** Constructor.
@@ -25,7 +25,6 @@ package com . kisscodesystems . KissAs3FwDemoAndroidWithResources . prop
     public function PropsAppDemoAndroidWithResources ( ) : void
     {
       super ( ) ;
-      applicationName = "Demo application" ;
       weightBackgroundPicture = 3 ;
       weightScrollContent = 3 ;
       useEmbedFonts = true ;

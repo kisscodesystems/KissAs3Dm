@@ -14,24 +14,29 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.4
+** Current version : 1.5
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
 **                   <https://openso.kisscodesystems.com>
 **
 ** Changelog       : 1.1 - 06.30.2017
-**                   the layers of the middleground have to be created
-**                   right after the replacement of propsApp and propsDyn
+**                   bugfixes and smaller improvements
 **                   1.2 - 07.02.2017
-**                   scrolling is enabled by mouse wheel
-**                   password input field example in the widget of input fields
+**                   displayAsPassword is available in TextInput
+**                   the scrolling works in the BaseScroll using the mouse wheel.
 **                   1.3 - 07.05.2017
-**                   the initialization of the demo app will be done in separated methods
-**                   new classes of each demo application
-**                   the embedded arial font is in the demo propsDyn class from now
+**                   the embedded arial font is in the demo propsDyn from now
+**                   the content will be cached as a bitmap during its movement
 **                   1.4 - 07.06.2017
 **                   small improvements in the content moving
+**                   1.5 - 07.09.2017
+**                   multiple contents are available in widgets instead of ContentSingle
+**                   multiple widget containers are also available (settings panel)
+**                   small bugfix of content moving on mobile devices
+**                   pixel stealing is improved in Color (mobile devices)
+**                   the Checkbox is Switcher from now
+**                   "about" tab on the settings panel
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
@@ -91,12 +96,12 @@ package com . kisscodesystems . KissAs3FwDemo
   import com . kisscodesystems . KissAs3Fw . ui . ButtonDraw ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonLink ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonText ;
-  import com . kisscodesystems . KissAs3Fw . ui . Checkbox ;
   import com . kisscodesystems . KissAs3Fw . ui . Color ;
   import com . kisscodesystems . KissAs3Fw . ui . ColorPicker ;
   import com . kisscodesystems . KissAs3Fw . ui . List ;
   import com . kisscodesystems . KissAs3Fw . ui . ListPicker ;
   import com . kisscodesystems . KissAs3Fw . ui . Potmet ;
+  import com . kisscodesystems . KissAs3Fw . ui . Switcher ;
   import com . kisscodesystems . KissAs3Fw . ui . TextArea ;
   import com . kisscodesystems . KissAs3Fw . ui . TextBox ;
   import com . kisscodesystems . KissAs3Fw . ui . TextInput ;
@@ -114,7 +119,7 @@ package com . kisscodesystems . KissAs3FwDemo
 // THE DISPLAYABLE COMPONENTS ARE HERE:
 // For the hints how to use the components.
     private var widgetComponentUsage : Widget = null ;
-    private var widgetComponentUsagesw : int = 500 ;
+    private var widgetComponentUsagesw : int = 550 ;
     private var widgetComponentUsagesh : int = 300 ;
     private var textBoxComponentUsage : TextBox = null ;
 // For the single lined elements.
@@ -177,8 +182,8 @@ package com . kisscodesystems . KissAs3FwDemo
     private var widgetOthers : Widget = null ;
     private var widgetOtherssw : int = 350 ;
     private var widgetOtherssh : int = 310 ;
-    private var checkboxEnabled : Checkbox = null ;
-    private var checkboxDisabled : Checkbox = null ;
+    private var switcherEnabled : Switcher = null ;
+    private var switcherDisabled : Switcher = null ;
     private var potmetEnabled : Potmet = null ;
     private var potmetDisabled : Potmet = null ;
     private var textLabelPotmet : TextLabel = null ;
@@ -286,20 +291,21 @@ package com . kisscodesystems . KissAs3FwDemo
 // The creation of the widget.
       widgetComponentUsage = new Widget ( application ) ;
 // This has to be added into the widgets.
-      addWidget ( widgetComponentUsage ) ;
+      addWidget ( 0 , widgetComponentUsage ) ;
 // The widget type and header have to be specified.
       widgetComponentUsage . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetComponentUsage . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_COMPONENT_USAGE ) ;
 // It can be set to follow the size of the stage or not. ( basically this can be the % declaration of the size.)
       widgetComponentUsage . setFollowStageWidth ( true ) ;
       widgetComponentUsage . setFollowStageHeight ( true ) ;
+      widgetComponentUsage . setDefaultContent ( ) ;
 // Widget is done, the components are the following. This is just a text box, let's create it.
       textBoxComponentUsage = new TextBox ( application ) ;
 // It should be added into the content of the widget.
 // 1: the object reference
 // 2: active or inactive
 // 3: the place of the display object. (zero based cell index)
-      widgetComponentUsage . addToContent ( textBoxComponentUsage , true , 0 ) ;
+      widgetComponentUsage . addToContent ( 0 , textBoxComponentUsage , true , 0 ) ;
 // Other customization of the box.
       textBoxComponentUsage . setHtml ( true ) ;
       textBoxComponentUsage . setWordWrap ( true ) ;
@@ -311,39 +317,40 @@ package com . kisscodesystems . KissAs3FwDemo
       widgetComponentUsage . setswh ( widgetComponentUsagesw , widgetComponentUsagesh ) ;
 // For the single lined elements.
       widgetSingleLineTexts = new Widget ( application ) ;
-      addWidget ( widgetSingleLineTexts ) ;
+      addWidget ( 0 , widgetSingleLineTexts ) ;
       widgetSingleLineTexts . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetSingleLineTexts . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_SINGLE_LINE_TEXTS ) ;
       widgetSingleLineTexts . setFollowStageWidth ( true ) ;
       widgetSingleLineTexts . setFollowStageHeight ( true ) ;
+      widgetSingleLineTexts . setDefaultContent ( ) ;
 // This is the maximum index of the columns.1 means two columns (ORIENTATION_VERTICAL, or two rows in case of ORIENTATION_HORIZONTAL)
-      widgetSingleLineTexts . setElementsFix ( 1 ) ;
+      widgetSingleLineTexts . setElementsFix ( 0 , 1 ) ;
 // Now creating and adding the elements into the widget.
       textLabelBright = new TextLabel ( application ) ;
-      widgetSingleLineTexts . addToContent ( textLabelBright , false , 0 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textLabelBright , false , 0 ) ;
       textLabelBright . setTextCode ( TextsDemo ( getTexts ( ) ) . SINGLE_LINE_LABEL_BRIGHT ) ;
       textLabelBright . setTextType ( getTexts ( ) . TEXT_TYPE_BRIGHT ) ;
       textLabelMid = new TextLabel ( application ) ;
-      widgetSingleLineTexts . addToContent ( textLabelMid , false , 2 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textLabelMid , false , 2 ) ;
       textLabelMid . setTextCode ( TextsDemo ( getTexts ( ) ) . SINGLE_LINE_LABEL_MID_ENABLED_INPUT ) ;
       textLabelMid . setTextType ( getTexts ( ) . TEXT_TYPE_MID ) ;
       textInputEnabled = new TextInput ( application ) ;
-      widgetSingleLineTexts . addToContent ( textInputEnabled , true , 3 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textInputEnabled , true , 3 ) ;
       textInputEnabled . setTextCode ( TextsDemo ( getTexts ( ) ) . ENABLED_TEXT_INPUT ) ;
       textLabelDark = new TextLabel ( application ) ;
-      widgetSingleLineTexts . addToContent ( textLabelDark , false , 4 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textLabelDark , false , 4 ) ;
       textLabelDark . setTextCode ( TextsDemo ( getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_ENABLED_INPUT ) ;
       textLabelDark . setTextType ( getTexts ( ) . TEXT_TYPE_DARK ) ;
       textInputDisabled = new TextInput ( application ) ;
-      widgetSingleLineTexts . addToContent ( textInputDisabled , true , 5 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textInputDisabled , true , 5 ) ;
       textInputDisabled . setTextCode ( TextsDemo ( getTexts ( ) ) . DISABLED_TEXT_INPUT ) ;
       textInputDisabled . setEnabled ( false ) ;
       textLabelDark2 = new TextLabel ( application ) ;
-      widgetSingleLineTexts . addToContent ( textLabelDark2 , false , 6 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textLabelDark2 , false , 6 ) ;
       textLabelDark2 . setTextCode ( TextsDemo ( getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT ) ;
       textLabelDark2 . setTextType ( getTexts ( ) . TEXT_TYPE_DARK ) ;
       textInputPassword = new TextInput ( application ) ;
-      widgetSingleLineTexts . addToContent ( textInputPassword , true , 7 ) ;
+      widgetSingleLineTexts . addToContent ( 0 , textInputPassword , true , 7 ) ;
       textInputPassword . setTextCode ( "Password" ) ;
       textInputPassword . setDisplayAsPassword ( true ) ;
 // Here are an event listener too: the input fields has to follow the size of the widget. (not necessary, we want that.)
@@ -351,46 +358,48 @@ package com . kisscodesystems . KissAs3FwDemo
       widgetSingleLineTexts . setswh ( widgetSingleLineTextssw , widgetSingleLineTextssh ) ;
 // For the multi lined elements.
       widgetMultipleLineTexts = new Widget ( application ) ;
-      addWidget ( widgetMultipleLineTexts ) ;
+      addWidget ( 0 , widgetMultipleLineTexts ) ;
       widgetMultipleLineTexts . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetMultipleLineTexts . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_MULTIPLE_LINE_TEXTS ) ;
       widgetMultipleLineTexts . setFollowStageWidth ( true ) ;
       widgetMultipleLineTexts . setFollowStageHeight ( true ) ;
-      widgetMultipleLineTexts . setElementsFix ( 1 ) ;
+      widgetMultipleLineTexts . setDefaultContent ( ) ;
+      widgetMultipleLineTexts . setElementsFix ( 0 , 1 ) ;
       textLabelTextBox = new TextLabel ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textLabelTextBox , false , 0 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textLabelTextBox , false , 0 ) ;
       textLabelTextBox . setTextCode ( TextsDemo ( getTexts ( ) ) . MULTIPLE_LINE_LABEL_TEXT_BOX ) ;
       textBox = new TextBox ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textBox , true , 1 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textBox , true , 1 ) ;
       textBox . setTextCode ( TextsDemo ( getTexts ( ) ) . TEXT_BOX ) ;
       textLabelTextAreaEnabled = new TextLabel ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textLabelTextAreaEnabled , false , 2 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textLabelTextAreaEnabled , false , 2 ) ;
       textLabelTextAreaEnabled . setTextCode ( TextsDemo ( getTexts ( ) ) . MULTIPLE_LINE_LABEL_TEXT_AREA_ENABLED ) ;
       textAreaEnabled = new TextArea ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textAreaEnabled , true , 3 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textAreaEnabled , true , 3 ) ;
       textAreaEnabled . setTextCode ( TextsDemo ( getTexts ( ) ) . TEXT_AREA_ENABLED ) ;
       textLabelTextAreaDisabled = new TextLabel ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textLabelTextAreaDisabled , false , 4 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textLabelTextAreaDisabled , false , 4 ) ;
       textLabelTextAreaDisabled . setTextCode ( TextsDemo ( getTexts ( ) ) . MULTIPLE_LINE_LABEL_TEXT_AREA_DISABLED ) ;
       textAreaDisabled = new TextArea ( application ) ;
-      widgetMultipleLineTexts . addToContent ( textAreaDisabled , true , 5 ) ;
+      widgetMultipleLineTexts . addToContent ( 0 , textAreaDisabled , true , 5 ) ;
       textAreaDisabled . setTextCode ( TextsDemo ( getTexts ( ) ) . TEXT_AREA_DISABLED ) ;
       textAreaDisabled . setEnabled ( false ) ;
       widgetMultipleLineTexts . getContentBaseEventDispatcher ( ) . addEventListener ( EVENT_SIZES_CHANGED , widgetMultipleLineTextsContentResized ) ;
       widgetMultipleLineTexts . setswh ( widgetMultipleLineTextssw , widgetMultipleLineTextssh ) ;
 // For buttons.
       widgetButtons = new Widget ( application ) ;
-      addWidget ( widgetButtons ) ;
+      addWidget ( 0 , widgetButtons ) ;
       widgetButtons . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetButtons . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_BUTTONS ) ;
       widgetButtons . setFollowStageWidth ( false ) ;
       widgetButtons . setFollowStageHeight ( false ) ;
-      widgetButtons . setElementsFix ( 2 ) ;
+      widgetButtons . setDefaultContent ( ) ;
+      widgetButtons . setElementsFix ( 0 , 2 ) ;
       textLabelButtonBar = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( textLabelButtonBar , false , 0 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonBar , false , 0 ) ;
       textLabelButtonBar . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_BARS ) ;
       buttonBarEnabled = new ButtonBar ( application ) ;
-      widgetButtons . addToContent ( buttonBarEnabled , true , 2 ) ;
+      widgetButtons . addToContent ( 0 , buttonBarEnabled , true , 2 ) ;
       buttonBarEnabled . setMaxWidth ( buttonBarEnabledw ) ;
       buttonBarEnabled . addButton ( getTexts ( ) . OC_OK ) ;
       buttonBarEnabled . addButton ( getTexts ( ) . OC_CANCEL ) ;
@@ -398,7 +407,7 @@ package com . kisscodesystems . KissAs3FwDemo
       buttonBarEnabled . addButton ( getTexts ( ) . YN_NO ) ;
       buttonBarEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CHANGED , buttonBarEnabledChanged ) ;
       buttonBarDisabled = new ButtonBar ( application ) ;
-      widgetButtons . addToContent ( buttonBarDisabled , true , 5 ) ;
+      widgetButtons . addToContent ( 0 , buttonBarDisabled , true , 5 ) ;
       buttonBarDisabled . setMaxWidth ( buttonBarDisabledw ) ;
       buttonBarDisabled . addButton ( getTexts ( ) . OC_OK ) ;
       buttonBarDisabled . addButton ( getTexts ( ) . OC_CANCEL ) ;
@@ -406,73 +415,77 @@ package com . kisscodesystems . KissAs3FwDemo
       buttonBarDisabled . addButton ( getTexts ( ) . YN_NO ) ;
       buttonBarDisabled . setEnabled ( false ) ;
       textLabelButtonDraw = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( textLabelButtonDraw , false , 6 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonDraw , false , 6 ) ;
       textLabelButtonDraw . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_DRAWS ) ;
       buttonDrawEnabled = new ButtonDraw ( application ) ;
-      widgetButtons . addToContent ( buttonDrawEnabled , true , 7 ) ;
+      widgetButtons . addToContent ( 0 , buttonDrawEnabled , true , 7 ) ;
       buttonDrawEnabled . setButtonType ( DRAW_BUTTON_TYPE_SETTINGS ) ;
       buttonDrawEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonDrawEnabledClick ) ;
       buttonDrawDisabled = new ButtonDraw ( application ) ;
-      widgetButtons . addToContent ( buttonDrawDisabled , true , 8 ) ;
+      widgetButtons . addToContent ( 0 , buttonDrawDisabled , true , 8 ) ;
       buttonDrawDisabled . setButtonType ( DRAW_BUTTON_TYPE_MENU ) ;
       buttonDrawDisabled . setEnabled ( false ) ;
       textLabelButtonLink = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( textLabelButtonLink , false , 9 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonLink , false , 9 ) ;
       textLabelButtonLink . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_LINKS ) ;
       buttonLinkEnabled = new ButtonLink ( application ) ;
-      widgetButtons . addToContent ( buttonLinkEnabled , true , 10 ) ;
+      widgetButtons . addToContent ( 0 , buttonLinkEnabled , true , 10 ) ;
       buttonLinkEnabled . setTextCode ( getTexts ( ) . YN_YES ) ;
       buttonLinkEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonLinkEnabledClick ) ;
       buttonLinkDisabled = new ButtonLink ( application ) ;
-      widgetButtons . addToContent ( buttonLinkDisabled , true , 11 ) ;
+      widgetButtons . addToContent ( 0 , buttonLinkDisabled , true , 11 ) ;
       buttonLinkDisabled . setTextCode ( getTexts ( ) . YN_NO ) ;
       buttonLinkDisabled . setEnabled ( false ) ;
       textLabelButtonText = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( textLabelButtonText , false , 12 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonText , false , 12 ) ;
       textLabelButtonText . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_TEXTS ) ;
       buttonTextEnabled = new ButtonText ( application ) ;
-      widgetButtons . addToContent ( buttonTextEnabled , true , 13 ) ;
+      widgetButtons . addToContent ( 0 , buttonTextEnabled , true , 13 ) ;
       buttonTextEnabled . setTextCode ( getTexts ( ) . OC_OK ) ;
       buttonTextEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonTextEnabledClick ) ;
       buttonTextDisabled = new ButtonText ( application ) ;
-      widgetButtons . addToContent ( buttonTextDisabled , true , 14 ) ;
+      widgetButtons . addToContent ( 0 , buttonTextDisabled , true , 14 ) ;
       buttonTextDisabled . setTextCode ( getTexts ( ) . OC_CANCEL ) ;
       buttonTextDisabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonTextDisabledClick ) ;
       buttonTextDisabled . setEnabled ( false ) ;
       widgetButtons . setswh ( widgetButtonssw , widgetButtonssh ) ;
 // For pickers.
       widgetPickers = new Widget ( application ) ;
-      addWidget ( widgetPickers ) ;
+      addWidget ( 0 , widgetPickers ) ;
       widgetPickers . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetPickers . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_PICKERS ) ;
       widgetPickers . setFollowStageWidth ( false ) ;
       widgetPickers . setFollowStageHeight ( true ) ;
-      widgetPickers . setElementsFix ( 2 ) ;
+      var colorsIndex : int = widgetPickers . addContent ( TextsDemo ( application . getTexts ( ) ) . WIDGET_PICKERS_COLORS ) ;
+      var listsIndex : int = widgetPickers . addContent ( TextsDemo ( application . getTexts ( ) ) . WIDGET_PICKERS_LISTS ) ;
+      widgetPickers . setElementsFix ( colorsIndex , 2 ) ;
+      widgetPickers . setElementsFix ( listsIndex , 2 ) ;
+      widgetPickers . setActiveContent ( colorsIndex ) ;
       textLabelColor = new TextLabel ( application ) ;
-      widgetPickers . addToContent ( textLabelColor , false , 0 ) ;
+      widgetPickers . addToContent ( colorsIndex , textLabelColor , false , 0 ) ;
       textLabelColor . setTextCode ( TextsDemo ( getTexts ( ) ) . COLORS ) ;
       colorEnabled = new Color ( application ) ;
-      widgetPickers . addToContent ( colorEnabled , true , 2 ) ;
+      widgetPickers . addToContent ( colorsIndex , colorEnabled , true , 1 ) ;
       colorEnabled . setRGBColor ( getPropsDyn ( ) . getAppBackgroundFgColor ( ) . toString ( 16 ) ) ;
       colorDisabled = new Color ( application ) ;
-      widgetPickers . addToContent ( colorDisabled , true , 5 ) ;
+      widgetPickers . addToContent ( colorsIndex , colorDisabled , true , 2 ) ;
       colorDisabled . setRGBColor ( getPropsDyn ( ) . getAppBackgroundFgColor ( ) . toString ( 16 ) ) ;
       colorDisabled . setEnabled ( false ) ;
       textLabelColorPicker = new TextLabel ( application ) ;
-      widgetPickers . addToContent ( textLabelColorPicker , false , 6 ) ;
+      widgetPickers . addToContent ( colorsIndex , textLabelColorPicker , false , 3 ) ;
       textLabelColorPicker . setTextCode ( TextsDemo ( getTexts ( ) ) . COLOR_PICKERS ) ;
       colorPickerEnabled = new ColorPicker ( application ) ;
-      widgetPickers . addToContent ( colorPickerEnabled , true , 7 ) ;
+      widgetPickers . addToContent ( colorsIndex , colorPickerEnabled , true , 4 ) ;
       colorPickerEnabled . setRGBColor ( getPropsDyn ( ) . getAppBackgroundBgColor ( ) . toString ( 16 ) ) ;
       colorPickerDisabled = new ColorPicker ( application ) ;
-      widgetPickers . addToContent ( colorPickerDisabled , true , 8 ) ;
+      widgetPickers . addToContent ( colorsIndex , colorPickerDisabled , true , 5 ) ;
       colorPickerDisabled . setRGBColor ( getPropsDyn ( ) . getAppBackgroundFgColor ( ) . toString ( 16 ) ) ;
       colorPickerDisabled . setEnabled ( false ) ;
       textLabelList = new TextLabel ( application ) ;
-      widgetPickers . addToContent ( textLabelList , false , 9 ) ;
+      widgetPickers . addToContent ( listsIndex , textLabelList , false , 0 ) ;
       textLabelList . setTextCode ( TextsDemo ( getTexts ( ) ) . LISTS ) ;
       listEnabled = new List ( application ) ;
-      widgetPickers . addToContent ( listEnabled , true , 10 ) ;
+      widgetPickers . addToContent ( listsIndex , listEnabled , true , 1 ) ;
       listEnabled . setArrays ( [ TextsDemo ( getTexts ( ) ) . ELEMENT0 , TextsDemo ( getTexts ( ) ) . ELEMENT1 , TextsDemo ( getTexts ( ) ) . ELEMENT2 , TextsDemo ( getTexts ( ) ) . ELEMENT3 , TextsDemo ( getTexts ( ) ) . ELEMENT4 , TextsDemo ( getTexts ( ) ) . ELEMENT5 , TextsDemo ( getTexts ( ) ) . ELEMENT6 , TextsDemo ( getTexts ( ) ) . ELEMENT7 , TextsDemo ( getTexts ( ) ) . ELEMENT8 , TextsDemo ( getTexts ( ) ) . ELEMENT9 ] , [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ] ) ;
       listEnabled . setNumOfElements ( listMaxElements ) ;
       listEnabled . setMultiple ( true ) ;
@@ -480,7 +493,7 @@ package com . kisscodesystems . KissAs3FwDemo
       listEnabled . setStartIndex ( 2 ) ;
       listEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CHANGED , listEnabledChanged ) ;
       listDisabled = new List ( application ) ;
-      widgetPickers . addToContent ( listDisabled , true , 11 ) ;
+      widgetPickers . addToContent ( listsIndex , listDisabled , true , 2 ) ;
       listDisabled . setArrays ( [ TextsDemo ( getTexts ( ) ) . ELEMENT0 , TextsDemo ( getTexts ( ) ) . ELEMENT1 , TextsDemo ( getTexts ( ) ) . ELEMENT2 , TextsDemo ( getTexts ( ) ) . ELEMENT3 , TextsDemo ( getTexts ( ) ) . ELEMENT4 , TextsDemo ( getTexts ( ) ) . ELEMENT5 , TextsDemo ( getTexts ( ) ) . ELEMENT6 , TextsDemo ( getTexts ( ) ) . ELEMENT7 , TextsDemo ( getTexts ( ) ) . ELEMENT8 , TextsDemo ( getTexts ( ) ) . ELEMENT9 ] , [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ] ) ;
       listDisabled . setNumOfElements ( listMaxElements ) ;
       listDisabled . setMultiple ( true ) ;
@@ -488,15 +501,15 @@ package com . kisscodesystems . KissAs3FwDemo
       listDisabled . setStartIndex ( 4 ) ;
       listDisabled . setEnabled ( false ) ;
       textLabelListPicker = new TextLabel ( application ) ;
-      widgetPickers . addToContent ( textLabelListPicker , false , 12 ) ;
+      widgetPickers . addToContent ( listsIndex , textLabelListPicker , false , 3 ) ;
       textLabelListPicker . setTextCode ( TextsDemo ( getTexts ( ) ) . LIST_PICKERS ) ;
       listPickerEnabled = new ListPicker ( application ) ;
-      widgetPickers . addToContent ( listPickerEnabled , true , 13 ) ;
+      widgetPickers . addToContent ( listsIndex , listPickerEnabled , true , 4 ) ;
       listPickerEnabled . setNumOfElements ( listMaxElements ) ;
       listPickerEnabled . setArrays ( [ TextsDemo ( getTexts ( ) ) . ELEMENT0 , TextsDemo ( getTexts ( ) ) . ELEMENT1 , TextsDemo ( getTexts ( ) ) . ELEMENT2 , TextsDemo ( getTexts ( ) ) . ELEMENT3 , TextsDemo ( getTexts ( ) ) . ELEMENT4 , TextsDemo ( getTexts ( ) ) . ELEMENT5 , TextsDemo ( getTexts ( ) ) . ELEMENT6 , TextsDemo ( getTexts ( ) ) . ELEMENT7 , TextsDemo ( getTexts ( ) ) . ELEMENT8 , TextsDemo ( getTexts ( ) ) . ELEMENT9 , TextsDemo ( getTexts ( ) ) . ELEMENT10 , TextsDemo ( getTexts ( ) ) . ELEMENT11 , TextsDemo ( getTexts ( ) ) . ELEMENT12 , TextsDemo ( getTexts ( ) ) . ELEMENT13 , TextsDemo ( getTexts ( ) ) . ELEMENT14 , TextsDemo ( getTexts ( ) ) . ELEMENT15 , TextsDemo ( getTexts ( ) ) . ELEMENT16 , TextsDemo ( getTexts ( ) ) . ELEMENT17 , TextsDemo ( getTexts ( ) ) . ELEMENT18 , TextsDemo ( getTexts ( ) ) . ELEMENT19 ] , [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 ] ) ;
       listPickerEnabled . setSelectedIndex ( 2 ) ;
       listPickerDisabled = new ListPicker ( application ) ;
-      widgetPickers . addToContent ( listPickerDisabled , true , 14 ) ;
+      widgetPickers . addToContent ( listsIndex , listPickerDisabled , true , 5 ) ;
       listPickerDisabled . setNumOfElements ( listMaxElements ) ;
       listPickerDisabled . setArrays ( [ TextsDemo ( getTexts ( ) ) . ELEMENT0 , TextsDemo ( getTexts ( ) ) . ELEMENT1 , TextsDemo ( getTexts ( ) ) . ELEMENT2 , TextsDemo ( getTexts ( ) ) . ELEMENT3 , TextsDemo ( getTexts ( ) ) . ELEMENT4 , TextsDemo ( getTexts ( ) ) . ELEMENT5 , TextsDemo ( getTexts ( ) ) . ELEMENT6 , TextsDemo ( getTexts ( ) ) . ELEMENT7 , TextsDemo ( getTexts ( ) ) . ELEMENT8 , TextsDemo ( getTexts ( ) ) . ELEMENT9 , TextsDemo ( getTexts ( ) ) . ELEMENT10 , TextsDemo ( getTexts ( ) ) . ELEMENT11 , TextsDemo ( getTexts ( ) ) . ELEMENT12 , TextsDemo ( getTexts ( ) ) . ELEMENT13 , TextsDemo ( getTexts ( ) ) . ELEMENT14 , TextsDemo ( getTexts ( ) ) . ELEMENT15 , TextsDemo ( getTexts ( ) ) . ELEMENT16 , TextsDemo ( getTexts ( ) ) . ELEMENT17 , TextsDemo ( getTexts ( ) ) . ELEMENT18 , TextsDemo ( getTexts ( ) ) . ELEMENT19 ] , [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 ] ) ;
       listPickerDisabled . setSelectedIndex ( 3 ) ;
@@ -505,38 +518,39 @@ package com . kisscodesystems . KissAs3FwDemo
       widgetPickers . setswh ( widgetPickerssw , widgetPickerssh ) ;
 // For other elements that have specific values.
       widgetOthers = new Widget ( application ) ;
-      addWidget ( widgetOthers ) ;
+      addWidget ( 0 , widgetOthers ) ;
       widgetOthers . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
       widgetOthers . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_OTHERS ) ;
       widgetOthers . setFollowStageWidth ( true ) ;
       widgetOthers . setFollowStageHeight ( false ) ;
-      widgetOthers . setElementsFix ( 2 ) ;
-      checkboxEnabled = new Checkbox ( application ) ;
-      widgetOthers . addToContent ( checkboxEnabled , true , 2 ) ;
-      checkboxEnabled . setTextCodes ( TextsDemo ( getTexts ( ) ) . CHECKBOX_CHECKED , TextsDemo ( getTexts ( ) ) . CHECKBOX_UNCHECKED ) ;
-      checkboxEnabled . setChecked ( false ) ;
-      checkboxDisabled = new Checkbox ( application ) ;
-      widgetOthers . addToContent ( checkboxDisabled , true , 5 ) ;
-      checkboxDisabled . setTextCodes ( TextsDemo ( getTexts ( ) ) . CHECKBOX_CHECKED , TextsDemo ( getTexts ( ) ) . CHECKBOX_UNCHECKED ) ;
-      checkboxDisabled . setChecked ( true ) ;
-      checkboxDisabled . setEnabled ( false ) ;
+      widgetOthers . setDefaultContent ( ) ;
+      widgetOthers . setElementsFix ( 0 , 2 ) ;
+      switcherEnabled = new Switcher ( application ) ;
+      widgetOthers . addToContent ( 0 , switcherEnabled , true , 2 ) ;
+      switcherEnabled . setTextCodes ( TextsDemo ( getTexts ( ) ) . SWITCHER_UP , TextsDemo ( getTexts ( ) ) . SWITCHER_DOWN ) ;
+      switcherEnabled . setUp ( false ) ;
+      switcherDisabled = new Switcher ( application ) ;
+      widgetOthers . addToContent ( 0 , switcherDisabled , true , 5 ) ;
+      switcherDisabled . setTextCodes ( TextsDemo ( getTexts ( ) ) . SWITCHER_UP , TextsDemo ( getTexts ( ) ) . SWITCHER_DOWN ) ;
+      switcherDisabled . setUp ( true ) ;
+      switcherDisabled . setEnabled ( false ) ;
       potmetEnabled = new Potmet ( application ) ;
-      widgetOthers . addToContent ( potmetEnabled , true , 6 ) ;
+      widgetOthers . addToContent ( 0 , potmetEnabled , true , 6 ) ;
       potmetEnabled . setMinMaxIncValues ( 30 , 100 , 2 ) ;
       potmetEnabled . setCurValue ( 42 ) ;
       potmetDisabled = new Potmet ( application ) ;
-      widgetOthers . addToContent ( potmetDisabled , true , 7 ) ;
+      widgetOthers . addToContent ( 0 , potmetDisabled , true , 7 ) ;
       potmetDisabled . setMinMaxIncValues ( 30 , 100 , 2 ) ;
       potmetDisabled . setCurValue ( 42 ) ;
       potmetDisabled . setEnabled ( false ) ;
       textLabelPotmet = new TextLabel ( application ) ;
-      widgetOthers . addToContent ( textLabelPotmet , false , 8 ) ;
+      widgetOthers . addToContent ( 0 , textLabelPotmet , false , 8 ) ;
       textLabelPotmet . setTextCode ( TextsDemo ( getTexts ( ) ) . POTMETS ) ;
       textLabelXmlLister = new TextLabel ( application ) ;
-      widgetOthers . addToContent ( textLabelXmlLister , false , 9 ) ;
+      widgetOthers . addToContent ( 0 , textLabelXmlLister , false , 9 ) ;
       textLabelXmlLister . setTextCode ( TextsDemo ( getTexts ( ) ) . XMLLISTER ) ;
       xmlLister = new XmlLister ( application ) ;
-      widgetOthers . addToContent ( xmlLister , true , 11 ) ;
+      widgetOthers . addToContent ( 0 , xmlLister , true , 11 ) ;
       xmlLister . setNumOfElements ( listMaxElements ) ;
       xmlLister . setXmlAsString ( menuxml ) ;
       widgetOthers . getContentBaseEventDispatcher ( ) . addEventListener ( EVENT_SIZES_CHANGED , widgetOthersContentResized ) ;
@@ -738,8 +752,8 @@ package com . kisscodesystems . KissAs3FwDemo
       widgetOthers = null ;
       widgetOtherssw = 0 ;
       widgetOtherssh = 0 ;
-      checkboxEnabled = null ;
-      checkboxDisabled = null ;
+      switcherEnabled = null ;
+      switcherDisabled = null ;
       potmetEnabled = null ;
       potmetDisabled = null ;
       textLabelPotmet = null ;

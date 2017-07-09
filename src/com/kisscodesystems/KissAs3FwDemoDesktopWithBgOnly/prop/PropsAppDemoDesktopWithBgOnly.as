@@ -14,8 +14,8 @@
 */
 package com . kisscodesystems . KissAs3FwDemoDesktopWithBgOnly . prop
 {
-  import com . kisscodesystems . KissAs3Fw . prop . PropsApp
-  public class PropsAppDemoDesktopWithBgOnly extends PropsApp
+  import com . kisscodesystems . KissAs3FwDemo . prop . PropsAppDemo
+  public class PropsAppDemoDesktopWithBgOnly extends PropsAppDemo
   {
 /*
 ** Constructor.
@@ -25,7 +25,6 @@ package com . kisscodesystems . KissAs3FwDemoDesktopWithBgOnly . prop
     public function PropsAppDemoDesktopWithBgOnly ( ) : void
     {
       super ( ) ;
-      applicationName = "Demo application" ;
       weightBackgroundPicture = 5 ;
       weightScrollContent = 5 ;
       useEmbedFonts = false ;
