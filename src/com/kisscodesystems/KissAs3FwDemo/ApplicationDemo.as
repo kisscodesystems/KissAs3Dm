@@ -14,7 +14,7 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.5
+** Current version : 1.6
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -37,6 +37,10 @@
 **                   pixel stealing is improved in Color (mobile devices)
 **                   the Checkbox is Switcher from now
 **                   "about" tab on the settings panel
+**                   1.6 - 07.31.2017
+**                   several smaller improvements
+**                   ButtonFile class is added to handle file browsing and uploading
+**                   This works on desktop, webbrowser and on mobile devices.
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
@@ -94,6 +98,7 @@ package com . kisscodesystems . KissAs3FwDemo
   import com . kisscodesystems . KissAs3Fw . Application ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonBar ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonDraw ;
+  import com . kisscodesystems . KissAs3Fw . ui . ButtonFile ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonLink ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonText ;
   import com . kisscodesystems . KissAs3Fw . ui . Color ;
@@ -152,6 +157,8 @@ package com . kisscodesystems . KissAs3FwDemo
     private var buttonBarEnabledw : int = 300 ;
     private var buttonBarDisabled : ButtonBar = null ;
     private var buttonBarDisabledw : int = 150 ;
+    private var textLabelButtonFile : TextLabel = null ;
+    private var buttonFile : ButtonFile = null ;
     private var textLabelButtonDraw : TextLabel = null ;
     private var buttonDrawEnabled : ButtonDraw = null ;
     private var buttonDrawDisabled : ButtonDraw = null ;
@@ -181,7 +188,7 @@ package com . kisscodesystems . KissAs3FwDemo
 // For other elements that have specific values.
     private var widgetOthers : Widget = null ;
     private var widgetOtherssw : int = 350 ;
-    private var widgetOtherssh : int = 310 ;
+    private var widgetOtherssh : int = 350 ;
     private var switcherEnabled : Switcher = null ;
     private var switcherDisabled : Switcher = null ;
     private var potmetEnabled : Potmet = null ;
@@ -414,37 +421,43 @@ package com . kisscodesystems . KissAs3FwDemo
       buttonBarDisabled . addButton ( getTexts ( ) . YN_YES ) ;
       buttonBarDisabled . addButton ( getTexts ( ) . YN_NO ) ;
       buttonBarDisabled . setEnabled ( false ) ;
+      textLabelButtonFile = new TextLabel ( application ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonFile , false , 6 ) ;
+      textLabelButtonFile . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_FILE ) ;
+      buttonFile = new ButtonFile ( application ) ;
+      widgetButtons . addToContent ( 0 , buttonFile , true , 8 ) ;
+      buttonFile . setFileFilters ( [ buttonFile . fileFilterImgs , buttonFile . fileFilterTxts ] ) ;
       textLabelButtonDraw = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( 0 , textLabelButtonDraw , false , 6 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonDraw , false , 9 ) ;
       textLabelButtonDraw . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_DRAWS ) ;
       buttonDrawEnabled = new ButtonDraw ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonDrawEnabled , true , 7 ) ;
+      widgetButtons . addToContent ( 0 , buttonDrawEnabled , true , 10 ) ;
       buttonDrawEnabled . setButtonType ( DRAW_BUTTON_TYPE_SETTINGS ) ;
       buttonDrawEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonDrawEnabledClick ) ;
       buttonDrawDisabled = new ButtonDraw ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonDrawDisabled , true , 8 ) ;
+      widgetButtons . addToContent ( 0 , buttonDrawDisabled , true , 11 ) ;
       buttonDrawDisabled . setButtonType ( DRAW_BUTTON_TYPE_MENU ) ;
       buttonDrawDisabled . setEnabled ( false ) ;
       textLabelButtonLink = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( 0 , textLabelButtonLink , false , 9 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonLink , false , 12 ) ;
       textLabelButtonLink . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_LINKS ) ;
       buttonLinkEnabled = new ButtonLink ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonLinkEnabled , true , 10 ) ;
+      widgetButtons . addToContent ( 0 , buttonLinkEnabled , true , 13 ) ;
       buttonLinkEnabled . setTextCode ( getTexts ( ) . YN_YES ) ;
       buttonLinkEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonLinkEnabledClick ) ;
       buttonLinkDisabled = new ButtonLink ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonLinkDisabled , true , 11 ) ;
+      widgetButtons . addToContent ( 0 , buttonLinkDisabled , true , 14 ) ;
       buttonLinkDisabled . setTextCode ( getTexts ( ) . YN_NO ) ;
       buttonLinkDisabled . setEnabled ( false ) ;
       textLabelButtonText = new TextLabel ( application ) ;
-      widgetButtons . addToContent ( 0 , textLabelButtonText , false , 12 ) ;
+      widgetButtons . addToContent ( 0 , textLabelButtonText , false , 15 ) ;
       textLabelButtonText . setTextCode ( TextsDemo ( getTexts ( ) ) . BUTTON_TEXTS ) ;
       buttonTextEnabled = new ButtonText ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonTextEnabled , true , 13 ) ;
+      widgetButtons . addToContent ( 0 , buttonTextEnabled , true , 16 ) ;
       buttonTextEnabled . setTextCode ( getTexts ( ) . OC_OK ) ;
       buttonTextEnabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonTextEnabledClick ) ;
       buttonTextDisabled = new ButtonText ( application ) ;
-      widgetButtons . addToContent ( 0 , buttonTextDisabled , true , 14 ) ;
+      widgetButtons . addToContent ( 0 , buttonTextDisabled , true , 17 ) ;
       buttonTextDisabled . setTextCode ( getTexts ( ) . OC_CANCEL ) ;
       buttonTextDisabled . getBaseEventDispatcher ( ) . addEventListener ( EVENT_CLICK , buttonTextDisabledClick ) ;
       buttonTextDisabled . setEnabled ( false ) ;
@@ -733,6 +746,8 @@ package com . kisscodesystems . KissAs3FwDemo
       textLabelButtonText = null ;
       buttonTextEnabled = null ;
       buttonTextDisabled = null ;
+      textLabelButtonFile = null ;
+      buttonFile = null ;
       widgetPickers = null ;
       widgetPickerssw = 0 ;
       widgetPickerssh = 0 ;

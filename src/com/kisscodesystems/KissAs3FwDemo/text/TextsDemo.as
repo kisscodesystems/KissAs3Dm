@@ -88,6 +88,7 @@ package com . kisscodesystems . KissAs3FwDemo . text
     public const BUTTON_DRAWS : String = _BTC + "BUTTON_DRAWS" + _ETC ;
     public const BUTTON_LINKS : String = _BTC + "BUTTON_LINKS" + _ETC ;
     public const BUTTON_TEXTS : String = _BTC + "BUTTON_TEXTS" + _ETC ;
+    public const BUTTON_FILE : String = _BTC + "BUTTON_FILE" + _ETC ;
     public const CLICKED_LINK : String = _BTC + "CLICKED_LINK" + _ETC ;
     public const COLORS : String = _BTC + "COLORS" + _ETC ;
     public const COLOR_PICKERS : String = _BTC + "COLOR_PICKERS" + _ETC ;
