@@ -14,7 +14,7 @@
 **
 ** Published       : 06.21.2017
 **
-** Current version : 1.6
+** Current version : 1.7
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -41,6 +41,9 @@
 **                   several smaller improvements
 **                   ButtonFile class is added to handle file browsing and uploading
 **                   This works on desktop, webbrowser and on mobile devices.
+**                   1.7 - 08.19.2017
+**                   Camera object is added now.
+**                   The File and FileReference can be set from outside in ButtonFile.
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw.
@@ -79,8 +82,6 @@
 ** 2: insert this new key into textCodesDisplayingStyles in textStockDemo
 ** 3: insert the new texts as done in the textIni2 in textStockDemo
 **
-** Copyright (C) 2017 KissCode Systems Kft
-**
 ** ApplicationDemo is free software: you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
 ** Free Software Foundation, version 3.
@@ -101,6 +102,7 @@ package com . kisscodesystems . KissAs3FwDemo
   import com . kisscodesystems . KissAs3Fw . ui . ButtonFile ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonLink ;
   import com . kisscodesystems . KissAs3Fw . ui . ButtonText ;
+  import com . kisscodesystems . KissAs3Fw . ui . Camera ;
   import com . kisscodesystems . KissAs3Fw . ui . Color ;
   import com . kisscodesystems . KissAs3Fw . ui . ColorPicker ;
   import com . kisscodesystems . KissAs3Fw . ui . List ;
@@ -127,6 +129,13 @@ package com . kisscodesystems . KissAs3FwDemo
     private var widgetComponentUsagesw : int = 550 ;
     private var widgetComponentUsagesh : int = 300 ;
     private var textBoxComponentUsage : TextBox = null ;
+// Widget for a Camera object.
+    private var widgetCamera : Widget = null ;
+    private var widgetCamerasw : int = 520 ;
+    private var widgetCamerash : int = 520 ;
+    private var cameraTextLabel : TextLabel = null ;
+    private var camera : Camera = null ;
+    private var buttonFileCam : ButtonFile = null ;
 // For the single lined elements.
     private var widgetSingleLineTexts : Widget = null ;
     private var widgetSingleLineTextssw : int = 500 ;
@@ -322,6 +331,25 @@ package com . kisscodesystems . KissAs3FwDemo
       widgetComponentUsage . getContentBaseEventDispatcher ( ) . addEventListener ( EVENT_SIZES_CHANGED , widgetComponentUsageContentResized ) ;
 // NOW the initial resizing of the widget to resize the textbox too.
       widgetComponentUsage . setswh ( widgetComponentUsagesw , widgetComponentUsagesh ) ;
+// Widget for a Camera object.
+      widgetCamera = new Widget ( application ) ;
+      addWidget ( 0 , widgetCamera ) ;
+      widgetCamera . setWidgetType ( getTexts ( ) . WIDGET_TYPE_GENERAL ) ;
+      widgetCamera . setWidgetHeaderCode ( TextsDemo ( getTexts ( ) ) . WIDGET_HEADER_DEMO_CAMERA ) ;
+      widgetCamera . setFollowStageWidth ( false ) ;
+      widgetCamera . setFollowStageHeight ( false ) ;
+      widgetCamera . setDefaultContent ( ) ;
+      widgetCamera . setElementsFix ( 0 , 0 ) ;
+      camera = new Camera ( application ) ;
+      widgetCamera . addToContent ( 0 , camera , true , 0 ) ;
+      camera . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_SAVED , cameraSaved ) ;
+      buttonFileCam = new ButtonFile ( application ) ;
+      widgetCamera . addToContent ( 0 , buttonFileCam , true , 1 ) ;
+      buttonFileCam . setFileFilters ( [ buttonFileCam . fileFilterImgs ] ) ;
+      cameraTextLabel = new TextLabel ( application ) ;
+      widgetCamera . addToContent ( 0 , cameraTextLabel , false , 2 ) ;
+      cameraTextLabel . setTextCode ( TextsDemo ( getTexts ( ) ) . CAMERA ) ;
+      widgetCamera . setswh ( widgetCamerasw , widgetCamerash ) ;
 // For the single lined elements.
       widgetSingleLineTexts = new Widget ( application ) ;
       addWidget ( 0 , widgetSingleLineTexts ) ;
@@ -572,6 +600,10 @@ package com . kisscodesystems . KissAs3FwDemo
 /*
 ** The functions used to operate this demo object.
 */
+    private function cameraSaved ( e : Event ) : void
+    {
+      buttonFileCam . setFileReference ( camera . getFileReference ( ) ) ;
+    }
     private function widgetComponentUsageContentResized ( e : Event ) : void
     {
       if ( textBoxComponentUsage != null && widgetComponentUsage != null )
@@ -706,6 +738,12 @@ package com . kisscodesystems . KissAs3FwDemo
 // 3: calling the super destroy.
       super . destroy ( ) ;
 // 4: every reference and value should be resetted to null, 0 or false.
+      widgetCamera = null ;
+      widgetCamerasw = 0 ;
+      widgetCamerash = 0 ;
+      cameraTextLabel = null ;
+      camera = null ;
+      buttonFileCam = null ;
       widgetComponentUsage = null ;
       widgetComponentUsagesw = 0 ;
       widgetComponentUsagesh = 0 ;

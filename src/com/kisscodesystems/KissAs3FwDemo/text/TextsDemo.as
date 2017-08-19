@@ -72,6 +72,7 @@ package com . kisscodesystems . KissAs3FwDemo . text
     public const WIDGET_PICKERS_COLORS : String = _BTC + "WIDGET_PICKERS_COLORS" + _ETC ;
     public const WIDGET_PICKERS_LISTS : String = _BTC + "WIDGET_PICKERS_LISTS" + _ETC ;
     public const WIDGET_HEADER_DEMO_OTHERS : String = _BTC + "WIDGET_HEADER_DEMO_OTHERS" + _ETC ;
+    public const WIDGET_HEADER_DEMO_CAMERA : String = _BTC + "WIDGET_HEADER_DEMO_CAMERA" + _ETC ;
     public const SINGLE_LINE_LABEL_BRIGHT : String = _BTC + "SINGLE_LINE_LABEL_BRIGHT" + _ETC ;
     public const SINGLE_LINE_LABEL_MID_ENABLED_INPUT : String = _BTC + "SINGLE_LINE_LABEL_MID_ENABLED_INPUT" + _ETC ;
     public const SINGLE_LINE_LABEL_DARK_ENABLED_INPUT : String = _BTC + "SINGLE_LINE_LABEL_DARK_ENABLED_INPUT" + _ETC ;
@@ -100,6 +101,7 @@ package com . kisscodesystems . KissAs3FwDemo . text
     public const SELECTED_INDEXES : String = _BTC + "SELECTED_INDEXES" + _ETC ;
     public const HAS_BEEN_CLICKED : String = _BTC + "HAS_BEEN_CLICKED" + _ETC ;
     public const XMLLISTER : String = _BTC + "XMLLISTER" + _ETC ;
+    public const CAMERA : String = _BTC + "CAMERA" + _ETC ;
 // For the sample xml
     public const VALUE0 : String = _BTC + "VALUE0" + _ETC ;
     public const VALUE1 : String = _BTC + "VALUE1" + _ETC ;

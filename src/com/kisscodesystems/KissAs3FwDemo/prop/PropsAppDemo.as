@@ -26,8 +26,8 @@ package com . kisscodesystems . KissAs3FwDemo . prop
     {
       super ( ) ;
       applicationName = "Demo application" ;
-      applicationVersion = "version: 1.6" ;
-      applicationReleaseDate = "released: 07.31.2017" ;
+      applicationVersion = "version: 1.7" ;
+      applicationReleaseDate = "released: 08.19.2017" ;
       applicationSoftwareHomepageTxt . push ( "KissAs3Fw Actionscript3 Framework" ) ;
       applicationSoftwareHomepageUrl . push ( "https://github.com/kisscodesystems/KissAs3FwDemos" ) ;
       applicationSoftwareHomepageTxt . push ( "KissCode Systems Kft - opensource" ) ;
