@@ -1,0 +1,15 @@
+A KissCode Systems Kft. Kissfd alkalmazásához (a továbbiakban: Alkalmazás) tartozó adatkezelési nyilatkozat.
+(For english version, please, scroll down.)
+
+Az Alkalmazás a Kiss Framework használatát demonstrálja. Az Alkalmazás használata során a Framework által kínált funkcionalitás kerül bemutatásra a muködo demo program segítségével.
+
+Ez az Alkalmazás nem használ kliens oldali webes sütiket (cookies), és nem kezel vagy továbbít semmilyen személyes adatot. Ha az eszköz amelyre az Alkalmazás telepítésre kerül rendelkezik kamerával, akkor az Alkalmazás használhatja azt, amennyiben a felhasználó megadja az enedélyt erre. Az Alkalmazás nem készít video felvételt, de egy adott pillanatban fotót készíthet, ha a felhasználó az Alkalmazás Camera objektumában megnyomja a Kép készítése gombot. Ez a kép mentésre kerül az eszközön a felhasználó home könyvtárában az operációs rendszer alapértelmezett fájl szintu jogosultságaival.
+
+----------
+EN version
+The data management statement for the Kissfd application of KissCode Systems Kft. (Hereinafter: the Application).
+
+The Application demonstrates the use of the Kiss Framework. When using the Application, the functionality offered by the Framework will be demonstrated using this working demo program.
+
+This Application does not use client-side web cookies and does not handle or transmit any personal data. If the device on which the Application is installed has a camera, the Application may use it if the user gives permission to do so. The Application does not record video, but you can take a photo at a specific moment by pressing the Capture button in the Application Camera object. This image is saved on the device in the user's home directory with the default operating system permissions.
+
