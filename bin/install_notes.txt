@@ -1,13 +1,16 @@
-To install the Kiss Framework Demo, please, follow the instructions.
+To install and launch the Kiss Framework Demo, please, follow the instructions.
 
 apk
 - download the file to your devide and install it
 
-exe, dmg
+exe
 - download the proper air runtime if it is not installed yet:
   https://airsdk.harman.com/assets/downloads/AdobeAIR.exe
-  https://airsdk.harman.com/assets/downloads/AdobeAIR.dmg
-- download and install the file
+- download and install the exe or dmg file
+
+swf
+- download the swf file and the _swfplayer.exe
+- no install needed, just drop the swf file onto the _swfplayer.exe
 
 This application will be available soon on Google Play and Apple Store.
 
