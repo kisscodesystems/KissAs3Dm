@@ -37,5 +37,5 @@ To just view the Kiss Framework Demo
   
   iMac (swf)
   - download the Kissfd.swf file and the _flashplayer.dmg
-  - run the _flashplayer.dmg, and double click on the flash icon
+  - run the _flashplayer.dmg
   - double click on the Kissfd.swf
