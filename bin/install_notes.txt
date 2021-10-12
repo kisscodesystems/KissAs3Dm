@@ -7,16 +7,15 @@ To install and launch the Kiss Framework Demo, please, follow the instructions.
   Android phone/tablet (apk)
   - download the Kissfd.apk file to your devide and install it
 
-  Windows (exe)
-  - download and run the proper air runtime if it is not installed yet:
+  Windows (air)
+  - download and run the air runtime if it is not installed yet:
     https://airsdk.harman.com/assets/downloads/AdobeAIR.exe
-  - download and install the Kissfd.exe file
+  - download and install the Kissfd.air file
 
-  iMac (dmg)
-  - download and run the proper air runtime if it is not installed yet:
+  iMac (air)
+  - download and run the air runtime if it is not installed yet:
     https://airsdk.harman.com/assets/downloads/AdobeAIR.dmg
-  - download and install the Kissfd.dmg file
-    (..it's not there, coming soon)
+  - download and install the Kissfd.air file
 
   iPhone/iPad (Apple Store)
   - open this link on an iPhone or iPad device:
