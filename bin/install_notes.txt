@@ -7,12 +7,20 @@ To install and launch the Kiss Framework Demo, please, follow the instructions.
   Android phone/tablet (apk)
   - download the Kissfd.apk file to your devide and install it
 
+  Windows (exe)
+  admin rights needed
+  - download and run the air runtime if it is not installed yet:
+    https://airsdk.harman.com/assets/downloads/AdobeAIR.exe
+  - download and install the Kissfd.exe file
+
   Windows (air)
+  admin rights needed and Kissfd.air will give certificate error
   - download and run the air runtime if it is not installed yet:
     https://airsdk.harman.com/assets/downloads/AdobeAIR.exe
   - download and install the Kissfd.air file
 
   iMac (air)
+  admin rights needed and Kissfd.air will give certificate error
   - download and run the air runtime if it is not installed yet:
     https://airsdk.harman.com/assets/downloads/AdobeAIR.dmg
   - download and install the Kissfd.air file
@@ -28,13 +36,13 @@ To just view the Kiss Framework Demo
   - download the Kissfd.swf file and the _flashplayer.exe
   - no install needed, just drop the Kissfd.swf file onto the _flashplayer.exe
 
+  iMac (swf)
+  - download the Kissfd.swf file and the _flashplayer.dmg
+  - run the _flashplayer.dmg
+  - double click on the Kissfd.swf
+
   Linux (swf)
   (desktop environment needed, should work on any Linux)
   - download these: Kissfd.swf file and the _flashplayer.lin
   - run in terminal and in the folder you have downloaded the aboves into:
     chmod 500 _flashplayer.lin && ./_flashplayer.lin Kissfd.swf
-  
-  iMac (swf)
-  - download the Kissfd.swf file and the _flashplayer.dmg
-  - run the _flashplayer.dmg
-  - double click on the Kissfd.swf
