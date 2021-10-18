@@ -19,8 +19,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function MultiLineTextsWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 620 ;
-      iniSizeHeight = 550 ;
+      iniSizeWidth = 650 ;
+      iniSizeHeight = 600 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -98,17 +98,18 @@ package com . kisscodesystems . KissAs3Dm . app
           maxw = textLabelTextAreaDisabled . getsw ( ) ;
         }
         maxw = getContentsw ( ) - maxw - 3 * application . getPropsDyn ( ) . getAppMargin ( ) ;
+        var maxh : int = ( getContentsh ( ) - 4 * application . getPropsDyn ( ) . getAppMargin ( ) ) / 3 ;
         if ( textBox != null )
         {
-          textBox . setswh ( maxw , getContentsh ( ) / 4 ) ;
+          textBox . setswh ( maxw , maxh ) ;
         }
         if ( textAreaEnabled != null )
         {
-          textAreaEnabled . setswh ( maxw , getContentsh ( ) / 4 ) ;
+          textAreaEnabled . setswh ( maxw , maxh ) ;
         }
         if ( textAreaDisabled != null )
         {
-          textAreaDisabled . setswh ( maxw , getContentsh ( ) / 4 ) ;
+          textAreaDisabled . setswh ( maxw , maxh ) ;
         }
       }
       else

@@ -92,6 +92,7 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ textCodesWidgetModes [ 0 ] ] . push ( "Automatikus" ) ;
       texts [ textCodesWidgetModes [ 1 ] ] . push ( "Asztali" ) ;
       texts [ textCodesWidgetModes [ 2 ] ] . push ( "Mobil" ) ;
+      texts [ application . getTexts ( ) . MORE ] . push ( "Több" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_BASIC ] . push ( "Alap" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_DIGITAL ] . push ( "Digitális" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_ANALOG ] . push ( "Analóg" ) ;
@@ -145,6 +146,7 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ application . getTexts ( ) . RUBBER ] . push ( "Radír" ) ;
       texts [ application . getTexts ( ) . REALLY_WANT_TO_CLEAR_DRAWN_CONTENT ] . push ( "Tényleg törölni szeretnéd a rajzolt tartalmat?" ) ;
       texts [ application . getTexts ( ) . SETTING_WIDGET_MODE ] . push ( "Widget mód." ) ;
+      texts [ application . getTexts ( ) . REQUIRED_PERMISSIONS_ALERT ] . push ( "Ez az akalmazás Kamera, Tárhely és Internet jogosultságokat igényel.\nKérlek, nézz rá a beállításokra, és add meg ezeket a jogosultságokat az appnak a megfelelő működéséhez. Elképzelhető hogy újra kell majd indítani az alkalmazást." ) ;
       texts [ application . getTexts ( ) . COMPONENTS_USAGE ] . push (
       "<p><b>Üdvözlet a KissAs3Fw framework-ben!</b></p>" 
       + application . EMPTY_HTML_PARAGRAPH 
@@ -414,7 +416,7 @@ package com . kisscodesystems . KissAs3Dm . text
           + "\n - Line thickness, line color and background color are configurable." 
           + "\n - Clearing is possible by a rubber or a whole clearing." 
           + "\n - Background color and the size of the board can be changed if the clear link has been used." 
-          + "\n - Save as a base64 encoded byte array will be impoemented soon."
+          + "\n - Save as a base64 encoded byte array will be implemented soon."
           ,
         " " 
           + "Board" 
@@ -445,6 +447,10 @@ package com . kisscodesystems . KissAs3Dm . text
           + "\n - The title of the sound can be specified."
           + "\n - Start, pause, stop main features." 
           + "\n - Seek, and displaying in progress and remaining times."
+          + "\n"
+          + "\nMore" 
+          + "\n - A group of hidden objects." 
+          + "\n - Every objects are fully functional but can be visible and invisible."
           ,
         " " 
           + "Potmeter" 
@@ -466,6 +472,10 @@ package com . kisscodesystems . KissAs3Dm . text
           + "\n - Zene címe megadható." 
           + "\n - Start, pause, stop alapfunkciók."
           + "\n - Seek, folyamatban és visszamaradó időtartam kijelzés." 
+          + "\n"
+          + "\nMore" 
+          + "\n - Objektumok egy rejtett csoportja." 
+          + "\n - Minden objektum teljesen funkcionál, de lehet rejtett és megjelenített."
       ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . MENU_ITEM_COMPONENT_USAGE ] = [ "Component usage" , "Komponens használat" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . MENU_ITEM_SINGLE_LINE_TEXTS ] = [ "Single line texts" , "Egysoros szövegek" ] ;
@@ -495,6 +505,7 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ TextsDemo ( application . getTexts ( ) ) . WIDGET_HEADER_OTHERS ] = [ "Others" , "Továbbiak" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . WIDGET_HEADER_CAMERA ] = [ "Camera" , "Kamera" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . WIDGET_HEADER_BOARD ] = [ "Board" , "Tábla" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . PRIVACY_POLICY ] = [ "Privacy Policy" , "Adatkezelési Irányelvek" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_BRIGHT ] = [ "This is a single line label (bright)." , "Ez egy egy soros cimke (világos)." ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_MID_ENABLED_INPUT ] = [ "Input field is enabled (mid label):" , "Beviteli mező enabled (közepes cimke):" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_ENABLED_INPUT ] = [ "Input field is disabled (dark label):" , "Beviteli mező disabled (sötét cimke):" ] ;
@@ -523,6 +534,9 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ TextsDemo ( application . getTexts ( ) ) . SWITCHER_DOWN ] = [ "Switcher empty.." , "Switcher üres.." ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . SELECTED_INDEXES ] = [ "Selected indexes: " , "Megjelölt indexek: " ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . HAS_BEEN_CLICKED ] = [ " has been clicked." , " volt megklikkelve." ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . BOARD_LABEL ] = [ "This is a board." , "Ez egy tábla." ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . BUTTON_IN_MORE ] = [ "More button" , "Több gomb" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . LINK_IN_MORE ] = [ "More link" , "Több link" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . ELEMENT0 ] = [ "Element 0" , "Elem 0" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . ELEMENT1 ] = [ "Element 1" , "Elem 1" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . ELEMENT2 ] = [ "Element 2" , "Elem 2" ] ;

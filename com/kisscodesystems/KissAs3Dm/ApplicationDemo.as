@@ -14,7 +14,7 @@
 **
 ** Published       : 2021.09.28
 **
-** Current version : 1.9
+** Current version : 1.10
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -56,6 +56,11 @@
 **                   ther is no mobile and desktop mode, it can be set from the Settings
 **                   New classes are available to use such as Board or Rater
 **                   SoundPlayer is also available to play embedded sound files.
+**                   1.10 - 17.oct.2021
+**                   Smaller bug fixes for example for rendering the application using gpu
+**                   Smaller improvemnets such as the Board now contains the UI elements
+**                   on the above of the board and not below it.
+**                   The Other widget has the privacy link from now.
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw and the sample application to be created.
@@ -84,9 +89,18 @@ package com . kisscodesystems . KissAs3Dm
   import com . kisscodesystems . KissAs3Fw . Application ;
   import flash . events . ContextMenuEvent ;
   import flash . events . Event ;
+  import flash . utils . ByteArray ;
   public class ApplicationDemo extends Application
   {
     private var widgetManager : WidgetManagerDemo = null ;
+    [ Embed ( source = "/opt/dkcs/kcsops/res/privacyPolicyEN" , mimeType = "application/octet-stream" ) ]
+    private var privacyPolicyClassEN : Class ;
+    private var privacyPolicyByteArrayEN : ByteArray = new privacyPolicyClassEN ( ) as ByteArray ;
+    private var privacyPolicyEN : String = privacyPolicyByteArrayEN . toString ( ) ;
+    [ Embed ( source = "/opt/dkcs/kcsops/res/privacyPolicyHU" , mimeType = "application/octet-stream" ) ]
+    private var privacyPolicyClassHU : Class ;
+    private var privacyPolicyByteArrayHU : ByteArray = new privacyPolicyClassHU ( ) as ByteArray ;
+    private var privacyPolicyHU : String = privacyPolicyByteArrayHU . toString ( ) ;
     public function ApplicationDemo ( ) : void
     {
       super ( ) ;
@@ -94,6 +108,17 @@ package com . kisscodesystems . KissAs3Dm
       soundManager = new SoundManagerDemo ( this ) ;
       widgetManager = new WidgetManagerDemo ( this ) ;
       traceLevel = 0 ;
+    }
+    public function getPrivacyPolicy ( ) : String
+    {
+      if ( getTextStock ( ) . getLangCode ( ) == TextsDemo ( application . getTexts ( ) ) . LANG_HU )
+      {
+        return privacyPolicyHU ;
+      }
+      else
+      {
+        return privacyPolicyEN ;
+      }
     }
     public function getWidgetManager ( ) : WidgetManagerDemo
     {

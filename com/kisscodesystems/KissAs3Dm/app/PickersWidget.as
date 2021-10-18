@@ -35,8 +35,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function PickersWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 550 ;
-      iniSizeHeight = 470 ;
+      iniSizeWidth = 620 ;
+      iniSizeHeight = 680 ;
     }
     override protected function onCreate ( ) : void
     {

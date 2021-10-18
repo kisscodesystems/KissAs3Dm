@@ -21,8 +21,8 @@ package com . kisscodesystems . KissAs3Dm . prop
     {
       super ( ) ;
       applicationName = "Kiss Framework Demo" ;
-      applicationVersion = "1.9" ;
-      applicationReleaseDate = "2021-09-28" ;
+      applicationVersion = "1.10" ;
+      applicationReleaseDate = "2021-10-17" ;
       applicationSoftwareHomepageTxt . push ( "Kiss Framework Demo Sources" ) ;
       applicationSoftwareHomepageUrl . push ( "https://github.com/kisscodesystems/KissAs3Dm" ) ;
       applicationSoftwareHomepageTxt . push ( "KissCode Systems Kft - opensource" ) ;

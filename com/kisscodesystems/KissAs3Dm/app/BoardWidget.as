@@ -12,7 +12,7 @@ package com . kisscodesystems . KissAs3Dm . app
     {
       super ( applicationRef ) ;
       iniSizeWidth = 620 ;
-      iniSizeHeight = 420 ;
+      iniSizeHeight = 460 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -28,6 +28,7 @@ package com . kisscodesystems . KissAs3Dm . app
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_BOARD ) ;
         board = new Board ( application ) ;
         addToContent ( 0 , board , true , 0 ) ;
+        board . setLabel ( TextsDemo ( application . getTexts ( ) ) . BOARD_LABEL ) ;
         application . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_MARGIN_CHANGED , marginChanged ) ;
         doSizeChanged ( ) ;
       }
@@ -59,7 +60,7 @@ package com . kisscodesystems . KissAs3Dm . app
       super . doSizeChanged ( ) ;
       if ( board != null && application != null )
       {
-        board . setswh ( getContentsw ( ) - 2 * application . getPropsDyn ( ) . getAppMargin ( ) , getContentsh ( ) / 2 ) ;
+        board . setswh ( getContentsw ( ) - 2 * application . getPropsDyn ( ) . getAppMargin ( ) , getContentsh ( ) - 2 * application . getPropsDyn ( ) . getAppMargin ( ) ) ;
       }
     }
     override public function destroy ( ) : void

@@ -14,8 +14,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function CameraWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 600 ;
-      iniSizeHeight = 500 ;
+      iniSizeWidth = 780 ;
+      iniSizeHeight = 740 ;
     }
     override protected function onCreate ( ) : void
     {

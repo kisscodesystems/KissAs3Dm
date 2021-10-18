@@ -12,7 +12,7 @@ package com . kisscodesystems . KissAs3Dm . app
     public function ComponentUsageWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 620 ;
+      iniSizeWidth = 680 ;
       iniSizeHeight = 420 ;
     }
     override protected function onCreate ( ) : void

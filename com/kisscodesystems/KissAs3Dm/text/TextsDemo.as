@@ -81,6 +81,9 @@ package com . kisscodesystems . KissAs3Dm . text
     public const SWITCHER_DOWN : String = _BTC + "SWITCHER_DOWN" + _ETC ;
     public const SELECTED_INDEXES : String = _BTC + "SELECTED_INDEXES" + _ETC ;
     public const HAS_BEEN_CLICKED : String = _BTC + "HAS_BEEN_CLICKED" + _ETC ;
+    public const BOARD_LABEL : String = _BTC + "BOARD_LABEL" + _ETC ;
+    public const BUTTON_IN_MORE : String = _BTC + "BUTTON_IN_MORE" + _ETC ;
+    public const LINK_IN_MORE : String = _BTC + "LINK_IN_MORE" + _ETC ;
     public const MENU_ITEM_COMPONENT_USAGE : String = _BTC + "MENU_ITEM_COMPONENT_USAGE" + _ETC ;
     public const MENU_ITEM_CAMERA : String = _BTC + "MENU_ITEM_CAMERA" + _ETC ;
     public const MENU_ITEM_SINGLE_LINE_TEXTS : String = _BTC + "MENU_ITEM_SINGLE_LINE_TEXTS" + _ETC ;
@@ -98,6 +101,7 @@ package com . kisscodesystems . KissAs3Dm . text
     public const WIDGETINFO_PICKERS : String = _BTC + "WIDGETINFO_PICKERS" + _ETC ;
     public const WIDGETINFO_BOARD : String = _BTC + "WIDGETINFO_BOARD" + _ETC ;
     public const WIDGETINFO_OTHERS : String = _BTC + "WIDGETINFO_OTHERS" + _ETC ;
+    public const PRIVACY_POLICY : String = _BTC + "PRIVACY_POLICY" + _ETC ;
     public const ELEMENT0 : String = _BTC + "ELEMENT0" + _ETC ;
     public const ELEMENT1 : String = _BTC + "ELEMENT1" + _ETC ;
     public const ELEMENT2 : String = _BTC + "ELEMENT2" + _ETC ;

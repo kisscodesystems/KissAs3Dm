@@ -29,7 +29,7 @@ package com . kisscodesystems . KissAs3Dm . app
     {
       super ( applicationRef ) ;
       iniSizeWidth = 560 ;
-      iniSizeHeight = 410 ;
+      iniSizeHeight = 490 ;
     }
     override protected function onCreate ( ) : void
     {
