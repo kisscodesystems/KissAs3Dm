@@ -5,7 +5,7 @@ To install and launch the Kiss Framework Demo, please, follow the instructions.
     https://play.google.com/store/apps/details?id=air.com.kisscodesystems.kissfd
 
   Android phone/tablet (apk)
-  - download the Kissfd.apk file to your devide and install it
+  - download the Kissfd.apk file to your device and install it
 
   Windows (exe)
   admin rights needed
@@ -25,9 +25,16 @@ To install and launch the Kiss Framework Demo, please, follow the instructions.
     https://airsdk.harman.com/assets/downloads/AdobeAIR.dmg
   - download and install the Kissfd.air file
 
+  iPhone/iPad (ipa, Apple Ad-Hoc)
+  - this is done, the ipa has been created and it is installed
+    on my developer iPhone. sorry guys, this cannot run
+    everywhere, I don't have enterprise Apple license yet.
+    but this works and looks pretty cool and I assume that you
+    are very satisfied knowing it.
+
   iPhone/iPad (Apple Store)
   - open this link on an iPhone or iPad device:
-    (..coming soon)
+    (..coming soon, have to go thru the approval process)
 
 To just view the Kiss Framework Demo
 (without installation, and using old but working flashplayers):
