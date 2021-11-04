@@ -12,9 +12,9 @@
 ** The desktop or mobile demo class of the KissAs3Fw.
 ** Every application based on this framework should extend the Application class.
 **
-** Published       : 2021.09.28
+** Published       : 2021.11.04
 **
-** Current version : 1.10
+** Current version : 1.11
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -61,6 +61,14 @@
 **                   Smaller improvemnets such as the Board now contains the UI elements
 **                   on the above of the board and not below it.
 **                   The Other widget has the privacy link from now.
+**                   1.11 - 04.nov.2021
+**                   Smaller improvements
+**                   - permission handling on iOS devices
+**                   - app prefixies (D:dev, T:tst blank:prd)
+**                   - easier to grab the Widgets area
+**                   - Potmeter now displays its value continuously
+**                   - Use Harman sdk to build from now
+**                   - Permission handling improvements
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw and the sample application to be created.
@@ -108,6 +116,7 @@ package com . kisscodesystems . KissAs3Dm
       soundManager = new SoundManagerDemo ( this ) ;
       widgetManager = new WidgetManagerDemo ( this ) ;
       traceLevel = 0 ;
+      applicationType = "T" ;
     }
     public function getPrivacyPolicy ( ) : String
     {

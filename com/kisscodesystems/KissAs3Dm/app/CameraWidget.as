@@ -38,7 +38,6 @@ package com . kisscodesystems . KissAs3Dm . app
         addToContent ( indexBasic , buttonFileCam , true , 1 ) ;
         buttonFileCam . setFileFilters ( [ buttonFileCam . fileFilterImgs ] ) ;
         buttonFileCam . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_FILE_REFERENCE_BROWSE , fileReferenceDestroyed ) ;
-        application . askForCameraPermission ( ) ;
       }
     }
     override public function setDesktopSizes ( ) : void
