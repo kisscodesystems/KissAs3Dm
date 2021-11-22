@@ -12,9 +12,9 @@
 ** The desktop or mobile demo class of the KissAs3Fw.
 ** Every application based on this framework should extend the Application class.
 **
-** Published       : 2021.11.04
+** Published       : 2021.11.22
 **
-** Current version : 1.11
+** Current version : 1.12
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -69,6 +69,8 @@
 **                   - Potmeter now displays its value continuously
 **                   - Use Harman sdk to build from now
 **                   - Permission handling improvements
+**                   1.12 - 22.nov.2021
+**                   Smaller improvements
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw and the sample application to be created.

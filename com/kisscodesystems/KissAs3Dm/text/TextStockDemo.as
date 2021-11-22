@@ -93,6 +93,7 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ textCodesWidgetModes [ 1 ] ] . push ( "Asztali" ) ;
       texts [ textCodesWidgetModes [ 2 ] ] . push ( "Mobil" ) ;
       texts [ application . getTexts ( ) . MORE ] . push ( "Több" ) ;
+      texts [ application . getTexts ( ) . CAMERA_ON_MOBILE_DEVICES ] . push ( "Mobil eszköz?\nForgasd fekvő nézetbe." ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_BASIC ] . push ( "Alap" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_DIGITAL ] . push ( "Digitális" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_ANALOG ] . push ( "Analóg" ) ;
