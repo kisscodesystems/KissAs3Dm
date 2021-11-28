@@ -27,14 +27,11 @@ To install and launch the Kiss Framework Demo, please, follow the instructions.
 
   iPhone/iPad (ipa, Apple Ad-Hoc)
   - this is done, the ipa has been created and it is installed
-    on my developer iPhone. sorry guys, this cannot run
-    everywhere, I don't have enterprise Apple license yet.
-    but this works and looks pretty cool and I assume that you
-    are very satisfied knowing it.
+    on the specified iPhones.
 
   iPhone/iPad (Apple Store)
   - open this link on an iPhone or iPad device:
-    (..coming soon, have to go thru the approval process)
+    https://testflight.apple.com/join/8aHLILNL
 
 To just view the Kiss Framework Demo
 (without installation, and using old but working flashplayers):
