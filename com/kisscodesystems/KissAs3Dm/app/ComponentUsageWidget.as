@@ -28,7 +28,7 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( indexBasic ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_COMPONENT_USAGE ) ;
         textBoxComponentUsage = new TextBox ( application ) ;
-        addToContent ( indexBasic , textBoxComponentUsage , true , 0 ) ;
+        addToContent ( indexBasic , textBoxComponentUsage , 0 ) ;
         textBoxComponentUsage . setHtml ( true ) ;
         textBoxComponentUsage . setWordWrap ( true ) ;
         textBoxComponentUsage . setTextCode ( TextsDemo ( application . getTexts ( ) ) . COMPONENTS_USAGE ) ;

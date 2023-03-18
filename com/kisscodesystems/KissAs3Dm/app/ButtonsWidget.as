@@ -28,8 +28,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function ButtonsWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 560 ;
-      iniSizeHeight = 490 ;
+      iniSizeWidth = 660 ;
+      iniSizeHeight = 590 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -44,10 +44,10 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( indexBasic ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_BUTTONS ) ;
         textLabelButtonBar = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelButtonBar , false , 0 ) ;
+        addToContent ( indexBasic , textLabelButtonBar , 0 ) ;
         textLabelButtonBar . setTextCode ( TextsDemo ( application . getTexts ( ) ) . BUTTON_BARS ) ;
         buttonBarEnabled = new ButtonBar ( application ) ;
-        addToContent ( indexBasic , buttonBarEnabled , true , 1 ) ;
+        addToContent ( indexBasic , buttonBarEnabled , 1 ) ;
         buttonBarEnabled . setMaxWidth ( buttonBarEnabledw ) ;
         buttonBarEnabled . addButton ( application . getTexts ( ) . OC_OK ) ;
         buttonBarEnabled . addButton ( application . getTexts ( ) . OC_CANCEL ) ;
@@ -55,7 +55,7 @@ package com . kisscodesystems . KissAs3Dm . app
         buttonBarEnabled . addButton ( application . getTexts ( ) . YN_NO ) ;
         buttonBarEnabled . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_CHANGED , buttonBarEnabledChanged ) ;
         buttonBarDisabled = new ButtonBar ( application ) ;
-        addToContent ( indexBasic , buttonBarDisabled , true , 3 ) ;
+        addToContent ( indexBasic , buttonBarDisabled , 3 ) ;
         buttonBarDisabled . setMaxWidth ( buttonBarDisabledw ) ;
         buttonBarDisabled . addButton ( application . getTexts ( ) . OC_OK ) ;
         buttonBarDisabled . addButton ( application . getTexts ( ) . OC_CANCEL ) ;
@@ -63,30 +63,30 @@ package com . kisscodesystems . KissAs3Dm . app
         buttonBarDisabled . addButton ( application . getTexts ( ) . YN_NO ) ;
         buttonBarDisabled . setEnabled ( false ) ;
         textLabelButtonFile = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelButtonFile , false , 4 ) ;
+        addToContent ( indexBasic , textLabelButtonFile , 4 ) ;
         textLabelButtonFile . setTextCode ( TextsDemo ( application . getTexts ( ) ) . BUTTON_FILE ) ;
         buttonFile = new ButtonFile ( application ) ;
-        addToContent ( indexBasic , buttonFile , true , 5 ) ;
+        addToContent ( indexBasic , buttonFile , 5 ) ;
         buttonFile . setFileFilters ( [ buttonFile . fileFilterImgs , buttonFile . fileFilterTxts ] ) ;
         textLabelButtonLink = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelButtonLink , false , 6 ) ;
+        addToContent ( indexBasic , textLabelButtonLink , 6 ) ;
         textLabelButtonLink . setTextCode ( TextsDemo ( application . getTexts ( ) ) . BUTTON_LINKS ) ;
         buttonLinkEnabled = new ButtonLink ( application ) ;
-        addToContent ( indexBasic , buttonLinkEnabled , true , 7 ) ;
+        addToContent ( indexBasic , buttonLinkEnabled , 7 ) ;
         buttonLinkEnabled . setTextCode ( application . getTexts ( ) . YN_YES ) ;
         buttonLinkDisabled = new ButtonLink ( application ) ;
-        addToContent ( indexBasic , buttonLinkDisabled , true , 7 ) ;
+        addToContent ( indexBasic , buttonLinkDisabled , 7 ) ;
         buttonLinkDisabled . setTextCode ( application . getTexts ( ) . YN_NO ) ;
         buttonLinkDisabled . setEnabled ( false ) ;
         textLabelButtonText = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelButtonText , false , 8 ) ;
+        addToContent ( indexBasic , textLabelButtonText , 8 ) ;
         textLabelButtonText . setTextCode ( TextsDemo ( application . getTexts ( ) ) . BUTTON_TEXTS ) ;
         buttonTextEnabled = new ButtonText ( application ) ;
-        addToContent ( indexBasic , buttonTextEnabled , true , 9 ) ;
+        addToContent ( indexBasic , buttonTextEnabled , 9 ) ;
         buttonTextEnabled . setTextCode ( application . getTexts ( ) . OC_OK ) ;
         buttonTextEnabled . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_CLICK , buttonTextEnabledClick ) ;
         buttonTextDisabled = new ButtonText ( application ) ;
-        addToContent ( indexBasic , buttonTextDisabled , true , 9 ) ;
+        addToContent ( indexBasic , buttonTextDisabled , 9 ) ;
         buttonTextDisabled . setTextCode ( application . getTexts ( ) . OC_CANCEL ) ;
         buttonTextDisabled . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_CLICK , buttonTextDisabledClick ) ;
         buttonTextDisabled . setEnabled ( false ) ;

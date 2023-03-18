@@ -21,19 +21,12 @@ package com . kisscodesystems . KissAs3Dm . text
     {
       super ( applicationRef ) ;
       langCodes . push ( TextsDemo ( application . getTexts ( ) ) . LANG_HU ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_01 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_02 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_03 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_04 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_05 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_06 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_07 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_08 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_09 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_10 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_11 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_12 ) ;
-      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_13 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_1 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_2 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_3 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_4 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_5 ) ;
+      textCodesDisplayingStyles . push ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_6 ) ;
       textIni2 ( ) ;
     }
     private function textIni2 ( ) : void
@@ -74,7 +67,7 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ textCodesWidgetsOrientations [ 0 ] ] . push ( "Manuális" ) ;
       texts [ textCodesWidgetsOrientations [ 1 ] ] . push ( "Függőleges" ) ;
       texts [ textCodesWidgetsOrientations [ 2 ] ] . push ( "Vízszintes" ) ;
-      texts [ textCodesDisplayingStyles [ 0 ] ] . push ( "View" ) ;
+      texts [ textCodesDisplayingStyles [ 0 ] ] . push ( "Alapértelmezett" ) ;
       texts [ textCodesDisplayingStyles [ 1 ] ] = [ "Style 01" , "Stílus 01" ] ;
       texts [ textCodesDisplayingStyles [ 2 ] ] = [ "Style 02" , "Stílus 02" ] ;
       texts [ textCodesDisplayingStyles [ 3 ] ] = [ "Style 03" , "Stílus 03" ] ;
@@ -92,9 +85,14 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ textCodesWidgetModes [ 0 ] ] . push ( "Automatikus" ) ;
       texts [ textCodesWidgetModes [ 1 ] ] . push ( "Asztali" ) ;
       texts [ textCodesWidgetModes [ 2 ] ] . push ( "Mobil" ) ;
+      texts [ textCodesBoxFrames [ 0 ] ] . push ( "Teljes" ) ;
+      texts [ textCodesBoxFrames [ 1 ] ] . push ( "Vízszintes" ) ;
+      texts [ textCodesBoxFrames [ 2 ] ] . push ( "Függőleges" ) ;
+      texts [ textCodesBoxFrames [ 3 ] ] . push ( "Nincs" ) ;
       texts [ application . getTexts ( ) . MORE ] . push ( "Több" ) ;
-      texts [ application . getTexts ( ) . CAMERA_ON_MOBILE_DEVICES ] . push ( "Mobil eszköz?\nForgasd fekvő nézetbe." ) ;
-      texts [ application . getTexts ( ) . WATCH_TYPE_BASIC ] . push ( "Alap" ) ;
+      texts [ application . getTexts ( ) . SETTING_BOX_CORNER ] . push ( "Doboz sarok." ) ;
+      texts [ application . getTexts ( ) . SETTING_BOX_FRAME ] . push ( "Doboz keret." ) ;
+      texts [ application . getTexts ( ) . WATCH_TYPE_BASIC ] . push ( "Szöveges" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_DIGITAL ] . push ( "Digitális" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_ANALOG ] . push ( "Analóg" ) ;
       texts [ application . getTexts ( ) . WATCH_TYPE_BINARY ] . push ( "Bináris" ) ;
@@ -123,14 +121,25 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ application . getTexts ( ) . SETTING_MARGIN ] . push ( "Margó." ) ;
       texts [ application . getTexts ( ) . SETTING_PADDING ] . push ( "Kitöltés." ) ;
       texts [ application . getTexts ( ) . SETTING_RADIUS ] . push ( "Sugár." ) ;
-      texts [ application . getTexts ( ) . SETTING_BACKGROUND_BG_COLOR ] . push ( "Háttérszín." ) ;
-      texts [ application . getTexts ( ) . SETTING_BACKGROUND_FG_COLOR ] . push ( "Előtérszín." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLORS ] . push ( "Háttérszínek." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_ALPHA ] . push ( "Áttetszőség." ) ;
       texts [ application . getTexts ( ) . SETTING_BACKGROUND_BLUR ] . push ( "Háttér maszatolás." ) ;
-      texts [ application . getTexts ( ) . SETTING_BACKGROUND_FILL_ALPHA ] . push ( "Áttetszőség." ) ;
       texts [ application . getTexts ( ) . SETTING_BACKGROUND_ALIGN ] . push ( "Háttér igazítás." ) ;
       texts [ application . getTexts ( ) . SETTING_BACKGROUND_ALPHA ] . push ( "Háttér áttetszőség." ) ;
       texts [ application . getTexts ( ) . SETTING_BACKGROUND_LIVE ] . push ( "A háttér élő." ) ;
       texts [ application . getTexts ( ) . SETTING_BACKGROUND_FIXED ] . push ( "A háttér fix." ) ;
+      texts [ application . getTexts ( ) . SETTING_GET_NEW_FONT_COLORSCHEMA ] . push ( "Új betűszínek!" ) ;
+      texts [ application . getTexts ( ) . SETTING_GET_NEW_BACKGROUND_COLORSCHEMA ] . push ( "Új háttérszínek!" ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_CHANGE ] . push ( "Háttér változtat." ) ;
+      texts [ application . getTexts ( ) . SETTING_FONT_COLOR_CHANGE ] . push ( "Betű változtat." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_REMAIN ] . push ( "Háttér marad." ) ;
+      texts [ application . getTexts ( ) . SETTING_FONT_COLOR_REMAIN ] . push ( "Betű marad." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_RANDOMNESS ] . push ( "Háttérszín véletlenség." ) ;
+      texts [ application . getTexts ( ) . SETTING_FONT_COLOR_RANDOMNESS ] . push ( "Betűszín véletlenség." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_RANDOM ] . push ( "Véletlen színek." ) ;
+      texts [ application . getTexts ( ) . SETTING_FONT_COLOR_RANDOM ] . push ( "Véletlen színek." ) ;
+      texts [ application . getTexts ( ) . SETTING_BACKGROUND_COLOR_NORMAL ] . push ( "Normál színek." ) ;
+      texts [ application . getTexts ( ) . SETTING_FONT_COLOR_NORMAL ] . push ( "Normál színek." ) ;
       texts [ application . getTexts ( ) . SETTING_FONT_FACE ] . push ( "Betűtípus." ) ;
       texts [ application . getTexts ( ) . SETTING_FONT_SIZE ] . push ( "Betűméret." ) ;
       texts [ application . getTexts ( ) . SETTING_FONT_COLORS ] . push ( "Betűszínek." ) ;
@@ -148,6 +157,8 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ application . getTexts ( ) . REALLY_WANT_TO_CLEAR_DRAWN_CONTENT ] . push ( "Tényleg törölni szeretnéd a rajzolt tartalmat?" ) ;
       texts [ application . getTexts ( ) . SETTING_WIDGET_MODE ] . push ( "Widget mód." ) ;
       texts [ application . getTexts ( ) . REQUIRED_PERMISSIONS_ALERT ] . push ( "Ez az akalmazás Kamera, Tárhely és Internet jogosultságokat igényel.\nKérlek, nézz rá a beállításokra, és add meg ezeket a jogosultságokat az appnak a megfelelő működéséhez. Elképzelhető hogy újra kell majd indítani az alkalmazást." ) ;
+      texts [ application . getTexts ( ) . REQUIRED_ATTACHED_CAMERA_ALERT ] . push ( "Nincs kamera csatolva, ezt meg kell tenni a folytatás előtt." ) ;
+      texts [ application . getTexts ( ) . CAMERA_IS_USABLE_IN_HORIZONTAL ] . push ( "A kamera csak az applikácó vízszintes méretezésében használható." ) ;
       texts [ application . getTexts ( ) . COMPONENTS_USAGE ] . push (
       "<p><b>Üdvözlet a KissAs3Fw framework-ben!</b></p>" 
       + application . EMPTY_HTML_PARAGRAPH 
@@ -591,6 +602,12 @@ package com . kisscodesystems . KissAs3Dm . text
       texts [ TextsDemo ( application . getTexts ( ) ) . VALUE94 ] = [ "Menu item 94" , "Menüpont 94" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . VALUE95 ] = [ "Menu item 95" , "Menüpont 95" ] ;
       texts [ TextsDemo ( application . getTexts ( ) ) . WIDGET_TAB_BASIC ] = [ "Basic" , "Alap" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_1 ] = [ "Displaying 1" , "Megjelenítés 1" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_2 ] = [ "Displaying 2" , "Megjelenítés 2" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_3 ] = [ "Displaying 3" , "Megjelenítés 3" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_4 ] = [ "Displaying 4" , "Megjelenítés 4" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_5 ] = [ "Displaying 5" , "Megjelenítés 5" ] ;
+      texts [ TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_6 ] = [ "Displaying 6" , "Megjelenítés 6" ] ;
     }
   }
 }

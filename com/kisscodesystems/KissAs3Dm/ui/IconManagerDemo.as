@@ -25,9 +25,12 @@ package com . kisscodesystems . KissAs3Dm . ui
     [ Embed ( source = "../../../../../res/icons1/pickers.png" ) ]
     private var PickersClass : Class ;
     private var pickersBitmap : Bitmap ;
-    [ Embed ( source = "../../../../../res/icons1/texts.png" ) ]
-    private var TextsClass : Class ;
-    private var textsBitmap : Bitmap ;
+    [ Embed ( source = "../../../../../res/icons1/textsingle.png" ) ]
+    private var TextsingleClass : Class ;
+    private var textsingleBitmap : Bitmap ;
+    [ Embed ( source = "../../../../../res/icons1/textmulti.png" ) ]
+    private var TextmultiClass : Class ;
+    private var textmultiBitmap : Bitmap ;
     public function IconManagerDemo ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
@@ -37,7 +40,8 @@ package com . kisscodesystems . KissAs3Dm . ui
       componentusageBitmap = new ComponentusageClass ( ) as Bitmap ;
       othersBitmap = new OthersClass ( ) as Bitmap ;
       pickersBitmap = new PickersClass ( ) as Bitmap ;
-      textsBitmap = new TextsClass ( ) as Bitmap ;
+      textsingleBitmap = new TextsingleClass ( ) as Bitmap ;
+      textmultiBitmap = new TextmultiClass ( ) as Bitmap ;
     }
     override public function getNewBitmapData ( iconType : String , textType : String , iconSize : int ) : BitmapData
     {
@@ -65,9 +69,13 @@ package com . kisscodesystems . KissAs3Dm . ui
       {
         return transformBitmapData ( pickersBitmap , textType , iconSize ) ;
       }
-      else if ( iconType == "texts" )
+      else if ( iconType == "textsingle" )
       {
-        return transformBitmapData ( textsBitmap , textType , iconSize ) ;
+        return transformBitmapData ( textsingleBitmap , textType , iconSize ) ;
+      }
+      else if ( iconType == "textmulti" )
+      {
+        return transformBitmapData ( textmultiBitmap , textType , iconSize ) ;
       }
       else
       {

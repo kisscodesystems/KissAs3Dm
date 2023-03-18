@@ -30,12 +30,12 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( indexBasic ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_CAMERA ) ;
         camera = new Camera ( application ) ;
-        addToContent ( indexBasic , camera , true , 0 ) ;
+        addToContent ( indexBasic , camera , 0 ) ;
         camera . setCameraSize ( 640 ) ;
         camera . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_SAVED , cameraSaved ) ;
         camera . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_CAMERA_IS_ATTACHED , cameraIsAttached ) ;
         buttonFileCam = new ButtonFile ( application ) ;
-        addToContent ( indexBasic , buttonFileCam , true , 1 ) ;
+        addToContent ( indexBasic , buttonFileCam , 1 ) ;
         buttonFileCam . setFileFilters ( [ buttonFileCam . fileFilterImgs ] ) ;
         buttonFileCam . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_FILE_REFERENCE_BROWSE , fileReferenceDestroyed ) ;
       }

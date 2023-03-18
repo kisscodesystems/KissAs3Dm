@@ -11,8 +11,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function BoardWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 620 ;
-      iniSizeHeight = 460 ;
+      iniSizeWidth = 720 ;
+      iniSizeHeight = 560 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -27,7 +27,7 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( 0 ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_BOARD ) ;
         board = new Board ( application ) ;
-        addToContent ( 0 , board , true , 0 ) ;
+        addToContent ( 0 , board , 0 ) ;
         board . setLabel ( TextsDemo ( application . getTexts ( ) ) . BOARD_LABEL ) ;
         application . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_MARGIN_CHANGED , marginChanged ) ;
         doSizeChanged ( ) ;

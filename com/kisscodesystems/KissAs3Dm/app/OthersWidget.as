@@ -27,8 +27,8 @@ package com . kisscodesystems . KissAs3Dm . app
     public function OthersWidget ( applicationRef : Application ) : void
     {
       super ( applicationRef ) ;
-      iniSizeWidth = 540 ;
-      iniSizeHeight = 440 ;
+      iniSizeWidth = 740 ;
+      iniSizeHeight = 640 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -43,32 +43,32 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( indexBasic ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_OTHERS ) ;
         switcherEnabled = new Switcher ( application ) ;
-        addToContent ( indexBasic , switcherEnabled , true , 0 ) ;
+        addToContent ( indexBasic , switcherEnabled , 0 ) ;
         switcherEnabled . setTextCodes ( TextsDemo ( application . getTexts ( ) ) . SWITCHER_UP , TextsDemo ( application . getTexts ( ) ) . SWITCHER_DOWN ) ;
         switcherEnabled . setUp ( false ) ;
         switcherDisabled = new Switcher ( application ) ;
-        addToContent ( indexBasic , switcherDisabled , true , 1 ) ;
+        addToContent ( indexBasic , switcherDisabled , 1 ) ;
         switcherDisabled . setTextCodes ( TextsDemo ( application . getTexts ( ) ) . SWITCHER_UP , TextsDemo ( application . getTexts ( ) ) . SWITCHER_DOWN ) ;
         switcherDisabled . setUp ( true ) ;
         switcherDisabled . setEnabled ( false ) ;
         potmeterEnabled = new Potmeter ( application ) ;
-        addToContent ( indexBasic , potmeterEnabled , true , 2 ) ;
+        addToContent ( indexBasic , potmeterEnabled , 2 ) ;
         potmeterEnabled . setMinMaxIncValues ( 30 , 100 , 2 ) ;
         potmeterEnabled . setCurValue ( 42 ) ;
         potmeterDisabled = new Potmeter ( application ) ;
-        addToContent ( indexBasic , potmeterDisabled , true , 2 ) ;
+        addToContent ( indexBasic , potmeterDisabled , 2 ) ;
         potmeterDisabled . setMinMaxIncValues ( 30 , 100 , 2 ) ;
         potmeterDisabled . setCurValue ( 42 ) ;
         potmeterDisabled . setEnabled ( false ) ;
         rater = new Rater ( application ) ;
-        addToContent ( indexBasic , rater , true , 3 ) ;
+        addToContent ( indexBasic , rater , 3 ) ;
         rater . setRate ( 3.5 ) ;
         rater . setReadonly ( false ) ;
         soundPlayer = new SoundPlayer ( application ) ;
-        addToContent ( indexBasic , soundPlayer , true , 4 ) ;
+        addToContent ( indexBasic , soundPlayer , 4 ) ;
         soundPlayer . setSoundTypeAndName ( "sample" , "Sample melody" ) ;
         more = new More ( application ) ;
-        addToContent ( indexBasic , more , true , 5 ) ;
+        addToContent ( indexBasic , more , 5 ) ;
         var button : ButtonText = new ButtonText ( application ) ;
         more . addToContent ( button ) ;
         button . setTextCode ( TextsDemo ( application . getTexts ( ) ) . BUTTON_IN_MORE ) ;
@@ -76,7 +76,7 @@ package com . kisscodesystems . KissAs3Dm . app
         more . addToContent ( link ) ;
         link . setTextCode ( TextsDemo ( application . getTexts ( ) ) . LINK_IN_MORE ) ;
         privacyButtonLink = new ButtonLink ( application ) ;
-        addToContent ( indexBasic , privacyButtonLink , true , 6 ) ;
+        addToContent ( indexBasic , privacyButtonLink , 6 ) ;
         privacyButtonLink . setTextCode ( TextsDemo ( application . getTexts ( ) ) . PRIVACY_POLICY ) ;
         privacyButtonLink . getBaseEventDispatcher ( ) . addEventListener ( application . EVENT_CLICK , viewPrivacy ) ;
         doSizeChanged ( ) ;

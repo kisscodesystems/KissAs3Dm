@@ -14,7 +14,7 @@
 **
 ** Published       : 2021.11.22
 **
-** Current version : 1.12
+** Current version : 1.13
 **
 ** Developed by    : Jozsef Kiss
 **                   KissCode Systems Kft
@@ -71,6 +71,8 @@
 **                   - Permission handling improvements
 **                   1.12 - 22.nov.2021
 **                   Smaller improvements
+**                   1.13 - 18.mar.2023
+**                   New features from the framework
 **
 ** MAIN FEATURES:
 ** - Shows the UI components of KissAs3Fw and the sample application to be created.
@@ -171,9 +173,9 @@ package com . kisscodesystems . KissAs3Dm
               + " <items>"
               + "   <item opened=\"0\" icon=\"componentusage\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_COMPONENT_USAGE + "\"/>"
               + "   <item opened=\"0\" icon=\"camera\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_CAMERA + "\"/>"
-              + "   <item opened=\"0\" icon=\"texts\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_TEXTS + "\">"
-              + "     <item opened=\"0\" icon=\"dummy\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_SINGLE_LINE_TEXTS + "\"/>"
-              + "     <item opened=\"0\" icon=\"dummy\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_MULTI_LINE_TEXTS + "\"/>" 
+              + "   <item opened=\"0\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_TEXTS + "\">"
+              + "     <item opened=\"0\" icon=\"textsingle\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_SINGLE_LINE_TEXTS + "\"/>"
+              + "     <item opened=\"0\" icon=\"textmulti\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_MULTI_LINE_TEXTS + "\"/>" 
               + "   </item>" 
               + "   <item opened=\"0\" icon=\"buttons\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_BUTTONS + "\"/>"
               + "   <item opened=\"0\" icon=\"pickers\" value=\"" + TextsDemo ( getTexts ( ) ) . MENU_ITEM_PICKERS + "\"/>" 
@@ -197,7 +199,6 @@ package com . kisscodesystems . KissAs3Dm
     }
     protected function inidisplayingstyle ( ) : void
     {
-      getPropsDyn ( ) . setCurrentDisplayingStyle ( TextsDemo ( application . getTexts ( ) ) . DISPLAYING_STYLE_10 ) ;
       getPropsDyn ( ) . setAppBackgroundImage ( true ) ;
     }
     protected function inisettingofapplicationname ( ) : void

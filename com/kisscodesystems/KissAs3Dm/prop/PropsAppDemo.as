@@ -29,7 +29,6 @@ package com . kisscodesystems . KissAs3Dm . prop
       applicationSoftwareHomepageUrl . push ( "http://kcsopensource.com" ) ;
       weightBackgroundPicture = 6 ;
       weightScrollContent = 6 ;
-      useEmbedFonts = false ;
     }
   }
 }

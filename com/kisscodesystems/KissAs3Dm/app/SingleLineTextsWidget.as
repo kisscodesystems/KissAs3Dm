@@ -19,7 +19,7 @@ package com . kisscodesystems . KissAs3Dm . app
     {
       super ( applicationRef ) ;
       iniSizeWidth = 780 ;
-      iniSizeHeight = 350 ;
+      iniSizeHeight = 550 ;
     }
     override protected function onCreate ( ) : void
     {
@@ -34,30 +34,30 @@ package com . kisscodesystems . KissAs3Dm . app
         setActiveContent ( indexBasic ) ;
         setInfoContent ( TextsDemo ( application . getTexts ( ) ) . WIDGETINFO_SINGLE_LINE_TEXTS ) ;
         textLabelBright = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelBright , false , 0 ) ;
+        addToContent ( indexBasic , textLabelBright , 0 ) ;
         textLabelBright . setTextCode ( TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_BRIGHT ) ;
         textLabelBright . setTextType ( application . getTexts ( ) . TEXT_TYPE_BRIGHT ) ;
         textLabelMid = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelMid , false , 2 ) ;
+        addToContent ( indexBasic , textLabelMid , 2 ) ;
         textLabelMid . setTextCode ( TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_MID_ENABLED_INPUT ) ;
         textLabelMid . setTextType ( application . getTexts ( ) . TEXT_TYPE_MID ) ;
         textInputEnabled = new TextInput ( application ) ;
-        addToContent ( indexBasic , textInputEnabled , true , 3 ) ;
+        addToContent ( indexBasic , textInputEnabled , 3 ) ;
         textInputEnabled . setTextCode ( TextsDemo ( application . getTexts ( ) ) . ENABLED_TEXT_INPUT ) ;
         textLabelDark = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelDark , false , 4 ) ;
+        addToContent ( indexBasic , textLabelDark , 4 ) ;
         textLabelDark . setTextCode ( TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_ENABLED_INPUT ) ;
         textLabelDark . setTextType ( application . getTexts ( ) . TEXT_TYPE_DARK ) ;
         textInputDisabled = new TextInput ( application ) ;
-        addToContent ( indexBasic , textInputDisabled , true , 5 ) ;
+        addToContent ( indexBasic , textInputDisabled , 5 ) ;
         textInputDisabled . setTextCode ( TextsDemo ( application . getTexts ( ) ) . DISABLED_TEXT_INPUT ) ;
         textInputDisabled . setEnabled ( false ) ;
         textLabelDark2 = new TextLabel ( application ) ;
-        addToContent ( indexBasic , textLabelDark2 , false , 6 ) ;
+        addToContent ( indexBasic , textLabelDark2 , 6 ) ;
         textLabelDark2 . setTextCode ( TextsDemo ( application . getTexts ( ) ) . SINGLE_LINE_LABEL_DARK_PASSWORD_INPUT ) ;
         textLabelDark2 . setTextType ( application . getTexts ( ) . TEXT_TYPE_DARK ) ;
         textInputPassword = new TextInput ( application ) ;
-        addToContent ( indexBasic , textInputPassword , true , 7 ) ;
+        addToContent ( indexBasic , textInputPassword , 7 ) ;
         textInputPassword . setTextCode ( "Password" ) ;
         textInputPassword . setDisplayAsPassword ( true ) ;
         doSizeChanged ( ) ;
