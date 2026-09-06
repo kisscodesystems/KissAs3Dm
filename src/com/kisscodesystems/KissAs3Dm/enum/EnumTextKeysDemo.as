@@ -1782,6 +1782,20 @@ package com.kisscodesystems.KissAs3Dm.enum
       return "[WIDGET_PROP_MIN_DW]";
     }
     /**
+     * Returns the text key of the WIDGET_PROP_MIN_DH label.
+     */
+    public static function WIDGET_PROP_MIN_DH():String
+    {
+      return "[WIDGET_PROP_MIN_DH]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROP_CONTROLS label.
+     */
+    public static function WIDGET_PROP_CONTROLS():String
+    {
+      return "[WIDGET_PROP_CONTROLS]";
+    }
+    /**
      * Returns the text key of the WIDGET_ACTION_TO_LOWEST_DEPTH label.
      */
     public static function WIDGET_ACTION_TO_LOWEST_DEPTH():String

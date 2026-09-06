@@ -25,6 +25,9 @@
  *   these three rows are the place that dropping is seen at
  * - the row of the value walks the very range that has been taken, so it can ask for
  *   nothing that potmeter would drop
+ * - the frame drawn around that potmeter is switched from its own row: one standing
+ *   between the icons of a player carries no frame, and the dimensions of it are the same
+ *   either way
  */
 package com.kisscodesystems.KissAs3Dm.widget
 {
@@ -34,6 +37,7 @@ package com.kisscodesystems.KissAs3Dm.widget
   import com.kisscodesystems.KissAs3Fw.enum.EnumEvents;
   import com.kisscodesystems.KissAs3Fw.enum.EnumIcons;
   import com.kisscodesystems.KissAs3Fw.ui.Potmeter;
+  import com.kisscodesystems.KissAs3Fw.ui.Switcher;
   import com.kisscodesystems.KissAs3Fw.ui.TextLabel;
   import flash.events.Event;
   public class PotmeterWidget extends PropertyWidget
@@ -69,12 +73,14 @@ package com.kisscodesystems.KissAs3Dm.widget
     private var incOBJ:Potmeter = null;
     private var precisionOBJ:Potmeter = null;
     private var curValueOBJ:Potmeter = null;
+    private var frameOBJ:Switcher = null;
     // the labels of the third column: the values the getters of that potmeter answer
     private var minVAL:TextLabel = null;
     private var maxVAL:TextLabel = null;
     private var incVAL:TextLabel = null;
     private var precisionVAL:TextLabel = null;
     private var curValueVAL:TextLabel = null;
+    private var frameVAL:TextLabel = null;
     /**
      * Constructs the widget of the Potmeter component.
      * @param applicationRef the main application reference
@@ -139,6 +145,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       incOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), rangeChanged);
       precisionOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), precisionChanged);
       curValueOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), curValueChanged);
+      frameOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), frameChanged);
     }
     /**
      * Displays the current value of every property of the example potmeter, the three
@@ -160,6 +167,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       precisionVAL.setLabel("" + examplePotmeter.getDecimalPrecision());
       curValueOBJ.setCurValue(examplePotmeter.getCurValue(), false);
       curValueVAL.setLabel("" + examplePotmeter.getCurValue());
+      frameVAL.setLabel(getYesNoKey(examplePotmeter.getFrame()));
     }
     /**
      * Returns the code writing the example potmeter the way it stands at the moment: the
@@ -181,6 +189,10 @@ package com.kisscodesystems.KissAs3Dm.widget
       if (examplePotmeter.getCurValue() != 0)
       {
         code += codeVarName + ".setCurValue(" + examplePotmeter.getCurValue() + ", false);\n";
+      }
+      if (!examplePotmeter.getFrame())
+      {
+        code += codeVarName + ".setFrame(false);\n";
       }
       code += getSpritePropertiesCode(imports);
       code += getSpriteStateCode();
@@ -227,6 +239,9 @@ package com.kisscodesystems.KissAs3Dm.widget
       curValueOBJ = createPotmeter(cellIndex + 1, exampleMIN, exampleMAX, exampleINC, examplePRECISION);
       curValueOBJ.setCurValue(exampleVALUE, false);
       curValueVAL = createValueLabel(cellIndex + 2);
+      cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_FRAME());
+      frameOBJ = createSwitcher(cellIndex + 1, examplePotmeter.getFrame());
+      frameVAL = createValueLabel(cellIndex + 2);
     }
     /**
      * Gives the three numbers of the rows of the range to the example potmeter and takes
@@ -294,6 +309,19 @@ package com.kisscodesystems.KissAs3Dm.widget
       displayEveryCurrentValue();
     }
     /**
+     * Draws the frame of the current appearance of the application around the example
+     * potmeter, or takes that frame away: the room that potmeter takes comes from its own
+     * knob and from its own value, so neither of the two touches its dimensions.
+     * @param e the changed event of that switcher
+     */
+    private function frameChanged(e:Event):void
+    {
+      application.trace("<" + this + " PotmeterWidget frameChanged> called.", 4);
+      application.trace("<" + this + " PotmeterWidget frameChanged> e: " + e, 3);
+      examplePotmeter.setFrame(frameOBJ.getOn());
+      displayEveryCurrentValue();
+    }
+    /**
      * Destroys this object and frees up everything. Every element of this widget stands
      * in the content of it, and that content is destroyed by the super destroy below, so
      * the references of them are only cleared here. The listeners registered above are
@@ -337,6 +365,8 @@ package com.kisscodesystems.KissAs3Dm.widget
       incVAL = null;
       precisionVAL = null;
       curValueVAL = null;
+      frameOBJ = null;
+      frameVAL = null;
     }
   }
 }

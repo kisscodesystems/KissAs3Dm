@@ -1012,6 +1012,14 @@
     <label lang="EN">Smallest width</label>
     <label lang="HU">A legkisebb szélesség</label>
   </labels>
+  <labels key="WIDGET_PROP_MIN_DH">
+    <label lang="EN">Lowest height</label>
+    <label lang="HU">A legkisebb magasság</label>
+  </labels>
+  <labels key="WIDGET_PROP_CONTROLS">
+    <label lang="EN">Controls on the video</label>
+    <label lang="HU">Kezelőelemek a videón</label>
+  </labels>
   <labels key="WIDGET_ACTION_TO_LOWEST_DEPTH">
     <label lang="EN">To the lowest</label>
     <label lang="HU">Legalulra</label>

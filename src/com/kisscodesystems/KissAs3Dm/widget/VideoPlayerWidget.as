@@ -37,6 +37,12 @@
  * - the smallest width that player can be laid out in is displayed too: it comes from the
  *   font size, from the margin of the application and from the width of the potmeter of
  *   the sound, so it changes with the appearance and with the volume as well
+ * - the lowest height of it is displayed next to that width: the name of the chapter and
+ *   the two rows of the controls stand on the picture of the video, so the room they need
+ *   is the room that player is never laid out lower than
+ * - the layer of those elements is switched from here as well: it is displayed over the
+ *   video and taken off it by its own row, and that row follows the presses on the picture
+ *   of the player and the inactivity taking that layer off the video by itself
  */
 package com.kisscodesystems.KissAs3Dm.widget
 {
@@ -93,6 +99,7 @@ package com.kisscodesystems.KissAs3Dm.widget
     private var boxDwOBJ:Potmeter = null;
     private var boxDhOBJ:Potmeter = null;
     private var resizableOBJ:Switcher = null;
+    private var controlsOBJ:Switcher = null;
     private var previewOBJ:Switcher = null;
     private var frameOBJ:Switcher = null;
     private var fullscreenOBJ:Switcher = null;
@@ -117,6 +124,8 @@ package com.kisscodesystems.KissAs3Dm.widget
     private var boxDimensionsVAL:TextLabel = null;
     private var videoDimensionsVAL:TextLabel = null;
     private var minDwVAL:TextLabel = null;
+    private var minDhVAL:TextLabel = null;
+    private var controlsVAL:TextLabel = null;
     private var resizableVAL:TextLabel = null;
     private var previewVAL:TextLabel = null;
     private var frameVAL:TextLabel = null;
@@ -219,6 +228,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       boxDhOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), boxChanged);
       previewOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), previewChanged);
       resizableOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), resizableChanged);
+      controlsOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), controlsChanged);
       frameOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), frameChanged);
       fullscreenOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), fullscreenChanged);
       openFullscreenOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CLICK(), openFullscreenClick);
@@ -259,6 +269,12 @@ package com.kisscodesystems.KissAs3Dm.widget
       videoDimensionsVAL.setLabel(exampleVideoPlayer.getVideoDw() + " x "
         + exampleVideoPlayer.getVideoDh());
       minDwVAL.setLabel("" + exampleVideoPlayer.getMinDw());
+      minDhVAL.setLabel("" + exampleVideoPlayer.getMinDh());
+      // the layer of the elements is displayed and taken off the video by the player
+      // itself as well, so the switcher of it follows every press on that picture and the
+      // inactivity taking that layer off it
+      controlsOBJ.setOn(exampleVideoPlayer.getControlsVisible(), false);
+      controlsVAL.setLabel(getYesNoKey(exampleVideoPlayer.getControlsVisible()));
       previewVAL.setLabel(getYesNoKey(exampleVideoPlayer.getPreview()));
       resizableVAL.setLabel(getYesNoKey(exampleVideoPlayer.getResizable()));
       frameVAL.setLabel(getYesNoKey(exampleVideoPlayer.getFrame()));
@@ -437,6 +453,13 @@ package com.kisscodesystems.KissAs3Dm.widget
       // the application, so this row changes nothing either
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_MIN_DW());
       minDwVAL = createValueLabel(cellIndex + 2);
+      // the lowest height comes from the elements standing on the picture of the video, so
+      // this row changes nothing either
+      cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_MIN_DH());
+      minDhVAL = createValueLabel(cellIndex + 2);
+      cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_CONTROLS());
+      controlsOBJ = createSwitcher(cellIndex + 1, exampleVideoPlayer.getControlsVisible());
+      controlsVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_PREVIEW());
       previewOBJ = createSwitcher(cellIndex + 1, exampleVideoPlayer.getPreview());
       previewVAL = createValueLabel(cellIndex + 2);
@@ -724,6 +747,20 @@ package com.kisscodesystems.KissAs3Dm.widget
       displayEveryCurrentValue();
     }
     /**
+     * Displays the name of the chapter and the controls of the example player over the
+     * picture of the video, or takes the whole layer of them off that picture. A layer that
+     * is displayed from here is taken off the video by the inactivity of the mouse exactly
+     * the way one displayed by a press on the picture is.
+     * @param e the changed event of that switcher
+     */
+    private function controlsChanged(e:Event):void
+    {
+      application.trace("<" + this + " VideoPlayerWidget controlsChanged> called.", 4);
+      application.trace("<" + this + " VideoPlayerWidget controlsChanged> e: " + e, 3);
+      exampleVideoPlayer.setControlsVisible(controlsOBJ.getOn());
+      displayEveryCurrentValue();
+    }
+    /**
      * Draws a frame around the example player or takes that frame away.
      * @param e the changed event of that switcher
      */
@@ -844,6 +881,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       boxDhOBJ = null;
       previewOBJ = null;
       resizableOBJ = null;
+      controlsOBJ = null;
       frameOBJ = null;
       fullscreenOBJ = null;
       openFullscreenOBJ = null;
@@ -866,6 +904,8 @@ package com.kisscodesystems.KissAs3Dm.widget
       boxDimensionsVAL = null;
       videoDimensionsVAL = null;
       minDwVAL = null;
+      minDhVAL = null;
+      controlsVAL = null;
       previewVAL = null;
       resizableVAL = null;
       frameVAL = null;

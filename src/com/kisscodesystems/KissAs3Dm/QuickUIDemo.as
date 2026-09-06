@@ -832,6 +832,13 @@ package com.kisscodesystems.KissAs3Dm
       const videoPlayerChapterListOpened:Boolean = videoPlayer.isChapterListOpened();
       application.trace("<QuickUIDemo createVideoPlayer> videoPlayerChapterListEnabled: " + videoPlayerChapterListEnabled, 3);
       application.trace("<QuickUIDemo createVideoPlayer> videoPlayerChapterListOpened: " + videoPlayerChapterListOpened, 3);
+      // the name of the chapter and the controls of the player stand on the picture of the
+      // video, and the layer of them is taken off that picture and displayed again here:
+      // the inactivity of the mouse over the video is the one taking it off by itself
+      videoPlayer.setControlsVisible(false);
+      videoPlayer.setControlsVisible(true);
+      const videoPlayerControlsVisible:Boolean = videoPlayer.getControlsVisible();
+      application.trace("<QuickUIDemo createVideoPlayer> videoPlayerControlsVisible: " + videoPlayerControlsVisible, 3);
       // the chapters can be dropped at any moment: a player of no chapter at all displays
       // no picture and it plays nothing, and this one is empty here, so this only proves
       // that the call can be made before the real chapters are handed over below
@@ -896,6 +903,10 @@ package com.kisscodesystems.KissAs3Dm
       application.trace("<QuickUIDemo createVideoPlayer> videoPlayerBoxDh: " + videoPlayerBoxDh, 3);
       application.trace("<QuickUIDemo createVideoPlayer> videoPlayerVideoDw: " + videoPlayerVideoDw, 3);
       application.trace("<QuickUIDemo createVideoPlayer> videoPlayerVideoDh: " + videoPlayerVideoDh, 3);
+      const videoPlayerMinDw:int = videoPlayer.getMinDw();
+      const videoPlayerMinDh:int = videoPlayer.getMinDh();
+      application.trace("<QuickUIDemo createVideoPlayer> videoPlayerMinDw: " + videoPlayerMinDw, 3);
+      application.trace("<QuickUIDemo createVideoPlayer> videoPlayerMinDh: " + videoPlayerMinDh, 3);
       videoPlayer.updateCxy();
       const videoPlayerX:int = videoPlayer.getCx();
       const videoPlayerY:int = videoPlayer.getCy();
@@ -2175,6 +2186,11 @@ package com.kisscodesystems.KissAs3Dm
       potmeter.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), potmeterChanged);
       // the difference of the maximum and the minimum has to be a multiply of the
       // increment, every other range is dropped
+      // the frame of a potmeter can be taken away: one standing between the icons of a
+      // player carries no frame of its own at all
+      potmeter.setFrame(false);
+      potmeter.setFrame(true);
+      application.trace("<QuickUIDemo createPotmeter> potmeterFrame: " + potmeter.getFrame(), 3);
       potmeter.setMinMaxIncValues(0, 10, 3); // do nothing
       potmeter.setMinMaxIncValues(-5, 5, 0.5);
       potmeter.setDecimalPrecision(1);
