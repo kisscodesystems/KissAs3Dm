@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<application 
+  xmlns="http://ns.adobe.com/air/application/51.2"
+  minimumPatchLevel="0">
+<!-- AIR Application Descriptor File. See http://www.adobe.com/go/learn_air_1.0_application_descriptor_en. -->
+  <id>air.com.quickuidemo</id>
+  <name>
+    <text xml:lang="en">QuickUI Demo</text>
+  </name>
+        <!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
+             Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
+             An updated version of application must have a versionNumber value higher than the previous version. Required for namespace >= 2.5 . 
+         For iOS Apps, this represents build number. -->
+        <versionNumber>0.1</versionNumber>
+
+        <!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. 
+         For iOS Apps, this represents application version number and format should be (<0-999>.<0-999>.<0-999>).
+         If this tag is not specified or the value is not according to the format, then this tag will be ignored
+         and <versionNumber> will be used for application version number. Optional. -->
+        <versionLabel>0.1</versionLabel>
+  <filename>Launch-QuickUIDemo</filename>
+  <description>
+    <text xml:lang="en">Description</text>
+  </description>
+  <copyright>Copyright 2026</copyright>
+  <initialWindow>
+    <content>QuickUIDemo.swf</content>
+    <title>QuickUIDemo</title>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+    <width>1682</width>
+    <height>1000</height>
+    <x>50</x>
+    <y>50</y>
+    <minSize>300 300</minSize>
+    <maxSize>5000 5000</maxSize>
+    <aspectRatio>any</aspectRatio>
+    <autoOrients>true</autoOrients>
+    <renderMode>direct</renderMode>
+  </initialWindow>
+  <installFolder>QuickUIDemo</installFolder>
+  <programMenuFolder>Demo/QuickUIDemo</programMenuFolder>
+  <icon>
+    <image36x36>icons/mipmap-ldpi.png</image36x36>
+    <image48x48>icons/mipmap-mdpi.png</image48x48>
+    <image72x72>icons/mipmap-hdpi.png</image72x72>
+    <image96x96>icons/mipmap-xhdpi.png</image96x96>
+    <image144x144>icons/mipmap-xxhdpi.png</image144x144>
+    <image192x192>icons/mipmap-xxxhdpi.png</image192x192>
+  </icon>
+  <customUpdateUI>false</customUpdateUI>
+  <fileTypes>
+    <fileType>
+      <name>com.myProject</name>
+      <extension>xmpl</extension>
+      <description>QuickUIDemo file</description>
+      <contentType>application/x-data-type</contentType>
+      <icon>
+        <image48x48>icons/mipmap-mdpi.png</image48x48>
+      </icon>
+    </fileType>
+  </fileTypes>
+  <android>
+    <manifestAdditions>
+    <![CDATA[
+      <manifest android:installLocation="auto">
+        <uses-permission android:name="android.permission.CAMERA"/>
+        <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.WAKE_LOCK"/>
+        <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+        <application android:enabled="true">
+          <activity android:excludeFromRecents="false">
+            <intent-filter>
+              <action android:name="android.intent.action.MAIN"/>
+              <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+          </activity>
+        </application>
+            </manifest>
+    ]]>
+    </manifestAdditions> 
+  </android> 
+  <iPhone>
+    <requestedDisplayResolution>high</requestedDisplayResolution>
+    <InfoAdditions><![CDATA[
+        <key>UIStatusBarStyle</key> 
+        <string>UIStatusBarStyleBlackOpaque</string> 
+        <key>NSCameraUsageDescription</key>
+        <string>Take a photo using your device to save and upload.</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Upload your photo.</string>
+        <key>NSPhotoLibraryAddUsageDescription</key>
+        <string>Save your photo.</string>
+        <key>UIDeviceFamily</key>
+        <array>
+          <string>1</string>
+          <string>2</string>
+        </array>
+        <key>UIBackgroundModes</key> 
+        <array> 
+          <string>audio</string> 
+        </array> 
+    ]]></InfoAdditions>
+  </iPhone>
+</application>

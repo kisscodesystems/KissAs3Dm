@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/51.2">
+  <id>com.kisscodesystems.KissAs3DmQuickUIUnitTest</id>
+  <name>KissAs3Dm QuickUI unit tests</name>
+  <versionNumber>1.0.0</versionNumber>
+  <filename>KissAs3DmQuickUI</filename>
+  <initialWindow>
+    <content>QuickUIUnitTestDemo.swf</content>
+    <visible>true</visible>
+    <!-- the very window the reference application is built and tested in -->
+    <width>1682</width>
+    <height>1000</height>
+  </initialWindow>
+</application>

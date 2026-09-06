@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The dynamics configuration of the KissAs3Dm application.
+
+  Every value that is missing from here keeps the one the framework gives it in
+  KissAs3FwDynamicsConfig.xml, or the default coded into the DynamicsConfig class.
+
+  This file is embedded and applied by DynamicsConfigDemo, and the displaying styles
+  of this application are described in that very class.
+
+  The colors, the align and the blur of the default displaying style are left to the
+  framework on purpose: that style displays the embedded mosaic tile of the framework
+  and wears the colors taken from it, so overwriting any of those here would only make
+  this application start in an appearance no displaying style of it describes.
+
+  These are the starting values only, the user can change them later on the settings
+  panel of the running application.
+-->
+<config name="DynamicsConfig">
+  <value key="appFontSize">16</value>
+  <value key="appLineThickness">1</value>
+</config>

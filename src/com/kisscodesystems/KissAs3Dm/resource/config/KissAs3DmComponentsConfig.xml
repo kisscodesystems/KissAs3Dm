@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The components configuration of the KissAs3Dm application.
+
+  Every value that is missing from here keeps the one the framework gives it in
+  KissAs3FwComponentsConfig.xml, or the default coded into the ComponentsConfig class.
+
+  To override any of those, add a value element here with the key of that value. The
+  list of the available keys is the KissAs3FwComponentsConfig.xml of the framework:
+
+    <value key="widgetsMargin">0</value>
+    <value key="widgetEnableManualResize">false</value>
+
+  This file is embedded and applied by ComponentsConfigDemo, so overriding a framework
+  default only means writing a line into this xml, no code has to be touched.
+-->
+<config name="ComponentsConfig">
+  <!--
+    The framework starts a camera at 640 pixels, and both demos of this application
+    display that camera among many other components on one single screen, so the smallest
+    picture the framework allows, 480 pixels, is the one they start it at. That value
+    keeps the 160 pixel steps of the cameraWidthInc of the framework as well.
+  -->
+  <value key="cameraWidthIni">480</value>
+</config>
