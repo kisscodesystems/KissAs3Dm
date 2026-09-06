@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labelgroup name="Labels of KissAs3Dm">
+  <labels key="COMPONENTS_USAGE">
+    <label lang="EN">Welcome!</label>
+    <label lang="HU">Üdv!</label>
+  </labels>
+  <labels key="BUTTON_BAR_0">
+    <label lang="EN">First button</label>
+    <label lang="HU">Első gomb</label>
+  </labels>
+  <labels key="BUTTON_BAR_1">
+    <label lang="EN">Profile</label>
+    <label lang="HU">Profil</label>
+  </labels>
+  <labels key="BUTTON_BAR_2">
+    <label lang="EN">Messages</label>
+    <label lang="HU">Üzenetek</label>
+  </labels>
+  <labels key="BUTTON_BAR_3">
+    <label lang="EN">Button 4</label>
+    <label lang="HU">Gomb 4</label>
+  </labels>
+  <labels key="BUTTON_BAR_4">
+    <label lang="EN">Button 5</label>
+    <label lang="HU">Gomb 5</label>
+  </labels>
+  <labels key="BUTTON_BAR_5">
+    <label lang="EN">Settings</label>
+    <label lang="HU">Beállítások</label>
+  </labels>
+  <!-- The topics of the menu of the application: every widget stands under one of them. -->
+  <labels key="MENU_TEXTS">
+    <label lang="EN">Texts</label>
+    <label lang="HU">Szövegek</label>
+  </labels>
+  <labels key="MENU_BUTTONS">
+    <label lang="EN">Buttons</label>
+    <label lang="HU">Gombok</label>
+  </labels>
+  <labels key="MENU_PICKERS">
+    <label lang="EN">Pickers and panels</label>
+    <label lang="HU">Választók és panelek</label>
+  </labels>
+  <labels key="MENU_CONTENTS">
+    <label lang="EN">Contents</label>
+    <label lang="HU">Tartalmak</label>
+  </labels>
+  <labels key="MENU_MEDIA">
+    <label lang="EN">Media</label>
+    <label lang="HU">Média</label>
+  </labels>
+  <labels key="MENU_OTHERS">
+    <label lang="EN">Others</label>
+    <label lang="HU">Egyebek</label>
+  </labels>
+  <labels key="MENU_WEB">
+    <label lang="EN">Web</label>
+    <label lang="HU">Web</label>
+  </labels>
+  <!-- The texts of the widgets of the application. -->
+  <labels key="WIDGET_WELCOME">
+    <label lang="EN">Welcome</label>
+    <label lang="HU">Üdvözöljük</label>
+  </labels>
+  <labels key="WIDGET_TAB_BASIC">
+    <label lang="EN">Basic</label>
+    <label lang="HU">Alap</label>
+  </labels>
+  <labels key="WIDGET_EMPTY">
+    <label lang="EN">This widget is empty yet, its content comes later.</label>
+    <label lang="HU">Ez a widget még üres, a tartalma később készül el.</label>
+  </labels>
+  <labels key="WIDGET_SEEINFO">
+    <label lang="EN">Press the info button of the header&#10;for more information about this component.</label>
+    <label lang="HU">A komponensről bővebben a fejléc&#10;infó gombja alatt olvashat.</label>
+  </labels>
+  <!-- The info texts of the widgets, the info button of the header displays them. -->
+  <labels key="WIDGETINFO_WELCOME">
+    <label lang="EN">Every component of this framework has a widget of its own in this application, and the info button standing in the header of a widget carries the whole description of the component it belongs to: what that component is built of, what it can be told and what it answers with. The Widget, the ContentSingle and the ContentMultiple the elements of every one of those widgets stand in are described the same way, and so is the Application every one of them belongs to, so information can be read about every single component and about the application itself as well.&#10;&#10;The menu of the application groups the widgets by the topic of the components, and picking an item of it opens the widget of that component, which is built the first time it is picked only: it can be moved, resized, minimized, stepped over and closed from there on. A widget holds the elements demonstrating its component in the content of it and that description in the info text of it, and the info button of the header swaps the two of them, which is why this very widget stands with its own info text displayed already.</label>
+    <label lang="HU">Ebben az alkalmazásban a keretrendszer minden komponensének saját widgetje van, és a widget fejlécében álló infó gomb hordozza annak a komponensnek a teljes leírását, amelyhez tartozik: azt, hogy miből épül fel, mit lehet neki megadni és mivel válaszol. Ugyanígy le van írva a Widget, a ContentSingle és a ContentMultiple is, amelyekben ezeknek a widgeteknek az elemei állnak, és az Application is, amelyhez mindegyikük tartozik, így minden egyes komponensről és magáról az alkalmazásról is olvasható információ.&#10;&#10;Az alkalmazás menüje a komponensek topikjai szerint csoportosítja a widgeteket, és egy elemének kiválasztása megnyitja az adott komponens widgetjét, amely csak az első kiválasztáskor épül fel: onnantól mozgatható, átméretezhető, lekicsinyíthető, átléphető és bezárható. Egy widget a komponensét bemutató elemeket a tartalmában, ezt a leírást pedig az infó szövegében tartja, a fejléc infó gombja pedig a kettő között vált, és éppen ezért áll ez a widget már a saját infó szövegével megnyitva.</label>
+  </labels>
+  <labels key="WIDGETINFO_TEXTLABEL">
+    <label lang="EN">A TextLabel displays one single line of text, or several lines of it when a maximum width has been given to it and it is allowed to break that text. Its dimensions come from the text itself, so it takes no width and no height from the outside at all: that maximum width is the only measure it can be kept inside. An icon or an emoji can stand in front of the text, in a leading slot that holds one of the two at a time: the one that arrives drops the one that has been there.&#10;&#10;The text can be a text key instead of a text of its own: the name of a label, written between square brackets. Such a key is looked up in the labels of the application, displayed in the language that is on and followed on every language change, so a label never has to be written again when the one using the application picks another language. A text carrying no key at all is displayed as it is. Every text is painted with a text type as well, the bright, the mid or the dark one, and that type carries the font color and the font size of it, straight from the appearance of the application. A label follows every change of that appearance on its own: the font face, the font size, the bold and the italic, the colors, and the icon or the emoji of the leading slot is drawn again in the size the new height of the text means.&#10;&#10;This component extends the base class of the objects that can be reacted to, so emojis can be stuck onto it as soon as its react feature is switched on. The dimensions of the label stay the dimensions of its own text then: the row of the reactions is placed under it, together with the picker the emojis are chosen from. The hits are stored one by one, with the user and the moment of every one of them, so they can be loaded back from a server and asked for by the emoji or by the user as well.</label>
+    <label lang="HU">A TextLabel egyetlen sor szöveget jelenít meg, vagy több sort is, ha maximális szélességet kapott és törheti azt a szöveget. A méretei magából a szövegből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át: az a maximális szélesség az egyetlen méret, amelyen belül tartható. A szöveg előtt ikon vagy emoji állhat, egy olyan helyen, amely egyszerre csak az egyiket tartja: az újonnan érkező elveszi az ott lévő helyét.&#10;&#10;A szöveg saját szöveg helyett szövegkulcs is lehet: egy címke neve, szögletes zárójelek között. Az ilyen kulcsot az alkalmazás címkéi között keresi meg, a bekapcsolt nyelven jeleníti meg, és minden nyelvváltást követ, így egy címkét soha nem kell újra beállítani, ha az alkalmazást használó más nyelvet választ. A kulcsot nem tartalmazó szöveg úgy jelenik meg, ahogy van. Minden szöveg egy szövegtípussal is kirajzolódik, a világossal, a középsővel vagy a sötéttel, és ez a típus hordozza a betűszínét és a betűméretét, egyenesen az alkalmazás megjelenéséből. A címke magától követi ennek minden változását: a betűtípust, a betűméretet, a félkövéret és a dőltet, a színeket, és a szöveg új magasságához illő méretben újra kirajzolja az előtte álló ikont vagy emojit.&#10;&#10;Ez a komponens azoknak az objektumoknak az alaposztályát terjeszti ki, amelyekre reagálni lehet, így emojik ragaszthatók rá, amint a reakció funkciója be van kapcsolva. A címke méretei ekkor is a saját szövegének a méretei maradnak: a reakciók sora alá kerül, azzal a választóval együtt, amelyből az emojikat ki lehet választani. A reakciókat egyenként tárolja, mindegyiknél a felhasználóval és az időpontjával, így visszatölthetők egy szerverről, és kérdezhetők emoji vagy felhasználó szerint is.</label>
+  </labels>
+  <labels key="WIDGETINFO_TEXTBOX">
+    <label lang="EN">A TextBox displays several lines of text and lets them be scrolled, but it takes no typing at all: it is a text field standing inside a scroll that carries it. Both of its dimensions come from the outside, so it is the one text component of this framework that is exactly as wide and as tall as it is told to be, and the size of the text inside it is handed over to that scroll as the size of its content. The text field itself never moves: the scroll is the one being dragged and the field follows it, line by line and column by column, so a text of any length is walked through without a single pixel of it being drawn twice.&#10;&#10;The text can be a text key instead of a text of its own, the very same way a label carries one, so a box never has to be filled again when the one using the application picks another language, and it is painted with a text type as well, the bright, the mid or the dark one, straight from the appearance of the application. It takes plain text and html alike, and a new text can be appended to the end of the one standing in it, which is what a log or a conversation of arriving lines is built of. The word wrapping can be switched off: a box that does not wrap its text is scrolled horizontally as well, and that is how a code or a table of columns is kept readable.&#10;&#10;The scroll reports the two ends of the text: it dispatches its top reached and its bottom reached events and the box forwards both of them, so the arrival of the very last line can be answered by loading the next page of it. The box can be scrolled down to that last line by one single call and it tells at any time whether that line is displayed already, so a text that is being appended to can be kept at its own end. It can be handed over to the one using the application to be resized by hand as well, and the TextArea component is built of this very class: that one is the same box with an editor in it.</label>
+    <label lang="HU">A TextBox több sor szöveget jelenít meg és görgethetővé teszi őket, de beírni nem lehet bele semmit: egy szövegmező, amely az őt hordozó görgetőben áll. Mindkét méretét kívülről kapja, így ennek a keretrendszernek az egyetlen olyan szövegkomponense, amely pontosan annyi széles és annyi magas, amennyinek megadják, a benne álló szöveg méretét pedig átadja annak a görgetőnek a tartalma méreteként. Maga a szövegmező soha nem mozdul: a görgetőt húzza a felhasználó, a mező pedig sorról sorra és hasábról hasábra követi, így bármilyen hosszú szöveg végigjárható anélkül, hogy egyetlen képpontja is kétszer rajzolódna ki.&#10;&#10;A szöveg saját szöveg helyett szövegkulcs is lehet, ugyanúgy, ahogy egy címke hordozza, így egy dobozt soha nem kell újra feltölteni, ha az alkalmazást használó más nyelvet választ, és egy szövegtípussal is kirajzolódik, a világossal, a középsővel vagy a sötéttel, egyenesen az alkalmazás megjelenéséből. Egyszerű szöveget és html-t egyaránt megjelenít, a benne álló szöveg végéhez pedig újabb szöveg fűzhető, és éppen ebből épül fel egy napló vagy egy sorról sorra érkező beszélgetés. A sortörés kikapcsolható: az a doboz, amely nem töri a szövegét, vízszintesen is görgethető, és így marad olvasható egy kód vagy egy hasábokból álló táblázat.&#10;&#10;A görgető jelzi a szöveg két végét: elküldi a tetejét és az alját elérő eseményeit, a doboz pedig mindkettőt továbbadja, így a legutolsó sor megérkezésére a következő oldal betöltésével lehet válaszolni. A doboz egyetlen hívással legörgethető erre a legutolsó sorra, és bármikor megmondja, hogy az a sor látszik-e már, így az a szöveg, amelyhez folyamatosan hozzáfűznek, a saját végén tartható. Átadható a felhasználónak kézi átméretezésre is, a TextArea komponens pedig éppen ebből az osztályból épül fel: az ugyanez a doboz, csak szerkesztő is van benne.</label>
+  </labels>
+  <labels key="WIDGETINFO_TEXTAREA">
+    <label lang="EN">A TextArea is a TextBox that can be written into as well: it stands in the scroller mode by default, a click that has not dragged its text turns it into an editor and the loss of the focus turns it back, so one and the same object both displays and takes a long text. The two modes are one single swap of depths: the scroll stands above the text field while the text is being read and under it while the text is being written, so a drag never types a character and a click never scrolls a line away.&#10;&#10;Everything the box brings is here as well: the scrolling of several lines, the word wrapping, the text keys followed on every language change, the text type of the appearance, the appending of a new text to the end of the old one and the html markup of the text, which is rendered here just like it is rendered by that box. What comes on top of the box is the writing itself: the characters that can be typed can be restricted, the length of the text can be maximized and lowered to a minimum, and the area tells at any time whether the text standing in it has reached that minimum, which is what a form is validated by.&#10;&#10;The changed event of the area is dispatched when the editing has been finished and not while it is going on, so a listener of it is called once per edit and not once per character. The editor can be opened from the outside as well, without any click on it, and that is how the focus is walked through the fields of a form. On a mobile device the content the area stands on is scrolled up as soon as that editor opens, so the keyboard sliding in does not cover the very line that is being written, and it is let back where it has been as soon as the editor closes.</label>
+    <label lang="HU">A TextArea olyan TextBox, amelybe írni is lehet: alapból görgető módban áll, egy olyan kattintás, amely nem húzta el a szövegét, szerkesztővé változtatja, a fókusz elvesztése pedig visszaváltja, így ugyanaz az objektum jeleníti meg és veszi át a hosszú szöveget. A két mód egyetlen mélységcsere: a görgető a szövegmező felett áll, amíg a szöveget olvassák, és alatta, amíg írják, így egy húzás soha nem ír be karaktert, egy kattintás pedig soha nem görget el egy sort sem.&#10;&#10;Minden itt van, amit a doboz hoz: a több sor görgetése, a sortörés, a minden nyelvváltást követő szövegkulcsok, a megjelenésből vett szövegtípus, az új szöveg hozzáfűzése a régi végéhez és a szöveg html jelölése, amelyet ugyanúgy megjelenít, ahogyan azt a doboz teszi. Amit a dobozon felül ad, az maga az írás: a beírható karakterek megszoríthatók, a szöveg hossza maximálható és minimumhoz köthető, a mező pedig bármikor megmondja, hogy a benne álló szöveg elérte-e ezt a minimumot, és éppen ezzel lehet egy űrlapot ellenőrizni.&#10;&#10;A mező megváltozott eseményét a szerkesztés befejezésekor küldi el és nem közben, így a rá figyelő egyszer hívódik meg szerkesztésenként és nem karakterenként. A szerkesztő kívülről is megnyitható, kattintás nélkül, és éppen így lehet a fókuszt végigvinni egy űrlap mezőin. Mobil eszközön a mezőt hordozó tartalom felgörgetődik, amint az a szerkesztő megnyílik, így a becsúszó billentyűzet nem takarja el azt a sort, amelyet éppen írnak, és visszakerül oda, ahol volt, amint a szerkesztő bezárul.</label>
+  </labels>
+  <labels key="WIDGETINFO_TEXTINPUT">
+    <label lang="EN">A TextInput takes one single line of text. Its width comes from the outside and its height from the text field of it, so it is never told how tall it has to be: the appearance of the application measures that, and a font of another size gives the input a new height on its own. It is drawn as a pressed frame with the text standing in it, and that frame never becomes more transparent than the minimum of the config, however transparent the application itself is, so the line being typed stays readable.&#10;&#10;A hint is displayed while the input stands empty and a delete icon while it does not, so the one filling it always sees either what is expected there or the way to clear it in one single click: a disabled input keeps that icon and takes no click on it, because it is not emptied either. The characters that can be typed can be restricted, the text standing in it can be turned to upper case and to lower case, it can be displayed as a password, and its length can be maximized and lowered to a minimum, which the input answers for: it tells at any time whether that text has reached the minimum. The auto completion is a dataset handed over in one single string: the elements matching the text being typed are offered in a list under the field, the case of the letters is ignored while they are matched, and the picked one becomes the text of the input. The height of the input holds that open list as well, so the content around it makes room for the list instead of being covered by it.&#10;&#10;The changed event is dispatched when the editing has been finished, so a listener of it is called once per edit. The focus can be moved into the input and asked for from the outside, and that is how the fields of a form are walked through. On a mobile device the content the input stands on is scrolled up as soon as the keyboard slides in, so that keyboard does not cover the field, and it is let back where it has been afterwards: an input that leaves the stage lets that content back as well, because nothing else would.</label>
+    <label lang="HU">A TextInput egyetlen sor szöveget vesz át. A szélességét kívülről kapja, a magasságát pedig a szövegmezőjéből, így soha nem kell megmondani neki, milyen magas legyen: ezt az alkalmazás megjelenése méri ki, és egy másik méretű betűtípus magától új magasságot ad a mezőnek. Benyomott keretként rajzolódik ki, benne a szöveggel, és ez a keret soha nem lesz átlátszóbb a beállítások minimumánál, akármilyen átlátszó is maga az alkalmazás, így az éppen beírt sor olvasható marad.&#10;&#10;Amíg a mező üresen áll, súgószöveg látszik benne, amíg nem, addig törlő ikon, így a kitöltő mindig látja vagy azt, hogy mit várnak oda, vagy azt, hogyan törölheti egyetlen kattintással: a letiltott mező megtartja ezt az ikont, de nem veszi át a rá adott kattintást, mert ki sem ürül. A beírható karakterek megszoríthatók, a benne álló szöveg nagybetűsíthető és kisbetűsíthető, jelszóként is megjeleníthető, a hossza pedig maximálható és minimumhoz köthető, amiért a mező felel is: bármikor megmondja, hogy az a szöveg elérte-e a minimumot. Az automatikus kiegészítés egyetlen sztringben átadott adathalmaz: a beírt szövegre illeszkedő elemeket a mező alatti listában ajánlja fel, az illesztés során a betűk kis- és nagybetűs alakját nem különbözteti meg, a kiválasztott elem pedig a mező szövegévé válik. A mező magassága ezt a nyitott listát is magában foglalja, így a körülötte álló tartalom helyet ad a listának, nem pedig eltakarja azt.&#10;&#10;A megváltozott eseményt a szerkesztés befejezésekor küldi el, így a rá figyelő egyszer hívódik meg szerkesztésenként. A fókusz kívülről a mezőbe helyezhető és le is kérdezhető, és éppen így lehet végigjárni egy űrlap mezőit. Mobil eszközön a mezőt hordozó tartalom felgörgetődik, amint a billentyűzet becsúszik, hogy az a billentyűzet ne takarja el a mezőt, és utána visszakerül oda, ahol volt: az a mező, amely lekerül a színpadról, szintén visszaengedi azt a tartalmat, mert más nem tenné meg.</label>
+  </labels>
+  <labels key="WIDGETINFO_BUTTONTEXT">
+    <label lang="EN">A ButtonText is the standard button of this framework: a text with an icon that can stand in front of it, painted onto a shape that answers every move of the mouse above it. Both of its dimensions come from that text and from the padding of the application, so it is never told how wide or how tall it has to be: every measure handed over to it from the outside is dropped. It follows the appearance of the application on its own, so another font size or another padding gives the button a new size and the row it stands in makes room for it.&#10;&#10;It is built of three layers standing on top of each other: the shape that is painted, the content that carries the text and the transparent one that takes every mouse interaction, so one single layer answers the mouse instead of every element of the button doing it. That shape is drawn as a plain surface while the mouse is away from it, as a raised one while the mouse stands over it and as a pressed one while it is being held down, and a sound can be given to that press as well, straight from the sounds of the application.&#10;&#10;A click on it disables the button first and dispatches the click event afterwards, so the work it starts can not be started twice by an impatient hand: the one answering that click is the one giving the button back, as soon as that work is over. A custom event can be handed over to it as a name, and that one is dispatched on the dispatcher of the whole application, so an object that has never heard of this button can answer the click of it. The text can be a text key as well, followed on every language change, and the whole button can be hidden and shown again by a call of its own.</label>
+    <label lang="HU">A ButtonText ennek a keretrendszernek a szokásos gombja: szöveg, amely előtt ikon is állhat, egy olyan alakzatra festve, amely az egér minden mozdulatára válaszol. Mindkét méretét ebből a szövegből és az alkalmazás bélésméretéből kapja, így soha nem kell megmondani neki, milyen széles vagy milyen magas legyen: minden kívülről átadott méretet elvet. Az alkalmazás megjelenését magától követi, így egy másik betűméret vagy egy másik bélés új méretet ad a gombnak, a sor pedig, amelyben áll, helyet ad neki.&#10;&#10;Három, egymáson álló rétegből épül fel: a kifestett alakzatból, a szöveget hordozó tartalomból és abból az átlátszóból, amely minden egérműveletet átvesz, így egyetlen réteg válaszol az egérnek ahelyett, hogy a gomb minden eleme megtenné. Ez az alakzat sima felületként rajzolódik ki, amíg az egér távol van tőle, kiemelkedőként, amíg az egér felette áll, és benyomottként, amíg lenyomva tartják, ehhez a lenyomáshoz pedig hang is adható, egyenesen az alkalmazás hangjai közül.&#10;&#10;Egy rá adott kattintás először letiltja a gombot, és csak azután küldi el a kattintás eseményét, így az általa indított munkát egy türelmetlen kéz nem indíthatja el kétszer: az, aki erre a kattintásra válaszol, adja vissza a gombot is, amint az a munka véget ért. Egyéni esemény is átadható neki egy név formájában, és ezt az egész alkalmazás eseményküldőjén küldi el, így egy olyan objektum is válaszolhat a kattintására, amely soha nem hallott erről a gombról. A szöveg szövegkulcs is lehet, amelyet minden nyelvváltáskor követ, az egész gomb pedig a saját hívásával elrejthető és újra megjeleníthető.</label>
+  </labels>
+  <labels key="WIDGETINFO_BUTTONLINK">
+    <label lang="EN">A ButtonLink is a clickable text with an icon or an emoji that can stand in front of it, and with a shape behind it that follows the mouse: it is not painted at all while the mouse is away, it is raised while the mouse stands over it and it is pressed while it is being held down. Every panel, every widget and every bar of this framework is built of these, so it is the one component the whole surface of an application is walked through by. Its dimensions come from its own text and from the padding of the application, so it takes no width and no height from the outside.&#10;&#10;The text can be a text key instead of a text of its own, looked up in the labels of the application and followed on every language change, and a maximum width can be given to it as well: a label longer than that width is broken into several lines instead of pushing everything next to it away. The shape type can be set from the outside too, and a flat one is exactly how the selected item of a row of these is marked, but the mouse overrides that type as soon as it arrives, and a roll out takes it back to the one that is not painted. That roll out can be asked for from the outside as well, and it has to be, when the press of this button has been handed over to a scroll that has been dragged instead.&#10;&#10;A web address can be given to it, together with the data belonging to that address: a click opens the page in a browser window, and those data are handed over as get data in an air application, because a post of them could not be answered there. The click event is dispatched only when this very button has been pressed down first, so a mouse that has been pressed somewhere else and released here never clicks anything. The Switcher component is built of this very class: that one is the same link standing in one of two states.</label>
+    <label lang="HU">A ButtonLink kattintható szöveg, amely előtt ikon vagy emoji is állhat, mögötte pedig olyan alakzattal, amely követi az egeret: egyáltalán nem rajzolódik ki, amíg az egér távol van, kiemelkedik, amíg az egér felette áll, és benyomódik, amíg lenyomva tartják. Ennek a keretrendszernek minden panelje, minden widgetje és minden gombsora ezekből épül fel, így ez az az egy komponens, amellyel egy alkalmazás egész felülete végigjárható. A méretei a saját szövegéből és az alkalmazás bélésméretéből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át.&#10;&#10;A szöveg saját szöveg helyett szövegkulcs is lehet, amelyet az alkalmazás címkéi között keres meg és minden nyelvváltáskor követ, és maximális szélesség is adható neki: az ennél hosszabb felirat több sorba törik ahelyett, hogy elnyomná a mellette állókat. Az alakzat típusa kívülről is beállítható, és éppen a lapos az, amellyel egy ilyenekből álló sor kiválasztott eleme meg van jelölve, de az egér felülírja ezt a típust, amint megérkezik, egy elhagyás pedig visszaveszi a nem rajzolt típusra. Ez az elhagyás kívülről is kérhető, és kérni is kell, amikor ennek a gombnak a lenyomását egy olyan görgető vette át, amelyet elhúztak helyette.&#10;&#10;Webcím is adható neki, a címhez tartozó adatokkal együtt: egy kattintás megnyitja az oldalt egy böngészőablakban, az adatokat pedig air alkalmazásban get adatként adja át, mert egy post kérést ott nem lehetne megválaszolni. A kattintás eseményét csak akkor küldi el, ha éppen ezt a gombot nyomták le először, így az az egér, amelyet máshol nyomtak le és itt engedtek fel, soha nem kattint semmire. A Switcher komponens éppen ebből az osztályból épül fel: az ugyanez a hivatkozás, csak két állapot egyikében áll.</label>
+  </labels>
+  <labels key="WIDGETINFO_BUTTONBAR">
+    <label lang="EN">A ButtonBar is a horizontal row of button links of which one is the active one: that one is drawn as a flat shape all the time, so the one using the application sees which item of the row is the selected one without pointing at anything at all. The buttons are added one by one, every one of them with a label and with an icon that can stand in front of that label, and they are positioned next to each other in the order they arrived in. Both dimensions of the bar come from those buttons, so it is never told how wide or how tall it has to be.&#10;&#10;Every mouse interaction of the whole row is taken by one single layer standing above it, the mover of the scroll of the bar, and that layer is the one drawing the button the mouse stands over: a bar of twenty buttons answers the mouse the very same way a bar of two does. That is what a drag is told from a click by as well, a mouse that has travelled farther than the click gap of the application has scrolled the bar instead of pressing a button, and a maximum width given to the bar is exactly what makes that scrolling needed: a row wider than that width is walked through horizontally.&#10;&#10;A button can be removed, every one of them can be dropped at once, and a button can be hidden as well: a hidden one keeps its index, its label and its place in the order, but it is left out of the row and it can not be clicked at all, so a bar of items that come and go is built without the indices of it ever moving. The icon of any button can be changed at any time, and it can be changed only when that button is not the active one, which is how a mark of something new is placed onto the items that are not being read. The bar dispatches its changed event every time another button becomes the active one, and it tells the index and the label of that one at any time.</label>
+    <label lang="HU">A ButtonBar gombhivatkozások vízszintes sora, amelyben az egyik gomb az aktív: ez a gomb végig lapos alakzattal rajzolódik ki, így az alkalmazást használó anélkül látja, melyik elem a kiválasztott, hogy bármire rá kellene mutatnia. A gombok egyenként kerülnek fel, mindegyik a saját feliratával és egy ikonnal, amely a felirata előtt állhat, és abban a sorrendben állnak egymás mellé, ahogyan megérkeztek. A sor mindkét mérete ezekből a gombokból adódik, így soha nem kell megmondani neki, milyen széles vagy milyen magas legyen.&#10;&#10;Az egész sor minden egérműveletét egyetlen, felette álló réteg veszi át, a sor görgetőjének a mozgatója, és ez a réteg rajzolja ki azt a gombot is, amely felett az egér áll: egy húsz gombból álló sor ugyanúgy válaszol az egérnek, ahogyan egy kétgombos. Ezen dől el az is, hogy egy húzást vagy egy kattintást kapott: az az egér, amely az alkalmazás kattintási résénél messzebb utazott, elgörgette a sort ahelyett, hogy lenyomott volna egy gombot, és éppen a sornak adott maximális szélesség az, ami ezt a görgetést szükségessé teszi: az ennél szélesebb sor vízszintesen járható végig.&#10;&#10;Egy gomb eltávolítható, mindegyik egyszerre is elhagyható, és egy gomb el is rejthető: az elrejtett megtartja az indexét, a feliratát és a helyét a sorrendben, de kimarad a sorból és egyáltalán nem kattintható, így úgy építhető meg a jövő-menő elemek sora, hogy az indexei soha nem mozdulnak el. Bármelyik gomb ikonja bármikor megváltoztatható, és csak akkor is megváltoztatható, ha az a gomb nem az aktív, és éppen így kerül az újdonság jele azokra az elemekre, amelyeket nem olvasnak. A sor minden alkalommal elküldi a megváltozott eseményét, amikor másik gomb lett az aktív, és bármikor megmondja annak az indexét és a feliratát.</label>
+  </labels>
+  <labels key="WIDGETINFO_SWITCHER">
+    <label lang="EN">A Switcher is a button link standing in one of two states, and one click on it switches it over to the other one and dispatches its changed event. The two states carry a name of their own, so the state of it can be read and written by the very words the application thinks in and not by a true and a false, and the boolean way is open as well: it tells at any time whether it stands in its on state and it can be switched over to that state directly.&#10;&#10;Both states carry an icon and a label of their own, and the switch icons of the framework are the ones it starts with, so a brand new switcher already shows which state it stands in. The label, the icon and the web address of the button link underneath it are driven by that state, so those setters of it do nothing at all: the state is the one single source of everything that is displayed, and a call trying to write the label directly would only take that source away.&#10;&#10;A state set from the outside can leave the changed event out, so a form filled from a server never answers its own filling: the listener of it is called by the one using the application only. Everything the button link brings is here as well: the shape that follows the mouse, the maximum width of the label, the sound of the press and the dimensions coming from that very label, so a switcher is placed into a row of buttons and it stands there as one of them.</label>
+    <label lang="HU">A Switcher olyan gombhivatkozás, amely két állapot egyikében áll, és egy rá adott kattintás átváltja a másikba, majd elküldi a megváltozott eseményét. A két állapot saját nevet hordoz, így az állapota azokkal a szavakkal olvasható és írható, amelyekben az alkalmazás gondolkodik, nem pedig egy igazzal és egy hamissal, de a logikai út is nyitva áll: bármikor megmondja, hogy a bekapcsolt állapotában áll-e, és közvetlenül is átváltható abba az állapotba.&#10;&#10;Mindkét állapot saját ikont és saját feliratot hordoz, és a keretrendszer váltóikonjaival indul, így egy vadonatúj váltó is megmutatja, melyik állapotában áll. Az alatta álló gombhivatkozás feliratát, ikonját és webcímét ez az állapot vezérli, így azok a beállítók semmit nem tesznek: az állapot minden megjelenített dolog egyetlen forrása, és egy olyan hívás, amely közvetlenül írná a feliratot, csak elvenné ezt a forrást.&#10;&#10;A kívülről beállított állapot elhagyhatja a megváltozott eseményt, így egy szerverről kitöltött űrlap soha nem válaszol a saját kitöltésére: a rá figyelőt csak az alkalmazást használó hívja meg. Minden itt van, amit a gombhivatkozás ad: az egeret követő alakzat, a felirat maximális szélessége, a lenyomás hangja és a méretek, amelyek éppen ebből a feliratból adódnak, így a váltó betehető egy gombsorba, és ott áll, mint azok egyike.</label>
+  </labels>
+  <labels key="WIDGETINFO_COLORPICKER">
+    <label lang="EN">A ColorPicker is a button that displays one single color and opens a ColorPanel under itself when it is clicked. Its dimensions come from the text height of the appearance of the application, so it takes no width and no height from the outside at all. The square standing in the middle of that button is the color that has been committed, painted straight onto it, and a click on that very square dispatches the changed event of the picker instead of opening the panel: the color that is standing there can be handed over without a single thing being opened.&#10;&#10;The panel closes the moment a color has been committed in it, and the picker takes that color, repaints its square and reports the change. A color is a six character rgb string, the very same string the getter answers and the setter takes, so it travels to a server and back without being converted at all. A color that is set by the code of the application can be a silent one: the changed event is not dispatched then, because the caller knows that color already and an event of it would be taken as an action of the one using the application.&#10;&#10;The panel of this picker can steal a pixel of the whole stage, and that stealing keeps the picker open: a press outside an open picker closes it otherwise, and that press would be the very click taking the pixel. The start and the stop of the stealing are forwarded as two events of their own, so the application around the picker can stop whatever else it does with the mouse while it lasts. The escape and the tab key close this picker as well, the way they close every openable component of this framework.</label>
+    <label lang="HU">A ColorPicker olyan gomb, amely egyetlen színt jelenít meg, és kattintásra egy ColorPanelt nyit meg maga alatt. A méretei az alkalmazás megjelenésének szövegmagasságából adódnak, így kívülről sem szélességet, sem magasságot nem vesz át. A gomb közepén álló négyzet az elfogadott szín, egyenesen a gombra kirajzolva, és az erre a négyzetre adott kattintás nem megnyitja a panelt, hanem elküldi a választó megváltozott eseményét: az ott álló szín tehát átadható anélkül, hogy bármi megnyílna.&#10;&#10;A panel abban a pillanatban bezárul, amint egy színt elfogadtak benne, a választó pedig átveszi azt a színt, újrarajzolja a négyzetét és jelzi a változást. Egy szín hat karakteres rgb sztring, pontosan az a sztring, amit a lekérdező visszaad és a beállító átvesz, így átalakítás nélkül eljut egy szerverre és vissza. Az alkalmazás kódja által beállított szín lehet csendes is: ilyenkor a megváltozott esemény nem indul el, hiszen a hívó már ismeri azt a színt, az eseményt pedig az alkalmazást használó cselekvésének vennénk.&#10;&#10;Ennek a választónak a panelje a teljes színpad bármelyik képpontját el tudja lopni, és ez a lopás nyitva tartja a választót: egy nyitott választót egyébként bezár a rajta kívülre adott lenyomás, márpedig éppen az a lenyomás lenne a képpontot kiválasztó kattintás. A lopás kezdetét és végét két saját esemény továbbítja, így a választó körüli alkalmazás addig felfüggesztheti mindazt, amit egyébként az egérrel tesz. Az escape és a tab is bezárja ezt a választót, ahogy a keretrendszer minden megnyitható komponensét.</label>
+  </labels>
+  <labels key="WIDGETINFO_COLORPANEL">
+    <label lang="EN">A ColorPanel is the panel of the color picking. It usually stands inside a ColorPicker, but it works standing alone just as well. It holds two colors at a time: the actual one that is being chosen and the default one that has been committed, and that committed one is the color the getter of it answers. It counts and displays the complementer of the actual color as well, so a pair of colors that work together is seen right away.&#10;&#10;The actual color can be given in many ways: typed as a six character rgb string into the input of it, picked from the prepared squares, taken from any pixel of the whole stage, chosen from the two gradient strips that are drawn from the actual and from the complementer color, or simply handed over by the code of the application. The button next to that input is the one committing the actual color as the default one, and only that commit dispatches the changed event of this panel.&#10;&#10;Every measure of this panel is a multiple of the size of one single square of it, and that size comes from the text height of the appearance of the application, so the whole content of it is built again every time the font size, the line thickness or the radius of that appearance changes. It takes no width and no height from the outside at all. The value object of such a panel is the store of its own color: the row of that value displays the very rgb string the panel stands on.</label>
+    <label lang="HU">A ColorPanel a színválasztás panelje. Általában egy ColorPickeren belül áll, de önmagában is ugyanúgy működik. Egyszerre két színt tart: a most választott aktuálist és az elfogadott alapszínt, és éppen ez az elfogadott az a szín, amelyet a lekérdezője visszaad. Kiszámítja és megjeleníti az aktuális szín komplementerét is, így az egymással működő színpár azonnal látszik.&#10;&#10;Az aktuális szín sokféleképpen megadható: beírható hat karakteres rgb sztringként a beviteli mezőjébe, kiválasztható az előkészített négyzetekből, elvehető a teljes színpad bármelyik képpontjából, kijelölhető abból a két színátmenetes sávból, amelyet az aktuális és a komplementer színből rajzol ki, vagy egyszerűen átadhatja az alkalmazás kódja. A beviteli mező melletti gomb az, amelyik az aktuális színt alapszínként elfogadja, és egyedül ez az elfogadás küldi el a panel megváltozott eseményét.&#10;&#10;A panel minden mérete egyetlen négyzete méretének a többszöröse, ez a méret pedig az alkalmazás megjelenésének szövegmagasságából adódik, így a teljes tartalma újraépül, valahányszor annak a megjelenésnek a betűmérete, vonalvastagsága vagy lekerekítése megváltozik. Kívülről sem szélességet, sem magasságot nem vesz át. Egy ilyen panel értékobjektuma a saját színének a tárolója: az érték sora éppen azt az rgb sztringet jeleníti meg, amelyen a panel áll.</label>
+  </labels>
+  <labels key="WIDGETINFO_DATEPICKER">
+    <label lang="EN">A DatePicker is a button that displays the selected date and opens a DatePanel under itself. The label of that button is the selected date as the panel has formatted it, and the calendar icon in front of it names what the button offers: that icon stays there for the whole life of the picker, while the text next to it is rewritten on every selection. The panel closes as soon as a day has been clicked on it.&#10;&#10;The width of this picker comes from the outside and the height from its own label, so it is exactly as wide as it is told to be while it is closed. An open picker is as large as its panel and it gives that stored width back the moment it is closed again. The selected date can be asked for in three ways: as the yyyy-MM-dd string of it, as the text the label displays, and as a copy of the date object itself, so nothing standing outside can rewrite the date this picker stands on.&#10;&#10;The hours and the minutes can be made selectable: the panel builds two pickers of them then and the format of the displayed date is extended by that time, and both of those pickers are dropped again as soon as they are not needed any more. A date that is set by the code of the application is selected on the panel and reported by the changed event of this picker, which the panel of it would not dispatch on its own, and a null date means the current one.</label>
+    <label lang="HU">A DatePicker olyan gomb, amely a kiválasztott dátumot jeleníti meg, és egy DatePanelt nyit meg maga alatt. A gomb felirata a kiválasztott dátum, úgy formázva, ahogy a panel formázta, az előtte álló naptárikon pedig megnevezi, mit kínál ez a gomb: ez az ikon a választó egész életében ott marad, míg a mellette álló szöveg minden kiválasztáskor újraíródik. A panel bezárul, amint egy napra rákattintottak.&#10;&#10;Ennek a választónak a szélessége kívülről érkezik, a magassága pedig a saját feliratából, így zárt állapotban pontosan annyi széles, amennyinek megadták. A nyitott választó akkora, mint a panelje, és abban a pillanatban visszaadja az eltárolt szélességét, amint újra bezárul. A kiválasztott dátum háromféleképpen kérdezhető meg: yyyy-MM-dd sztringként, a felirat által megjelenített szövegként, és a dátumobjektum egy másolataként, így kívülről semmi nem tudja átírni azt a dátumot, amelyen ez a választó áll.&#10;&#10;Az óra és a perc választhatóvá tehető: a panel ilyenkor két választót épít nekik, a megjelenített dátum formátuma pedig kiegészül ezzel az időponttal, és mindkét választót eldobja, amint már nincs rájuk szükség. Az alkalmazás kódja által beállított dátumot kiválasztja a panelen, és jelzi ennek a választónak a megváltozott eseményével, amelyet a panelje magától nem küldene el, a null dátum pedig a mai napot jelenti.</label>
+  </labels>
+  <labels key="WIDGETINFO_DATEPANEL">
+    <label lang="EN">A DatePanel displays the days of one whole month in a calendar view, and the DatePicker is built of it. The first day of every week is monday, because this panel displays the number of the weeks as well. The year and the month can be stepped forwards and backwards one by one, and one single click takes the whole view back to the current day.&#10;&#10;Every element of that view is created once, at the very beginning: the days and the week numbers the displayed month does not need are hidden instead of being dropped, so a month that is stepped over and over again costs no new object at all. The selected day and the current day are painted onto the background under the numbers, and the day the mouse stands on is marked while it stands there. The dimensions of this panel come from that very view, so it takes no width and no height from the outside.&#10;&#10;The format of the displayed date is an ActionScript 3 date time pattern and it can be changed at any time. The hours and the minutes can be made selectable as well: two pickers of them are built on demand, and switching them on takes the date time pattern of the appearance of the application, so a pattern that has been set by hand is overwritten by that switch. Only a click of the one using this panel dispatches its changed event: a date that is selected by the code of the application is a silent one.</label>
+    <label lang="HU">A DatePanel egy teljes hónap napjait jeleníti meg naptárnézetben, és ebből épül fel a DatePicker. Minden hét első napja a hétfő, mert ez a panel a hetek számát is megjeleníti. Az év és a hónap egyenként előre és visszalépthető, egyetlen kattintás pedig az egész nézetet visszaviszi a mai napra.&#10;&#10;Ennek a nézetnek minden eleme egyszer, a legelején jön létre: azokat a napokat és hétszámokat, amelyekre a megjelenített hónapnak nincs szüksége, nem eldobja, hanem elrejti, így az újra és újra átléptetett hónap egyetlen új objektumba sem kerül. A kiválasztott napot és a mai napot a számok alatti háttérre rajzolja ki, azt a napot pedig, amelyen az egér áll, addig kiemeli, amíg ott áll. A panel méretei éppen ebből a nézetből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át.&#10;&#10;A megjelenített dátum formátuma egy ActionScript 3 dátumminta, és bármikor megváltoztatható. Az óra és a perc is választhatóvá tehető: két választó épül nekik, amikor kell, a bekapcsolásuk pedig az alkalmazás megjelenésének dátum és idő mintáját veszi át, így a kézzel beállított mintát felülírja ez a váltás. Egyedül a panelt használó kattintása küldi el a megváltozott eseményt: az alkalmazás kódja által kiválasztott dátum csendes marad.</label>
+  </labels>
+  <labels key="WIDGETINFO_LISTPICKER">
+    <label lang="EN">A ListPicker is a button that displays the selected item of a list that opens under it. The label of that button is the label of that very item together with the icon of it, and the list closes as soon as an item has been clicked. Exactly one item is selected at a time and that list can not be left empty: this picker is built of a ListPanel that has been told to hold one single selection and to forbid the empty one.&#10;&#10;The items come as arrays from the outside: the labels, the values and the icons of them, belonging to each other by their indexes. The labels can be text keys, so a picker never has to be filled again when the one using the application picks another language, and the value of the selected item is the string the application itself works with: that value is the one travelling to a server. The selection can be asked for by its index and by its value alike, it can be set from the code silently, and it can be dropped as a whole, which leaves the button of the picker empty.&#10;&#10;The width of this picker comes from the outside and the height from the label of its button while the list is closed. The open list is as tall as the number of the items it displays at the same time, and it is scrolled to the selected item the very moment it opens, so a list of hundreds of items still opens on the item that is standing on the button. Only as many elements are built as that list displays: the items walk through those few elements while the list is being scrolled.</label>
+    <label lang="HU">A ListPicker olyan gomb, amely egy alatta megnyíló lista kiválasztott elemét jeleníti meg. A gomb felirata éppen ennek az elemnek a felirata, az ikonjával együtt, a lista pedig bezárul, amint egy elemre rákattintottak. Egyszerre pontosan egy elem van kiválasztva, és ez a lista nem maradhat üresen: ez a választó egy olyan ListPanelből épül fel, amelynek megmondtuk, hogy egyetlen kijelölést tartson, és hogy az üres kijelölést tiltsa meg.&#10;&#10;Az elemek kívülről, tömbökként érkeznek: a feliratok, az értékek és az ikonok, amelyek az indexük szerint tartoznak egymáshoz. A feliratok szövegkulcsok is lehetnek, így egy választót soha nem kell újra feltölteni, ha az alkalmazást használó más nyelvet választ, a kiválasztott elem értéke pedig az a sztring, amellyel maga az alkalmazás dolgozik: ez az érték jut el egy szerverre. A kijelölés az indexe és az értéke szerint egyaránt megkérdezhető, a kódból csendesen beállítható, és egészében levehető, ami üresen hagyja a választó gombját.&#10;&#10;Ennek a választónak a szélessége kívülről érkezik, a magassága pedig a gombjának a feliratából, amíg a lista zárva van. A nyitott lista annyi magas, ahány elemet egyszerre megjelenít, és abban a pillanatban a kiválasztott elemhez görgeti magát, amint megnyílik, így a több száz elemű lista is azon az elemen nyílik meg, amelyik a gombon áll. Csak annyi elem épül fel, amennyit ez a lista megjelenít: az elemek ezen a néhány építőelemen vándorolnak át, miközben a listát görgetik.</label>
+  </labels>
+  <labels key="WIDGETINFO_LISTPANEL">
+    <label lang="EN">A ListPanel is a scrollable list of selectable items, and the ListPicker is built of it. The labels, the values, the icons and the indentations of the items come as arrays from the outside, and those indentations are what a tree of items is drawn with: an item that is indented by one tabulator stands under the one above it. One single item of the list can be refreshed as well, without every array being given again.&#10;&#10;One item or more than one item can be selected, and the empty selection can be allowed or forbidden: a list that can not be left empty selects its very first item the moment that rule is set while nothing is selected, and going back from the multiple selection to the single one keeps the first selected item only and reports that change. The changed event is dispatched when the selection really changes, and it can be asked to be dispatched on every click as well, which is what a list of commands needs: the very same command has to be able to be picked twice in a row.&#10;&#10;Only as many elements are built as this list displays at the same time, and those elements show the window of the items the scroll stands at: the items walk through them while the list is being scrolled, so a list of thousands of items costs the elements of one single screen. The height comes from the number of those elements and the width from the outside. The item the mouse stands on is marked softly and the selected ones are marked strongly, and the list stops following that mouse as soon as it is switched off.</label>
+    <label lang="HU">A ListPanel kiválasztható elemek görgethető listája, és ebből épül fel a ListPicker. Az elemek feliratai, értékei, ikonjai és behúzásai kívülről, tömbökként érkeznek, és éppen ezekkel a behúzásokkal rajzolódik ki az elemekből álló fa: az az elem, amelyet egy tabulátorral behúztak, a felette álló alá tartozik. A lista egyetlen eleme is frissíthető, anélkül, hogy minden tömböt újra meg kellene adni.&#10;&#10;Egy elem és egynél több elem is kiválasztható, az üres kijelölés pedig engedélyezhető vagy megtiltható: az a lista, amely nem maradhat üresen, kijelöli a legelső elemét abban a pillanatban, amelyben ezt a szabályt úgy kapja meg, hogy éppen semmi nincs kijelölve, a többes kijelölésből az egyesbe visszatérve pedig csak az első kijelölt elemet tartja meg, és jelzi ezt a változást. A megváltozott eseményt akkor küldi el, amikor a kijelölés valóban megváltozik, de kérhető minden kattintásra is, és éppen erre van szüksége egy parancslistának: ugyanazt a parancsot kétszer egymás után is ki kell tudni választani.&#10;&#10;Csak annyi elem épül fel, amennyit ez a lista egyszerre megjelenít, és ezek az építőelemek azt a szeletet mutatják az elemekből, amelyen a görgető áll: az elemek rajtuk vándorolnak át, miközben a listát görgetik, így az akár több ezer elemű lista is egyetlen képernyő építőelemeibe kerül. A magassága ezeknek az építőelemeknek a számából adódik, a szélessége pedig kívülről. Azt az elemet, amelyen az egér áll, halványan kiemeli, a kijelölteket erősen, és amint kikapcsolják, abbahagyja az egér követését.</label>
+  </labels>
+  <labels key="WIDGETINFO_CONTENTSINGLE">
+    <label lang="EN">A ContentSingle is one scrollable area holding the elements of one content: a base sprite carries those elements and a base scroll standing above it masks and scrolls that sprite, so a content grown bigger than the room it has been given is walked through by dragging it or by the scroll bars of it. Every element arrives with a cell index of its own and this content places it by that index, and it recalculates its own dimensions from its elements every time one of them is added, removed or resized: such an element reports its dimensions changed event and the whole layout is taken again.&#10;&#10;Four automatic layouts are built of those cell indexes. The vertical and the horizontal orientations lay the cells out in columns and in rows, the elementsFix telling the greatest cell index of one row, so a vertical content standing on an elementsFix of two builds three columns: a column is as wide as the widest cell of it and a row is as tall as the tallest one. More than one element can share one single cell, and the elements of one cell stand next to each other in a vertical content and under each other in a horizontal one. The flowing orientation leaves the cell indexes alone and breaks the row every time the width of this content has been filled up, and the docking one gives every element a strip of the room the elements added before it have left, at the side that element is docked to, the one docked to the center taking the whole of what is left. The manual orientation places nothing at all: there every element is positioned by the code that added it.&#10;&#10;An element can be aligned inside its own cell horizontally and vertically, the upper left corner of that cell being the default place of it, and it can be told not to count in the dimensions of the cell at all: such an element can be set to fill its own cell instead, taking the position and the dimensions of that whole cell, or to stretch across its own strip in a docking content. The room left between the elements and around them is counted in the margins of the application, in a gap factor of zero or more, so it follows every change of that margin. The scroll can be jumped to any end of the content, and an elements repositioned event is dispatched every time the layout has been taken again. This is the very object the elements of every widget of this application stand in: the area under the button bar of this widget is one of them.</label>
+    <label lang="HU">A ContentSingle egy görgethető terület, amely egy tartalom elemeit fogja össze: egy alap sprite tartja ezeket az elemeket, a felette álló alap görgető pedig maszkolja és görgeti ezt a sprite-ot, így a kapott helynél nagyobbra nőtt tartalom húzással vagy a görgetősávjaival járható végig. Minden elem a saját cellaindexével érkezik, és ez a tartalom ezen az indexen helyezi el, a saját méreteit pedig újraszámolja az elemeiből, valahányszor egy elem felkerül, lekerül vagy átméreteződik: az ilyen elem elküldi a méretei megváltoztak eseményét, és a teljes elrendezés újra elkészül.&#10;&#10;Ezekből a cellaindexekből négy automatikus elrendezés épül fel. A függőleges és a vízszintes tájolás oszlopokba és sorokba rendezi a cellákat, az elementsFix pedig egy sor legnagyobb cellaindexét adja meg, így a kettes elementsFixen álló függőleges tartalom három oszlopot épít: egy oszlop olyan széles, mint a benne álló legszélesebb cella, egy sor pedig olyan magas, mint a benne álló legmagasabb. Egyetlen cellán több elem is állhat, és egy cella elemei a függőleges tartalomban egymás mellett, a vízszintesben egymás alatt sorakoznak. A tördelt tájolás nem foglalkozik a cellaindexekkel, és minden alkalommal új sort kezd, amikor ennek a tartalomnak a szélessége betelt, a dokkolt pedig minden elemnek egy sávot ad abból a helyből, amelyet az előtte felkerült elemek meghagytak, azon az oldalon, amelyre az az elem dokkolva van, a középre dokkolt elem pedig az egész maradékot elfoglalja. A manuális tájolás semmit nem helyez el: ott minden elemet az a kód állít a helyére, amely felvette.&#10;&#10;Egy elem a saját celláján belül vízszintesen és függőlegesen is igazítható, az alapértelmezett helye a cella bal felső sarka, és megadható az is, hogy egyáltalán ne számítson bele a cella méreteibe: az ilyen elem beállítható úgy, hogy kitöltse a saját celláját, átvéve annak a teljes cellának a helyét és a méreteit, dokkolt tartalomban pedig úgy, hogy a saját sávjára feszüljön ki. Az elemek között és körülöttük hagyott hely az alkalmazás margóiban van számolva, egy nulla vagy annál nagyobb térközfaktorral, így követi annak a margónak minden változását. A görgetés a tartalom bármelyik végére ugrasztható, és minden újrarendezés után elmegy az elemek újrarendezve esemény. Éppen ebben az objektumban állnak ennek az alkalmazásnak minden widgetjében az elemek: ennek a widgetnek a gombsora alatti terület is egy ilyen.</label>
+  </labels>
+  <labels key="WIDGETINFO_CONTENTMULTIPLE">
+    <label lang="EN">A ContentMultiple is a set of single contents with one button bar standing above them: every content has one button of its own in that bar and only the active content is visible. The others are kept exactly as they are, so leaving a content and coming back to it costs nothing at all: nothing is built again and nothing is lost, not even the scroll position of it. An active index of -1 hides every content at once.&#10;&#10;A content is added with the label of its button and with an icon that can stand in front of that label, and the index it answers with is the one every later call names it by; a content can be found by its label as well. The newer contents go under the previous ones. A content can be hidden from the button bar: it keeps its index, its label and its place in the order and it stays reachable from the inside of the application, but the one using that application can not pick it any more. The whole bar can be hidden too, which is what a widget of one single content does, and a content can be removed, or every one of them can be dropped at once. The icon of a button can be changed at any time, and it can be changed only when that button is not the active one, which is how a mark of something new is placed onto a content that is not being read.&#10;&#10;Every content call of this object is forwarded to the single content of the given index: the orientation, the elementsFix, the gap factor, the aligns, the fills, the docks, the adding and the removing of an element and the dimensions of the scrolled content. The bar takes its own height from its buttons and the contents take the room left under it, so the width and the height this object is given from the outside is what all of them are sized from. It dispatches its changed event every time another content has become the active one, and it tells the index of that one at any time. This is the content of every widget of this application: the buttons standing at the top of a widget are the ones of this bar, and this widget holds one single content, so the bar of it carries one single button.</label>
+    <label lang="HU">A ContentMultiple egyszerű tartalmak együttese egyetlen, felettük álló gombsorral: minden tartalomnak megvan a saját gombja ebben a sorban, és csak az aktív tartalom látszik. A többi pontosan úgy marad, ahogyan volt, így egy tartalom elhagyása és újbóli megnyitása semmibe nem kerül: semmi nem épül újra és semmi nem veszik el, még a görgetés állása sem. A -1 aktív index egyszerre minden tartalmat elrejt.&#10;&#10;Egy tartalom a gombjának feliratával és egy ikonnal kerül fel, amely a felirat előtt állhat, és az az index, amellyel visszatér, éppen az, amelyen minden későbbi hívás megnevezi; egy tartalom a felirata alapján is megkereshető. Az újabb tartalmak a korábbiak alá kerülnek. Egy tartalom elrejthető a gombsorból: megtartja az indexét, a feliratát és a helyét a sorrendben, és az alkalmazás belsejéből továbbra is elérhető, de az alkalmazást használó már nem tudja kiválasztani. A teljes sor is elrejthető, éppen ezt teszi az egyetlen tartalommal álló widget, egy tartalom pedig eltávolítható, és mindegyik egyszerre is elhagyható. Bármelyik gomb ikonja bármikor megváltoztatható, és csak akkor is megváltoztatható, ha az a gomb nem az aktív, és éppen így kerül az újdonság jele arra a tartalomra, amelyet nem olvasnak.&#10;&#10;Ennek az objektumnak minden tartalomhívása a megadott indexű egyszerű tartalomhoz kerül tovább: a tájolás, az elementsFix, a térközfaktor, az igazítások, a kitöltések, a dokkolások, egy elem felvétele és eltávolítása, valamint a görgetett tartalom méretei. A sor a saját magasságát a gombjaiból veszi, a tartalmak pedig az alatta maradó helyet kapják, így éppen az a szélesség és magasság méretezi mindegyiket, amelyet ez az objektum kívülről kap. Minden alkalommal elküldi a megváltozott eseményét, amikor másik tartalom lett az aktív, és bármikor megmondja annak az indexét. Ez a tartalma ennek az alkalmazásnak minden widgetjének: a widget tetején álló gombok ennek a sornak a gombjai, ez a widget pedig egyetlen tartalmat tart, így a sora egyetlen gombot visel.</label>
+  </labels>
+  <labels key="WIDGETINFO_MORE">
+    <label lang="EN">A More is an openable panel that holds a set of other user interface elements. It is useful when there are many buttons and all of them would take too much room if every one of them were displayed all the time: the panel stands closed as one single button, and the elements of it come out only when that button has been pressed. The submenu of the header of every widget of this application is one of these.&#10;&#10;The button of the panel carries a label and an icon, and both of those can be changed at any time: the label object itself is answered, so everything a label can be told can be told to it as well. An element is added into the panel and removed from it one by one, and the panel follows every one of them: it repositions its elements and takes its own dimensions again when an element has been added, when one has been removed and when any one of them has been resized. An element that is removed is not destroyed at all, because it has been created outside of this component.&#10;&#10;The open panel is drawn with a frame around it and it closes on a mouse press outside of it and on the escape key as well, so it never stays in the way. The opened and the closed events are dispatched every time it is opened and closed, whether it happens by that button, by the code of the application or by the one using it. The dimensions of this component come from its own label while it is closed and from the elements of its panel while it is open, so it takes no width and no height from the outside.</label>
+    <label lang="HU">A More nyitható panel, amely más felhasználói felületi elemeket tart együtt. Akkor hasznos, ha sok gomb van, és mindegyikük túl sok helyet foglalna, ha folyamatosan látszanának: a panel becsukva egyetlen gombként áll, és az elemei csak akkor jönnek elő, ha azt a gombot megnyomták. Ennek az alkalmazásnak minden widgetjében a fejléc almenüje is egy ilyen.&#10;&#10;A panel gombja feliratot és ikont visel, és mindkettő bármikor megváltoztatható: maga a feliratobjektum is lekérdezhető, így mindaz megadható neki, ami egy feliratnak megadható. Egy elem egyenként kerül a panelbe és egyenként kerül ki belőle, a panel pedig mindegyiket követi: újrarendezi az elemeit és újra felveszi a saját méreteit, ha elem került bele, ha elem került ki belőle, és ha bármelyikük átméreteződött. A kivett elem nem kerül megsemmisítésre, hiszen ezen a komponensen kívül jött létre.&#10;&#10;A nyitott panel köré keret rajzolódik, és a rajta kívüli egérnyomásra és az escape billentyűre is bezárul, így soha nem marad útban. A megnyitva és a bezárva esemény minden nyitáskor és záráskor elküldésre kerül, akár az a gomb, akár az alkalmazás kódja, akár az alkalmazást használó teszi. Ennek a komponensnek a méretei csukva a saját feliratából, nyitva pedig a paneljének elemeiből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át.</label>
+  </labels>
+  <labels key="WIDGETINFO_WIDGET">
+    <label lang="EN">A Widget is one window of the application: it is dragged by its header, resized by its bottom right corner, minimized to that header alone and closed by the button of it. Everything standing in it stands in a content multiple, so it carries one single content or several of them behind a button bar. Every widget of this application is one of these, so this widget demonstrates the very component it is built of: its header, its buttons, its content and the scrolling of that content are the features written here.&#10;&#10;The header holds the label of the widget with an icon in front of it, and two buttons stay in it: the one closing the widget and the more button opening the submenu that drops down from under it. Every other button stands in that submenu, the info, the minimize, the fullscreen, the previous, the next, the list of the widgets and the move into another content, so a widget narrow enough to hold nothing else still reaches every one of its functions. The info button swaps the content of the widget for the info text of it, the very text these lines stand in, and gives that content back. The fullscreen button gives this widget the whole room of the widget container it stands in and hides every widget standing beside it, exactly the way a mobile mode displays one single widget, and that mode is not set at all by it: it is a property that is kept, so a widget left in fullscreen is displayed that way again when it is gone back to, and it stands among the other widgets of its container while another one of them is the actual widget: the pointer coming over any part of it there is enough to give that fullscreen back, so no click at all is needed for it.&#10;&#10;The initialization dimensions of a widget are written as if the font size of the application were sixteen and they are recalculated from the actual font size, so the same widget stands in the same proportions whatever the size of the stage is. In desktop mode its dimensions are saved into the layer of the widgets, so a widget opened again stands the way it has been left, and in mobile mode it takes the whole room of the content it stands in and it can not be moved, resized or minimized at all. The onCreate is the place every extender widget builds its own content in, called when that widget has reached the stage, and the onClose is the one that can refuse a closing. Such a widget can ask a question as well: it asks it on the foreground of the application and the answer arrives back as an event. The widget manager finds it by its header, which is the very string an item of the menu of this application carries.</label>
+    <label lang="HU">A Widget az alkalmazás egy ablaka: a fejlécével húzható, a jobb alsó sarkával átméretezhető, önmagában erre a fejlécre kicsinyíthető és a gombjával bezárható. Minden, ami benne áll, egy többes tartalomban áll, így egyetlen tartalmat vagy egy gombsor mögött többet is visel. Ennek az alkalmazásnak minden widgetje egy ilyen, tehát ez a widget éppen azt a komponenst mutatja be, amelyből felépül: a fejléce, a gombjai, a tartalma és annak a tartalomnak a görgetése az itt leírt jellemzők.&#10;&#10;A fejléc a widget feliratát tartja egy ikonnal a felirat előtt, és két gomb marad benne: a widgetet bezáró és a több gomb, amely az alóla legördülő almenüt nyitja meg. Minden további gomb ebben az almenüben áll, az infó, a kicsinyítés, a teljes méret, az előző, a következő, a widgetek listája és a másik tartalomba mozgatás, így az a widget is eléri minden funkcióját, amely ennél többet nem tudna kitenni. Az infó gomb a widget tartalmát az infó szövegére cseréli, éppen arra, amelyben ezek a sorok állnak, majd visszaadja azt a tartalmat. A teljes méret gomb annak a widgettartónak a teljes helyét adja ennek a widgetnek, amelyben áll, és elrejti minden mellette álló widgetet, éppen úgy, ahogyan a mobil mód egyetlen widgetet jelenít meg, azt a módot pedig egyáltalán nem állítja be: megmaradó tulajdonság, így a teljes méretben elhagyott widget újra úgy jelenik meg, amikor visszatérnek hozzá, és a tartójának többi widgetje között áll, amíg közülük egy másik az aktuális widget: ott már az is elég a teljes méret visszaadásához, hogy az egérmutató bármelyik része fölé kerül, tehát semmilyen kattintás nem kell hozzá.&#10;&#10;Egy widget kezdeti méretei úgy vannak megírva, mintha az alkalmazás betűmérete tizenhat lenne, és az aktuális betűméretből számolódnak újra, így ugyanaz a widget ugyanolyan arányokkal áll, bármilyen méretű is a színpad. Asztali módban a méretei bekerülnek a widgetek rétegébe, így az újra megnyitott widget úgy áll, ahogyan elhagyták, mobil módban pedig annak a tartalomnak a teljes helyét foglalja el, amelyben áll, és egyáltalán nem mozgatható, nem méretezhető és nem kicsinyíthető. Az onCreate az a hely, ahol minden leszármazott widget a saját tartalmát felépíti, és akkor hívódik meg, amikor az a widget a színpadra került, az onClose pedig az, amely a bezárást vissza tudja utasítani. Egy ilyen widget kérdezni is tud: a kérdését az alkalmazás előterén teszi fel, a válasz pedig eseményként érkezik vissza. A widgetkezelő a fejléce alapján találja meg, éppen azon a sztringen, amelyet ennek az alkalmazásnak a menüjében egy elem visel.</label>
+  </labels>
+  <labels key="WIDGETINFO_APPLICATION">
+    <label lang="EN">The application is the root object of everything built on this framework: every other object of it holds a reference to this one and reaches everything through it. It builds the three configurations, the properties, the components and the dynamics of the application, and every manager of it as well: the fonts, the icons, the emojis, the labels, the sounds, the cache, the background, the context menu, the widgets, the url requests and the net connection. Every one of those is built in an initialize method of its own, so an application replaces any one of them with an extender of its own by overriding that single method, and this demo application does exactly that with several of them.&#10;&#10;Three layers stand above it: the background, the middleground holding the widgets and the panels of the menu and of the settings, and the foreground displaying the alerts, which is why the middleground goes invisible while a question is being asked. The menu arrives as an xml of topics and of the items standing under them, and picking one of those items hands the header of a widget over to the widget manager: that is how this very widget has been opened. The application follows the size of the stage as well: every layer and every widget is sized from it, and the font size of the whole application is counted from it too, so the same application stands the same way on a small and on a big screen.&#10;&#10;It is the sink of the tracing: every object of the framework logs into the trace method of this one, with a level from zero to nine, and the tracer displays the collected messages frame by frame, while an application running in a production environment traces nothing at all. It keeps what one object only can keep as well: the content that is being scrolled by a drag, because a press reaches every parent of the pressed object and only the first single content of them may take it, and the permission of the camera and of the microphone, which is asked for once only, the answer that has been given standing until this application is started again.</label>
+    <label lang="HU">Az alkalmazás mindennek a gyökérobjektuma, ami erre a keretrendszerre épül: minden más objektuma tart egy hivatkozást erre az egyre, és mindent ezen keresztül ér el. Ez építi fel a három beállításobjektumot, az alkalmazás tulajdonságait, komponenseit és dinamikáját, és minden kezelőjét is: a betűket, az ikonokat, az emojikat, a feliratokat, a hangokat, a gyorsítótárat, a hátteret, a helyi menüt, a widgeteket, az url kéréseket és a hálózati kapcsolatot. Ezek mindegyike a saját inicializáló metódusában készül el, így egy alkalmazás bármelyiket a saját leszármazottjára cserélheti azzal, hogy egyetlen metódust felülír, és ez a bemutató alkalmazás többükkel éppen ezt teszi.&#10;&#10;Fölötte három réteg áll: a háttér, a középső réteg, amely a widgeteket, valamint a menü és a beállítások paneljeit tartja, és az előtér, amely az üzeneteket jeleníti meg, ezért lesz láthatatlan a középső réteg, amíg egy kérdés áll. A menü topikokból és az alattuk álló elemekből álló xml-ként érkezik, és ezeknek az elemeknek a kiválasztása egy widget fejlécét adja át a widgetkezelőnek: éppen így nyílt meg ez a widget is. Az alkalmazás követi a színpad méretét is: ebből méreteződik minden rétege és minden widgetje, és ebből számolódik a teljes alkalmazás betűmérete is, így ugyanaz az alkalmazás ugyanúgy áll kis és nagy képernyőn.&#10;&#10;Egyben a naplózás gyűjtőhelye is: a keretrendszer minden objektuma ennek az egynek a trace metódusába ír, nullától kilencig terjedő szinttel, a naplózó pedig képkockánként jeleníti meg az összegyűjtött üzeneteket, míg az éles környezetben futó alkalmazás egyáltalán nem naplóz. Azt is ez tartja, amit csak egyetlen objektum tarthat: azt a tartalmat, amelyet éppen húzással görgetnek, hiszen a lenyomás a lenyomott objektum minden szülőjéhez elér, és közülük csak az első egyszerű tartalom veheti át, valamint a kamera és a mikrofon engedélyét, amelyet csak egyszer kér el, és a megadott válasz addig áll, amíg ezt az alkalmazást újra nem indítják.</label>
+  </labels>
+  <labels key="WIDGETINFO_ICON">
+    <label lang="EN">An Icon is a square object that any bitmap data can be drawn into, and it is the leading image of the labels, of the buttons and of the items of the lists of this framework. Two kinds of drawing can be asked of it: an icon of the icon manager, which is drawn in the colors of a text type and is given the drop shadow that stands out of those colors the best, and an emoji of the emoji manager, which arrives in the colors of its own, so it needs neither a text type nor a shadow at all.&#10;&#10;An icon follows the text format of its own text type from that moment on: a new font color or a new theme repaints it on the spot, without a single call from the application around it, while an emoji follows nothing at all. That is why this object stops following every text format as soon as an emoji is drawn into it: a picker builds hundreds of emojis at a time, and a listener of each of them would be walked through on every change of the appearance.&#10;&#10;The drawing is put onto a transparent square first, so the whole object takes the mouse events and not the drawn pixels only: a thin arrow is as clickable as the square around it. The dimensions come from that very drawing, the size of it being the last parameter of both drawing calls, so a width and a height given from the outside are dropped. The bitmap data can be freed up at any time as well: it is disposed and the dimensions go back to zero, while the types are kept, so the very same drawing can be repeated whenever it is needed again.</label>
+    <label lang="HU">Az Icon négyzet alakú objektum, amelybe bármilyen bitkép berajzolható, és ez a keretrendszer feliratainak, gombjainak és listaelemeinek a bevezető képe. Kétféle rajzolat kérhető tőle: az ikonkezelő egy ikonja, amely egy szövegtípus színeivel rajzolódik ki, és megkapja azt a vetett árnyékot, amely ezekből a színekből a legjobban kiemeli, valamint az emojikezelő egy emojija, amely a saját színeivel érkezik, így sem szövegtípusra, sem árnyékra nincs szüksége.&#10;&#10;Az ikon ettől kezdve követi a saját szövegtípusának formátumát: egy új betűszín vagy egy új téma azonnal újrarajzolja, a körülötte álló alkalmazás egyetlen hívása nélkül, az emoji viszont semmit nem követ. Éppen ezért hagyja abba ez az objektum minden szövegformátum követését, amint emoji kerül bele: egy választó egyszerre több száz emojit épít fel, és mindegyikük figyelőjén végig kellene menni a megjelenés minden változásakor.&#10;&#10;A rajzolat előbb egy átlátszó négyzetre kerül, így az egéreseményeket a teljes objektum veszi át, nem csak a kirajzolt képpontok: egy vékony nyíl éppen annyira kattintható, mint a körülötte álló négyzet. A méretek magából a rajzolatból adódnak, annak a mérete mindkét rajzoló hívás utolsó paramétere, így a kívülről kapott szélesség és magasság elvetésre kerül. A bitkép bármikor fel is szabadítható: megszűnik, a méretek pedig nullára állnak vissza, a típusok viszont megmaradnak, így ugyanaz a rajzolat bármikor megismételhető, amikor újra szükség van rá.</label>
+  </labels>
+  <labels key="WIDGETINFO_IMAGE">
+    <label lang="EN">An Image displays one picture that comes from the outside world. It can be asked for from an url, with the variables of a post request when the server it arrives from needs them, and that request can be delayed as well: a list of pictures asks for its items one after the other this way instead of starting every one of them at the very same moment. A bitmap data the application already holds can be given to it directly too, so an embedded resource or a photo just taken by a camera is displayed without a loading at all. One single event tells the outside that the loading is over, whatever the result of it has been, so a caller waiting for the picture is never left alone: a loading that has failed leaves the object empty and it reports itself the very same way.&#10;&#10;The dimensions given to it are the box the picture is drawn inside and not the dimensions of the object itself: a picture that fits to that box is shrunk into it keeping its own aspect ratio, so the side that does not fit is the one both sides come from, and a picture nobody has given a box to is drawn in the dimensions it has arrived with. A picture that does not fit to the box keeps those dimensions whatever the box is. It can be placed into the middle of a square as well, the side of which is the greater side of the picture, so a list of pictures of any aspect ratio stands in one and the same grid. A frame of the current appearance of the application can be drawn around it, and that frame takes one radius of the application on every side, so the picture inside it is drawn smaller. The dimensions of the object are the ones of the drawn picture, so a box wider than the picture leaves it as narrow as it has been. That box can be resized by hand as well: a handle appears in the bottom right corner of the picture, and the box follows every pixel of a drag of it, so the picture is shrunk into the new box in real time.&#10;&#10;The picture can be opened in fullscreen: it is drawn onto the middle of a black surface covering the whole screen, in the greatest dimensions it fits that screen in, and it follows every resize of it. The button opening it stands in the top right corner of the picture and it appears as soon as there is a picture at all. This component extends the same base class the TextLabel does, so emojis can be stuck onto a picture the way they can be stuck onto a sentence: the react row and the picker of the emojis stand under the picture, and the dimensions above are the ones of that picture only.</label>
+    <label lang="HU">Az Image egy olyan képet jelenít meg, amely a külvilágból érkezik. Kérhető egy url-ről, a post kérés változóival együtt, ha az őt kiszolgáló szervernek szüksége van rájuk, és ez a kérés késleltethető is: egy képekből álló lista így egymás után kéri le az elemeit, nem pedig mindet ugyanabban a pillanatban indítja el. Közvetlenül átadható neki egy olyan bitkép is, amelyet az alkalmazás már tart, így egy beágyazott erőforrás vagy egy kamerával éppen most készített fénykép betöltés nélkül jelenik meg. Egyetlen esemény mondja meg a külvilágnak, hogy a betöltés véget ért, bármi lett is az eredménye, így a képre várakozó hívó soha nem marad magára: a sikertelen betöltés üresen hagyja az objektumot, és ugyanígy jelenti magát.&#10;&#10;A neki adott méretek annak a keretnek a méretei, amelyen belül a kép kirajzolódik, nem pedig magának az objektumnak a méretei: a kerethez igazított kép a saját oldalarányát megtartva zsugorodik bele ebbe a keretbe, tehát az az oldal a kiindulás, amelyik nem fér el, a keret nélküli kép pedig abban a méretben rajzolódik ki, amelyben megérkezett. A kerethez nem igazított kép a keret méretétől függetlenül megtartja ezeket a méreteket. Egy négyzet közepére is állítható, amelynek az oldala a kép nagyobb oldala, így a bármilyen oldalarányú képekből álló lista egy és ugyanazon rácsban áll. Az alkalmazás jelenlegi megjelenéséből kirajzolható köré egy keret, amely minden oldalon egy alkalmazásnyi kerekítést foglal el, így a benne álló kép kisebben rajzolódik ki. Az objektum méretei a kirajzolt kép méretei, tehát a képnél szélesebb keret olyan keskenyen hagyja, amilyen volt. Ez a keret kézzel is átméretezhető: a kép jobb alsó sarkában megjelenik egy fogantyú, és a keret az elhúzásának minden képpontját követi, így a kép valós időben zsugorodik bele az új keretbe.&#10;&#10;A kép teljes képernyőn is megnyitható: a teljes képernyőt beborító fekete felület közepére rajzolódik ki, a lehető legnagyobb méretben, amelyben elfér, és minden átméretezését követi. A megnyitó gomb a kép jobb felső sarkában áll, és akkor jelenik meg, amikor egyáltalán van kép. Ez a komponens ugyanabból az alaposztályból származik, mint a TextLabel, így egy képre ugyanúgy tűzhetők emojik, ahogyan egy mondatra: az emojik sora és választója a kép alatt áll, a fenti méretek pedig csak magának a képnek a méretei.</label>
+  </labels>
+  <labels key="WIDGETINFO_SOUNDPLAYER">
+    <label lang="EN">A SoundPlayer plays one embedded sound of the sound manager and displays the standard buttons of a player around it: the play, the pause and the stop button, the name of the sound, the time played so far, the time still to come and a seek icon that can be dragged anywhere inside the sound. The sound and the name of it are given in one single call, together with the second the playing has to be started at, and a player that is playing something at that moment is stopped first.&#10;&#10;A stopped and a playing player stand in a different height: the buttons and the times of a stopped one take no room at all, so a player that is not being used is one strip only and it grows as soon as it is started. It tells the outside what has happened to it by four events, and the two of every pair tell who has done it: the played by outside and the stopped by the end arrive from the application and from the sound itself, while the played by hand and the stopped by hand arrive from the one clicking on it, so a playlist knows which sound to start next and a form knows that the one filling it has listened to something.&#10;&#10;The volume of it follows the sound volume of the application, so every player of it goes quieter together, and it plays no click sound of its own at all: the sound it carries is the very thing it is there for. The width comes from the outside and the height comes from the buttons and from the state it stands in, so a height given to it is dropped. A player that is switched off stops the playing first, and it can only be played again when there is a sound in it at all: a sound type the sound manager does not know leaves it empty and it stays unplayable until a known one is given to it.</label>
+    <label lang="HU">A SoundPlayer a hangkezelő egy beágyazott hangját játssza le, és köré kirakja egy lejátszó szokásos gombjait: a lejátszás, a szünet és a leállítás gombját, a hang nevét, az eddig lejátszott és a még hátralévő időt, valamint egy tekerőikont, amely a hangon belül bárhová elhúzható. A hang és a neve egyetlen hívásban adható meg, azzal a másodperccel együtt, amelynél a lejátszásnak indulnia kell, és az éppen szóló lejátszó előbb leáll.&#10;&#10;A leállított és a szóló lejátszó más magasságban áll: a leállítottnál a gombok és az idők egyáltalán nem foglalnak helyet, így az éppen nem használt lejátszó egyetlen sáv, és csak az indulásakor nő meg. Négy eseménnyel mondja meg a külvilágnak, hogy mi történt vele, és minden párból az egyik azt is elárulja, hogy ki tette: a kívülről lejátszott és a végére ért az alkalmazástól, illetve magától a hangtól érkezik, a kézzel lejátszott és a kézzel leállított pedig a rákattintótól, így egy lejátszási lista tudja, melyik hang következik, egy űrlap pedig tudja, hogy a kitöltője meghallgatott valamit.&#10;&#10;A hangereje az alkalmazás hangerejét követi, így minden lejátszója együtt halkul, és saját kattintáshangja egyáltalán nincs: éppen az a hang a lényege, amelyet hordoz. A szélességét kívülről kapja, a magassága pedig a gombjaiból és az állapotából adódik, így a neki adott magasság elvetésre kerül. A kikapcsolt lejátszó előbb leállítja a lejátszást, és csak akkor indítható újra, ha egyáltalán van benne hang: az olyan hangtípus, amelyet a hangkezelő nem ismer, üresen hagyja, és mindaddig lejátszhatatlan marad, amíg ismertet nem kap.</label>
+  </labels>
+  <labels key="WIDGETINFO_CAMERA">
+    <label lang="EN">A Camera displays the picture of one camera device of the machine. It grabs and releases that device on demand, and it tells the outside by an event of its own which of the two has happened, so an outgoing stream knows when it can be fed and when it has to be stopped. The permission of the camera is asked for once, as soon as this object reaches the screen, and the device itself is only grabbed afterwards: a device that is muted or busy leaves this object as it has been and it tells the one using the application that the permissions have to be checked. A camera is usable in landscape only, because the picture of it is a landscape one, so a screen that is turned into portrait releases the device on the spot. The microphone device is picked on a list of its own standing right under the one of the cameras, and it is grabbed and released together with the camera device, so one single object hands out both the picture and the sound of an outgoing stream. A machine that holds no microphone at all leaves this object without one and the picture goes on either way: a sound nobody allows does not stop a camera.&#10;&#10;Every property of the picture can be changed while the camera is running: the device it comes from, the aspect ratio, the width, the frames per second and the quality of it. The height is counted from the width and from the aspect ratio, so the two of them are the ones the dimensions come from, and the ones given from the outside are dropped. The picture can be blurred and every color channel of it can be multiplied, so the filters of an outgoing stream are seen before that stream is started. Every one of these stands on a settings panel of its own as well, which is opened by a press on the picture and closed by a press anywhere outside of it, so this component is usable without a single element around it, and one call takes every property of it back to the value the configuration of the application starts a camera with.&#10;&#10;One photo can be taken of the picture: it is drawn into a bitmap data, that bitmap data is written into a png byte array and it is displayed over the camera, with the name it has been taken under standing in the bottom right corner of it. That name is the moment of the photo, so a folder of the photos of one camera stands in the order they have been taken in. The camera device is released right afterwards, because the photo is the very thing that has been asked for. This object keeps the bytes of it only: writing them into a file or sending them to a server is the business of the application around it. A picture whose alpha channel is multiplied is not fully opaque, so the part of the background of the application that stands under it is drawn into the photo as well: that photo holds no transparent pixel either way.</label>
+    <label lang="HU">A Camera a gép egyik kameraeszközének a képét jeleníti meg. Kérésre megfogja és elengedi ezt az eszközt, és egy saját eseménnyel mondja meg a külvilágnak, hogy a kettő közül melyik történt, így egy kimenő adatfolyam tudja, mikor lehet táplálni és mikor kell leállítani. A kamera engedélyét egyszer kéri el, amint ez az objektum a képernyőre kerül, és csak ezután fogja meg magát az eszközt: az elhallgattatott vagy éppen használt eszköz úgy hagyja ezt az objektumot, ahogyan volt, és megmondja az alkalmazást használónak, hogy az engedélyeket ellenőrizni kell. A kamera csak fekvő helyzetben használható, mert a képe fekvő kép, így az álló helyzetbe fordított képernyő azonnal elengedi az eszközt. A mikrofoneszköz a kamerák listája alatt álló saját listán választható ki, és a kameraeszközzel együtt fogódik meg és engedődik el, így egyetlen objektum adja ki a kimenő adatfolyam képét és hangját is. Az a gép, amelyen egyáltalán nincs mikrofon, mikrofon nélkül hagyja ezt az objektumot, a kép pedig mindenképpen megy tovább: a hang, amit senki nem engedélyez, nem állítja meg a kamerát.&#10;&#10;A kép minden tulajdonsága megváltoztatható a kamera működése közben: az eszköz, ahonnan érkezik, az oldalarány, a szélesség, a másodpercenkénti képkockaszám és a minőség. A magasság a szélességből és az oldalarányból számolódik, tehát ez a kettő az, amiből a méretek adódnak, a kívülről kapottak pedig elvetésre kerülnek. A kép elmosható, és minden színcsatornája felszorozható, így egy kimenő adatfolyam szűrői még az adatfolyam elindítása előtt láthatók. Mindezek egy saját beállítópanelen is állnak, amely a képre nyomva nyílik meg, és bárhol máshol nyomva csukódik be, így ez a komponens egyetlen körülötte álló elem nélkül is használható, egyetlen hívás pedig minden tulajdonságát visszarendezi arra az értékre, amellyel az alkalmazás beállítása egy kamerát elindít.&#10;&#10;A képről egy fénykép készíthető: bitképbe rajzolódik, ez a bitkép egy png bájtsorozatba íródik, és a kamera felett jelenik meg, a jobb alsó sarkában azzal a névvel, amellyel készült. Ez a név a fénykép pillanata, így egy kamera fényképeinek a mappája abban a sorrendben áll, amelyben készültek. A kameraeszköz közvetlenül utána elengedésre kerül, mert éppen a fénykép volt az, amit kértek. Ez az objektum csak a bájtjait tartja meg: fájlba írni vagy szerverre küldeni azokat a körülötte álló alkalmazás dolga. Az a kép, amelynek az alfa csatornája fel van szorozva, nem teljesen átlátszatlan, így az alkalmazás hátterének az alatta álló része is belerajzolódik a fényképbe: az a fénykép így sem tartalmaz átlátszó képpontot.</label>
+  </labels>
+  <labels key="WIDGETINFO_VIDEOPLAYER">
+    <label lang="EN">A VideoPlayer plays one video of the outside world, and that video is a list of chapters: every chapter carries a name and an url of its own, so a long recording cut into parts stands in one single player and the one watching it steps from one part to the other by the two chapter buttons. The file arrives over a plain progressive download, so this component needs no streaming server and no net connection handling around it at all: the url of a chapter is the very address of a file, and the player asks for it the moment that chapter is started.&#10;&#10;The standard buttons of a player stand under the picture: the play, the pause and the stop button, the name of the chapter, the time played so far, the time still to come and a seek icon that can be dragged anywhere inside the chapter. The line that icon travels along tells how much of the chapter has arrived on the machine already, so a slow line is seen and not only felt. The length and the dimensions of a chapter come from the metadata of the file itself, so nobody has to tell them from the outside: they arrive with the beginning of the file itself, and the player takes them the moment they are there. The picture of a player that is playing nothing is not empty either: the first frame of the chapter it stands on is loaded on its own, muted and paused on that very frame, so the one looking at this component sees what is inside the file, and the first click goes on with the playing from the very same point. That preview picture can be switched off, and it comes back after every stop. A chapter that is over takes the next one right away when the automatic continuation is switched on, so the whole video is played by one single click, and the last chapter stops the player either way.&#10;&#10;The box the picture is drawn inside is the dimensions this object is given: the picture is shrunk into that box keeping the aspect ratio it has arrived with, and it stands in the middle of it. The height of this object is that of the picture and that of the buttons under it, so a height given to it is the one of the picture only. That box can be resized by hand as well: a handle appears in the bottom right corner of the picture, and the whole player lays itself out again in real time while it is being dragged. It tells the outside what has happened to it by five events: the played by outside and the stopped by the end arrive from the application and from the file itself, the played by hand and the stopped by hand arrive from the one clicking on it, and the changed one arrives whenever the chapters, the chapter it stands on or the metadata of that chapter has changed. The volume of it is measured from the sound volume of the application, and a player that is switched off stops the playing first.&#10;&#10;The sound of the video is controlled by two elements standing next to the stop button: a potmeter carrying the volume between zero and a hundred, and a button muting and unmuting that sound, so the video is silenced without the volume being dragged away and it goes on with the very same volume afterwards. The icon of that button tells what the sound stands on: a muted video carries the icon of the muting, and an unmuted one the icon of the loudness it plays with, from the silent speaker up to the loudest one. Those two elements stand together with the play, the pause and the stop button in the middle of the line of the controls, centered on the picture of the video itself, so the group of them follows the dimensions that picture is really drawn with, and they are taken onto the fullscreen of the video exactly the way every other control is. This component is never laid out narrower than the room the six elements of that line need next to each other: five of them carry one icon only and are as wide as they are tall, the sixth one is the potmeter of the sound, and the margin of the application stands between them, so a greater font size gives a wider player.</label>
+    <label lang="HU">A VideoPlayer a külvilág egy videóját játssza le, és ez a videó fejezetek listája: minden fejezetnek saját neve és saját url-je van, így egy részekre vágott hosszú felvétel egyetlen lejátszóban áll, a néző pedig a két fejezetgombbal lép egyik részről a másikra. A fájl egyszerű progresszív letöltéssel érkezik, így ennek a komponensnek nincs szüksége sem adatfolyam-kiszolgálóra, sem hálózati kapcsolat kezelésére: egy fejezet url-je egy fájl címe, és a lejátszó abban a pillanatban kéri el, amikor az a fejezet elindul.&#10;&#10;A lejátszó szokásos gombjai a kép alatt állnak: a lejátszás, a szünet és a leállítás gombja, a fejezet neve, az eddig lejátszott és a még hátralévő idő, valamint egy tekerőikon, amely a fejezeten belül bárhová elhúzható. Az a vonal, amely mentén ez az ikon halad, megmutatja, hogy a fejezetből mennyi érkezett meg eddig a gépre, így a lassú vonal látszik is, nem csak érződik. Egy fejezet hossza és méretei magának a fájlnak a metaadatából jönnek, így ezeket kívülről senkinek nem kell megmondania: magának a fájlnak az elejével együtt érkeznek, és a lejátszó abban a pillanatban átveszi őket, amikor megjöttek. Annak a lejátszónak a képe sem üres, amely éppen semmit nem játszik: az éppen kiválasztott fejezet első képe magától betöltődik, elhallgattatva és pontosan azon a képen megállítva, így a komponensre ránéző látja, mi van a fájlban, az első kattintás pedig ugyanarról a pontról folytatja a lejátszást. Ez az előnézeti kép kikapcsolható, és minden leállítás után visszatér. A véget ért fejezet azonnal átadja a helyét a következőnek, ha az automatikus folytatás be van kapcsolva, így a teljes videó egyetlen kattintással lejátszható, az utolsó fejezet pedig mindenképpen leállítja a lejátszót.&#10;&#10;Az a keret, amelyben a kép megjelenik, az objektumnak megadott méret: a kép ebbe a keretbe zsugorodik bele, megtartva azt az oldalarányt, amellyel megérkezett, és a keret közepén áll. Az objektum magassága a képé és az alatta álló gomboké együtt, így a neki megadott magasság csak a képé. Ez a keret kézzel is átméretezhető: a kép jobb alsó sarkában megjelenik egy fogantyú, és a lejátszó az elhúzása közben valós időben rendezi újra magát. Öt eseménnyel mondja meg a külvilágnak, hogy mi történt vele: a kívülről lejátszott és a végére ért az alkalmazástól, illetve magától a fájltól érkezik, a kézzel lejátszott és a kézzel leállított a rákattintótól, a megváltozott pedig akkor, amikor a fejezetek, az éppen kiválasztott fejezet vagy annak a metaadata megváltozott. A hangereje az alkalmazás hangerejéhez mérten áll be, a kikapcsolt lejátszó pedig előbb leállítja a lejátszást.&#10;&#10;A videó hangját a leállítás gombja mellett álló két elem szabályozza: egy potméter, amely nulla és száz között viseli a hangerőt, valamint egy gomb, amely elhallgattatja és újra megszólaltatja azt a hangot, így a videó anélkül némítható el, hogy a hangerőt el kellene húzni, utána pedig ugyanazzal a hangerővel folytatja. Annak a gombnak az ikonja megmondja, hogy a hang hol áll: az elhallgattatott videó a némítás ikonját viseli, a megszólaló pedig annak az erősségnek az ikonját, amellyel éppen szól, a hangtalan hangszórótól a leghangosabbig. Ez a két elem a lejátszás, a szünet és a leállítás gombjával együtt a vezérlők sorának a közepén áll, magára a videó képére középre igazítva, így a csoportjuk azokat a méreteket követi, amelyekkel az a kép valóban meg van rajzolva, és a videó teljes képernyős nézetére is ugyanúgy átkerülnek, ahogyan minden más vezérlő. Ez a komponens soha nem kerül keskenyebbre annál, mint amennyi hely annak a sornak a hat eleméhez kell egymás mellett: közülük öt csak egy ikont visel, és pontosan olyan széles, amilyen magas, a hatodik a hang potmétere, közöttük pedig az alkalmazás margója áll, így a nagyobb betűméret szélesebb lejátszót ad.</label>
+  </labels>
+  <labels key="WIDGETINFO_BOARD">
+    <label lang="EN">A Board is a surface that is drawn onto by hand, with the mouse or with a finger, together with the toolbar that belongs to it. It can be used to sign by hand, to sketch something out or to mark a detail of a picture. The toolbar carries the color of the background, the color of the line, the thickness of that line, the switcher between the drawing and the rubbing out, the button undoing the last movement of the drawing, the button redoing the last undone one and the button clearing the whole area, and every one of those can be given to the board from the outside as well: the toolbar and the code of the application work on one and the same state.&#10;&#10;An empty board can be resized, both by the resizer standing in its bottom right corner and by the dimensions it is given from the outside, and the drawable area inside it can be sized on its own too. As soon as the first line has been drawn every one of those calls is refused and the color of the background is fixed as well, together with the picker standing in the toolbar for it, because a drawing can neither be stretched nor be repainted under. Every movement of the drawing, from the pressing of the mouse to the releasing of it, is drawn onto a shape of its own, so the undoing takes the last one of those movements away and leaves everything drawn before it exactly where it is. An undone movement is not lost either: it waits for the redoing that puts it back exactly the way it has been drawn, and it is only dropped for good as soon as a new movement is started on the board. The clearing takes the board back to that empty state, and it reports it with a cleared event on top of the changed one, so the resizing, the color of the background and the picker of that color are free again from there on. Undoing every movement one by one takes the board back to that empty state as well, but the picker of the background stays locked there: only a clearing gives it back, and it comes back exactly in the state it has been given from the outside, so a picker that has been switched off from the outside stays off after that clearing too.&#10;&#10;The content of the drawable area is answered as a png byte array, so a signature can be sent to a server or written into a file without any further work, and the width and the height of that image are the ones of that area and not of the whole component: the toolbar and the label naming the board stand outside of it. Every change of the board is reported by its changed event, whether it comes from the toolbar, from the hand drawing on it or from the code around it.</label>
+    <label lang="HU">A Board olyan felület, amelyre kézzel, egérrel vagy ujjal lehet rajzolni, a hozzá tartozó eszköztárral együtt. Használható kézi aláírásra, vázlat felskiccelésére vagy egy képrészlet megjelölésére. Az eszköztár viseli a háttér színét, a vonal színét, annak a vonalnak a vastagságát, a rajzolás és a radírozás közötti kapcsolót, a rajz utolsó mozdulatát visszavonó gombot, az utolsó visszavont mozdulatot megismétlő gombot, valamint a teljes területet törlő gombot, és mindegyik kívülről is megadható a táblának: az eszköztár és az alkalmazás kódja ugyanazon az állapoton dolgozik.&#10;&#10;Az üres tábla átméretezhető, a jobb alsó sarkában álló átméretezővel és a kívülről kapott méretekkel is, a benne álló rajzterület pedig külön is méretezhető. Amint az első vonal megjelent, mindegyik ilyen hívás visszautasításra kerül, és a háttér színe is rögzül, az eszköztárban álló választójával együtt, hiszen egy rajz sem nem nyújtható, sem nem festhető alá újra. A rajz minden mozdulata, az egér lenyomásától a felengedéséig, külön alakzatra kerül, így a visszavonás csak az utolsó mozdulatot veszi el, az előtte rajzoltakat pedig pontosan ott hagyja, ahol vannak. A visszavont mozdulat sem veszik el: az ismétlésre vár, amely pontosan úgy teszi vissza, ahogyan meg volt rajzolva, és véglegesen csak akkor esik ki, amint egy új mozdulat indul a táblán. A törlés visszaviszi a táblát arra az üres állapotra, és ezt a megváltozott esemény mellett egy törölt eseménnyel is jelenti, így az átméretezés, a háttérszín és a hozzá tartozó választó onnantól ismét szabad. Minden mozdulat egyenkénti visszavonása szintén erre az üres állapotra viszi vissza a táblát, de a háttérválasztó ott zárva marad: csak a törlés adja vissza, és pontosan abban az állapotban, ahogyan kívülről megkapta, így a kívülről kikapcsolt választó a törlés után is kikapcsolva marad.&#10;&#10;A rajzterület tartalma png bájttömbként érhető el, így egy aláírás minden további munka nélkül elküldhető egy szervernek vagy fájlba írható, és annak a képnek a szélessége és magassága ennek a területnek és nem a teljes komponensnek a mérete: az eszköztár és a táblát megnevező felirat azon kívül áll. A tábla minden változását a megváltozott eseménye jelenti, akár az eszköztárból, akár a rajzoló kézből, akár a körülötte álló kódból érkezik.</label>
+  </labels>
+  <labels key="WIDGETINFO_WATCH">
+    <label lang="EN">A Watch displays the current time in one of four kinds of displaying: the basic one is a label with a small watch icon in front of it, the digital one is assembled of little sprites whose alpha draws the segments of every digit, the analog one is drawn of rotated lines and the binary one displays the very bits of the digits. It is useful especially in full screen, where the clock of the operating system can not be seen at all.&#10;&#10;A click on the watch opens the panel of it: the whole date, the timezone and the weekday are displayed there, and the kind of the watch and the displaying of the seconds can be picked there as well. The panel closes on the next click outside of it. The dimensions of this component come from its own elements, from the kind of the watch and from the font size of the application, so it takes no width and no height from the outside at all: every size it is given is dropped.&#10;&#10;The watch changed and the watch repositioned events are dispatched onto the dispatcher of the application and not onto the one of this object, so the state of the watch can be saved outside of it and given back the next time the application starts. Only the kind of the watch that is displayed at the moment is updated by the timer of the seconds, so the three that are hidden cost no processor time at all.</label>
+    <label lang="HU">A Watch az aktuális időt jeleníti meg, négyféle megjelenítés egyikével: az alapváltozat egy felirat, előtte egy kis óra ikonnal, a digitális apró sprite-okból áll össze, amelyeknek az átlátszósága rajzolja ki a számjegyek szegmenseit, az analóg elforgatott vonalakból rajzolódik, a bináris pedig a számjegyek bitjeit mutatja. Különösen teljes képernyőn hasznos, ahol az operációs rendszer órája egyáltalán nem látszik.&#10;&#10;Az órára kattintva megnyílik a panelje: ott a teljes dátum, az időzóna és a hét napja látható, és ott választható ki az óra fajtája és a másodpercek megjelenítése is. A panel a következő, rajta kívüli kattintásra bezárul. Ennek a komponensnek a méretei a saját elemeiből, az óra fajtájából és az alkalmazás betűméretéből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át: minden kapott méretet eldob.&#10;&#10;Az óra megváltozott és az óra áthelyezve események az alkalmazás eseménykezelőjére kerülnek, nem pedig ennek az objektumnak a sajátjára, így az óra állapota elmenthető rajta kívül, és az alkalmazás következő indulásakor visszaadható. A másodpercek időzítője csak az éppen megjelenített fajtát frissíti, így a rejtve maradó három egyáltalán nem kerül processzoridőbe.</label>
+  </labels>
+  <labels key="WIDGETINFO_RATER">
+    <label lang="EN">A Rater is a row of stars that a voting is taken or displayed with. Every star is drawn as a blank, a half or a full one, so a rate of two and a half stands with two full stars and one half one. The number of the stars comes from the components config of the application, so every rater of it stands with one and the same row.&#10;&#10;One single click is enough to rate: the rate the mouse stands at is displayed continuously while the pointer is over the row, so the one clicking sees exactly what is about to be taken, and the click itself commits it and dispatches the changed event. A readonly rater displays a rate only, it takes none at all: the mouse does not change anything on it and no event arrives from it, which is the way a rate that has been given by somebody else is put onto a screen.&#10;&#10;The dimensions of this component come from the number of the stars and from the size of one of them, and that size follows the font size of the application, so it takes no width and no height from the outside at all. The rate itself is a number and not a whole one: a half star is a half, so the rates read back from a server can be displayed the way they have been counted.</label>
+    <label lang="HU">A Rater csillagsor, amellyel értékelést lehet felvenni vagy megjeleníteni. Minden csillag üresen, félig vagy teljesen kirajzolva jelenik meg, így a két és feles értékelés két teljes és egy fél csillaggal áll. A csillagok száma az alkalmazás komponenskonfigurációjából jön, így minden ilyen eleme ugyanazzal a sorral áll.&#10;&#10;Az értékeléshez egyetlen kattintás elég: amíg a mutató a sor felett van, folyamatosan látszik az az érték, amelynél éppen áll, így a kattintó pontosan azt látja, ami rögzülni fog, maga a kattintás pedig rögzíti azt és elküldi a megváltozott eseményt. A csak olvasható változat kizárólag megjelenít, értékelést nem vesz fel: az egér semmit nem változtat rajta és esemény sem érkezik tőle, és éppen így kerül a képernyőre a más által adott értékelés.&#10;&#10;Ennek a komponensnek a méretei a csillagok számából és egy csillag méretéből adódnak, ez a méret pedig az alkalmazás betűméretét követi, így kívülről sem szélességet, sem magasságot nem vesz át. Maga az értékelés szám, méghozzá nem egész: a fél csillag fél, így a szerverről visszaolvasott értékelések úgy jeleníthetők meg, ahogyan kiszámolták őket.</label>
+  </labels>
+  <labels key="WIDGETINFO_POTMETER">
+    <label lang="EN">A Potmeter is a numeric stepper that is dragged by the mouse instead of being typed into. A rotating knob displays how far the current value stands between the minimum and the maximum one, and a label standing next to it displays the value itself. Dragging upwards or to the right increases that value and dragging downwards or to the left decreases it, and the dragging goes on wherever the mouse is taken, until it is released.&#10;&#10;The minimum, the maximum and the increment value are given in one single call, and the difference of the two ends has to be a whole multiply of that increment: a setting that does not meet this is dropped as a whole, so a potmeter can never stand with a range it could not step through. The number of the pixels one single increment needs is counted from that range, so the whole of it can always be dragged through, whatever the number of the steps in it is.&#10;&#10;The value is a number and not a whole one, and the decimal precision it is displayed and rounded with can be set between zero and ten. A value out of the range and a value that changes nothing at all are both dropped. The setter of the value can be a silent one as well: a value that has been set by the code of the application is one the caller knows already, so an event of it would be taken as an action of the one using that application. The dimensions of this component come from its own label and from the padding, so it takes no width and no height from the outside.</label>
+    <label lang="HU">A Potmeter olyan számléptető, amelyet nem beírni, hanem egérrel húzni kell. Egy forgó gomb mutatja, hol áll az aktuális érték a legkisebb és a legnagyobb között, a mellette álló felirat pedig magát az értéket jeleníti meg. A felfelé vagy jobbra húzás növeli, a lefelé vagy balra húzás csökkenti ezt az értéket, és a húzás bárhová is kerül az egér, egészen az elengedéséig tart.&#10;&#10;A legkisebb, a legnagyobb és a lépésköz egyetlen hívásban adható meg, és a két végpont különbségének a lépésköz egész számú többszörösének kell lennie: az ennek nem megfelelő beállítás egészében elvetésre kerül, így a csúszka soha nem állhat olyan tartománnyal, amelyet nem tudna végiglépni. Az egyetlen lépéshez szükséges képpontok száma ebből a tartományból számolódik, így az mindig végighúzható, bárhány lépés is van benne.&#10;&#10;Az érték szám, méghozzá nem egész, és nulla és tíz között állítható be, hány tizedesjeggyel jelenik meg és kerekítődik. A tartományon kívüli és a semmit nem változtató érték egyaránt elvetésre kerül. Az érték beállítója csendes is lehet: az alkalmazás kódja által beállított értéket a hívó már ismeri, így az arról szóló esemény az alkalmazást használó cselekvésének látszana. Ennek a komponensnek a méretei a saját feliratából és a belső térközből adódnak, így kívülről sem szélességet, sem magasságot nem vesz át.</label>
+  </labels>
+  <labels key="WIDGETINFO_XMLLISTER">
+    <label lang="EN">An XmlLister displays a tree that is described by an xml, one indented item per row. The keywords of that xml are the items, the item, the opened, the value and the icon: an item standing inside another one is a child of it, the value of an item is both the label and the value of the row it is displayed in, the opened tells whether the children of a branch are listed and the icon is the one standing in front of a leaf.&#10;&#10;The xml is given as one single string, and an unparsable or unwalkable one leaves an empty list behind instead of breaking anything: the error of it is logged and the tree is simply dropped. A branch item opens and closes on a click, and it carries the plus or the minus icon telling which of the two is about to happen, while a leaf item gets selected. The changed event is dispatched only when the selected leaf item really changes, so the opening and the closing of the branches walked through to reach it report nothing at all.&#10;&#10;The tree itself is displayed by a list panel: the number of the items that stand under each other at the same time can be set, the list can be scrolled to any item of it and the whole component takes its width from the outside, while the height of it comes from that number of the displayed items. The value of the selected leaf item is answered at any time, and it is an empty string as long as no leaf item has been selected yet.</label>
+    <label lang="HU">Az XmlLister egy xml által leírt fát jelenít meg, soronként egy behúzott elemmel. Ennek az xml-nek a kulcsszavai az items, az item, az opened, a value és az icon: a másikban álló elem annak a gyermeke, egy elem value értéke egyszerre a sorának felirata és értéke, az opened azt mondja meg, hogy egy ág gyermekei ki vannak-e listázva, az icon pedig a levél előtt álló ikon.&#10;&#10;Az xml egyetlen sztringként adható meg, és a nem értelmezhető vagy nem bejárható xml nem tör el semmit, csak üres listát hagy maga után: a hibája naplózásra kerül, a fa pedig egyszerűen elmarad. Az ágelem kattintásra nyílik és csukódik, és a pluszt vagy a mínuszt viseli attól függően, hogy melyik következik, a levélelem pedig kijelölésre kerül. A megváltozott esemény csak akkor kerül elküldésre, ha a kijelölt levélelem valóban megváltozott, így az odáig vezető ágak nyitása és csukása semmit nem jelent.&#10;&#10;Magát a fát egy listapanel jeleníti meg: beállítható, hány elem álljon egyszerre egymás alatt, a lista bármelyik eleméhez odagörgethető, a teljes komponens pedig kívülről kapja a szélességét, a magassága viszont a megjelenített elemek számából adódik. A kijelölt levélelem értéke bármikor lekérdezhető, és üres sztring marad mindaddig, amíg egyetlen levélelemet sem választottak ki.</label>
+  </labels>
+  <labels key="WIDGETINFO_URLREQUEST">
+    <label lang="EN">The UrlRequest manager carries the http communication of the application: every message that goes out to a server over https and every answer that comes back travels through this one single object. It knows no address of any server by itself: an application extending this framework builds the connections of its own and fills in the urls of its own in the manager standing in the place of this one, so every one of them lives in that one place instead of being spread over the classes using them.&#10;&#10;Those connections stand in groups, one group per application, and the connections of a group are the servers that application stands on. One of them is the default connection, the one in use: the messages of the group are sent on it as long as it answers. A message that fails is repeated on another server of the very same group silently, and that server becomes the default one of the group, so every further message goes to the one that has just answered. The one asking for a message hears one single answer either way, and that answer is a null one only after every server of the group has failed with it. The status of the answer, the progress of it and every error of the loading are followed and logged by the manager itself, and a message can be sent to a url of its own as well, on a loader built for that one message only.</label>
+    <label lang="HU">Az UrlRequest kezelője viszi az alkalmazás http kommunikációját: minden kimenő üzenet, amely https-en keresztül megy egy szerverhez, és minden visszaérkező válasz ezen az egyetlen objektumon halad át. Magától egyetlen szerver címét sem ismeri: a keretrendszert kiterjesztő alkalmazás építi fel a saját kapcsolatait, és a saját urljeit is abban a kezelőben adja meg, amely ennek a helyén áll, így mindegyik azon az egy helyen van ahelyett, hogy szét lenne szórva az őket használó osztályokban.&#10;&#10;Ezek a kapcsolatok csoportokban állnak, alkalmazásonként egy csoportban, és egy csoport kapcsolatai azok a szerverek, amelyeken az az alkalmazás áll. Egyikük az alapértelmezett kapcsolat, a használatban lévő: a csoport üzeneteit addig azon küldi el, ameddig az válaszol. Az elakadt üzenetet csendben megismétli ugyanannak a csoportnak egy másik szerverén, és az a szerver lesz a csoport alapértelmezettje, így minden további üzenet ahhoz megy, amelyik éppen válaszolt. Az üzenetet kérő így is, úgy is egyetlen választ kap, és az a válasz csak akkor üres, ha a csoport minden szervere elakadt vele. A válasz státuszát, a betöltés előrehaladását és minden hibáját maga a kezelő követi és naplózza, egy üzenet pedig saját urlre is elküldhető, egy csak arra az egy üzenetre épített betöltővel.</label>
+  </labels>
+  <labels key="WIDGETINFO_NETCONNECTION">
+    <label lang="EN">The NetConnection manager carries the rtmp communication of the application: it opens the socket connections that stay alive, calls the methods of the server on them and hands the results back to the caller. It knows no address of any server by itself either: an application extending this framework builds the connections of its own, with the client object, the parameters of the connecting and the handlers of the status and of the errors of them, and those settings are kept, so the very same connection can be opened again whenever it is needed.&#10;&#10;The connections stand in groups the same way the http ones do, one group per application, and the connections of a group are the servers that application stands on. One connection of a group is open at a time, the default one of it, and the methods of that group are called on it. When it fails, the manager opens another server of the very same group silently and that server becomes the default one, so the one using the application sees a connection that has been standing all along. It stops once every server of the group has failed to take that connection, so a group that can not be reached at all is left alone instead of being knocked on for ever, and a connection that stands makes every server of the group one to be tried again. The status messages of the streams the connections carry are named here one by one, so the objects playing or publishing a stream can follow what happens to it, and every connection can be closed one by one, by groups or all of them at once.</label>
+    <label lang="HU">A NetConnection kezelője viszi az alkalmazás rtmp kommunikációját: megnyitja az életben maradó socket kapcsolatokat, meghívja rajtuk a szerver metódusait, és az eredményeket visszaadja a hívónak. Magától ez sem ismeri egyetlen szerver címét sem: a keretrendszert kiterjesztő alkalmazás építi fel a saját kapcsolatait, a kliens objektummal, a csatlakozás paramétereivel, valamint a státuszuk és a hibáik kezelőivel együtt, ezeket a beállításokat pedig megőrzi, így ugyanaz a kapcsolat bármikor újra megnyitható.&#10;&#10;A kapcsolatok ugyanúgy csoportokban állnak, mint a http-sek, alkalmazásonként egy csoportban, és egy csoport kapcsolatai azok a szerverek, amelyeken az az alkalmazás áll. Egy csoportból egyszerre egy kapcsolat van nyitva, az alapértelmezett, és annak a csoportnak a metódusait azon hívja meg. Amikor az elakad, a kezelő csendben megnyit egy másik szervert ugyanabból a csoportból, és az lesz az alapértelmezett, így az alkalmazást használó olyan kapcsolatot lát, amely mindvégig állt. Akkor áll meg, ha a csoport minden szervere elakadt ezzel a kapcsolattal, így az egyáltalán el nem érhető csoportot békén hagyja ahelyett, hogy örökké zörgetné, egy álló kapcsolat pedig a csoport minden szerverét újra próbálhatóvá teszi. A kapcsolatok által vitt streamek státuszüzenetei egyenként meg vannak nevezve itt, így a streamet lejátszó vagy közvetítő objektumok követni tudják, mi történik vele, minden kapcsolat pedig lezárható egyenként, csoportonként vagy egyszerre az összes.</label>
+  </labels>
+  <!-- The texts of the rows the widgets demonstrate the properties of a component in. -->
+  <labels key="WIDGET_EXAMPLE_TEXT">
+    <label lang="EN">This is an example label.</label>
+    <label lang="HU">Ez egy példa felirat.</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_TEXT_LONG">
+    <label lang="EN">This is an example text of several lines. It stands in the box above so that the box has something to scroll: the scroll is the one being dragged and the text field follows it, line by line.&#10;&#10;A second paragraph makes this text taller than the box, and a line long enough makes it wider than the box as well, which is what the horizontal scrolling is seen by after the word wrapping has been switched off.&#10;&#10;A third one closes it. Every line of it is a plain one, so this very text is displayed the same way whether the html is switched on or off.</label>
+    <label lang="HU">Ez egy több sorból álló példaszöveg. A fenti dobozban áll, hogy legyen mit görgetnie annak a doboznak: a görgetőt húzza a felhasználó, a szövegmező pedig sorról sorra követi.&#10;&#10;A második bekezdés a doboznál magasabbá teszi ezt a szöveget, egy elég hosszú sor pedig a doboznál szélesebbé is, és éppen ezen látszik a vízszintes görgetés, miután a sortörést kikapcsolták.&#10;&#10;A harmadik zárja le. Minden sora egyszerű szöveg, így ez a szöveg ugyanúgy jelenik meg akkor is, ha a html be van kapcsolva, és akkor is, ha nincs.</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_TEXT_HTML">
+    <label lang="EN">&lt;b&gt;This text is a html one.&lt;/b&gt;&lt;br&gt;&lt;br&gt;It carries &lt;i&gt;tags of its own&lt;/i&gt;, so the box displays it &lt;u&gt;the way those tags tell&lt;/u&gt; as soon as the html of the row below has been switched on.&lt;br&gt;&lt;br&gt;A box taking plain text only displays the very tags themselves.</label>
+    <label lang="HU">&lt;b&gt;Ez a szöveg html.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Saját &lt;i&gt;jelölőket&lt;/i&gt; hordoz, így a doboz &lt;u&gt;úgy jeleníti meg, ahogy azok a jelölők mondják&lt;/u&gt;, amint az alatta álló sorban a html-t bekapcsolták.&lt;br&gt;&lt;br&gt;Az a doboz, amely csak egyszerű szöveget vesz át, magukat a jelölőket jeleníti meg.</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_HINT">
+    <label lang="EN">Type your name here</label>
+    <label lang="HU">Írd be ide a neved</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_STATE_ON">
+    <label lang="EN">The sound is on</label>
+    <label lang="HU">A hang be van kapcsolva</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_STATE_OFF">
+    <label lang="EN">The sound is off</label>
+    <label lang="HU">A hang ki van kapcsolva</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_CHAPTER_1">
+    <label lang="EN">The opening</label>
+    <label lang="HU">A nyitány</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_CHAPTER_2">
+    <label lang="EN">The middle of it, the chapter whose name is long enough to be broken into several lines</label>
+    <label lang="HU">A közepe, az a fejezet, amelynek a neve elég hosszú ahhoz, hogy több sorba törjen</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_CHAPTER_3">
+    <label lang="EN">The closing</label>
+    <label lang="HU">A zárás</label>
+  </labels>
+  <labels key="WIDGET_VALUE_NONE">
+    <label lang="EN">none</label>
+    <label lang="HU">nincs</label>
+  </labels>
+  <labels key="WIDGET_VALUE_TEXT_SHORT">
+    <label lang="EN">One single line</label>
+    <label lang="HU">Egyetlen sor</label>
+  </labels>
+  <labels key="WIDGET_VALUE_TEXT_LONG">
+    <label lang="EN">Several paragraphs</label>
+    <label lang="HU">Több bekezdés</label>
+  </labels>
+  <labels key="WIDGET_VALUE_TEXT_HTML">
+    <label lang="EN">Html text</label>
+    <label lang="HU">Html szöveg</label>
+  </labels>
+  <labels key="WIDGET_VALUE_LETTERS">
+    <label lang="EN">Letters and spaces</label>
+    <label lang="HU">Betűk és szóközök</label>
+  </labels>
+  <labels key="WIDGET_VALUE_DIGITS">
+    <label lang="EN">Digits</label>
+    <label lang="HU">Számjegyek</label>
+  </labels>
+  <labels key="WIDGET_VALUE_LETTERS_DIGITS">
+    <label lang="EN">Letters, digits and spaces</label>
+    <label lang="HU">Betűk, számjegyek és szóközök</label>
+  </labels>
+  <labels key="WIDGET_VALUE_SHAPE_PRESSED">
+    <label lang="EN">Pressed</label>
+    <label lang="HU">Benyomott</label>
+  </labels>
+  <labels key="WIDGET_VALUE_SHAPE_FLAT">
+    <label lang="EN">Flat</label>
+    <label lang="HU">Lapos</label>
+  </labels>
+  <labels key="WIDGET_VALUE_SHAPE_NOT_PRESSED">
+    <label lang="EN">Not pressed</label>
+    <label lang="HU">Kiemelkedő</label>
+  </labels>
+  <labels key="WIDGET_VALUE_XML_TREE">
+    <label lang="EN">Tree of folders</label>
+    <label lang="HU">Mappák fája</label>
+  </labels>
+  <labels key="WIDGET_VALUE_XML_FLAT">
+    <label lang="EN">Flat list</label>
+    <label lang="HU">Sima lista</label>
+  </labels>
+  <labels key="WIDGET_VALUE_XML_WRONG">
+    <label lang="EN">Unparsable xml</label>
+    <label lang="HU">Hibás xml</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_BOARD_LABEL">
+    <label lang="EN">Sign here!</label>
+    <label lang="HU">Írjon alá!</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_0">
+    <label lang="EN">Documents</label>
+    <label lang="HU">Dokumentumok</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_1">
+    <label lang="EN">Pictures</label>
+    <label lang="HU">Képek</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_2">
+    <label lang="EN">Holiday</label>
+    <label lang="HU">Nyaralás</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_3">
+    <label lang="EN">Family</label>
+    <label lang="HU">Család</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_4">
+    <label lang="EN">Music</label>
+    <label lang="HU">Zene</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_5">
+    <label lang="EN">Favourites</label>
+    <label lang="HU">Kedvencek</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_6">
+    <label lang="EN">Downloads</label>
+    <label lang="HU">Letöltések</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_ITEM_7">
+    <label lang="EN">Archive</label>
+    <label lang="HU">Archívum</label>
+  </labels>
+  <labels key="WIDGET_EXAMPLE_SOUND_NAME">
+    <label lang="EN">My embedded sample sound</label>
+    <label lang="HU">A beágyazott példahangom</label>
+  </labels>
+  <labels key="WIDGET_HINT_TEXT">
+    <label lang="EN">Type and press enter</label>
+    <label lang="HU">Írj be valamit és nyomj entert</label>
+  </labels>
+  <labels key="WIDGET_PROP_LABEL">
+    <label lang="EN">Label</label>
+    <label lang="HU">Felirat</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON">
+    <label lang="EN">Icon</label>
+    <label lang="HU">Ikon</label>
+  </labels>
+  <labels key="WIDGET_PROP_EMOJI">
+    <label lang="EN">Emoji</label>
+    <label lang="HU">Emoji</label>
+  </labels>
+  <labels key="WIDGET_PROP_TEXT_TYPE">
+    <label lang="EN">Text type</label>
+    <label lang="HU">Szövegtípus</label>
+  </labels>
+  <labels key="WIDGET_PROP_MAX_WIDTH">
+    <label lang="EN">Maximum width</label>
+    <label lang="HU">Maximális szélesség</label>
+  </labels>
+  <labels key="WIDGET_PROP_MULTILINE">
+    <label lang="EN">More lines</label>
+    <label lang="HU">Több sor</label>
+  </labels>
+  <labels key="WIDGET_PROP_VALUE">
+    <label lang="EN">Value object</label>
+    <label lang="HU">Értékobjektum</label>
+  </labels>
+  <labels key="WIDGET_PROP_ENABLED">
+    <label lang="EN">Enabled</label>
+    <label lang="HU">Engedélyezett</label>
+  </labels>
+  <labels key="WIDGET_PROP_VISIBLE">
+    <label lang="EN">Visible</label>
+    <label lang="HU">Látható</label>
+  </labels>
+  <labels key="WIDGET_PROP_DEPTH">
+    <label lang="EN">Depth</label>
+    <label lang="HU">Mélység</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_CLICK">
+    <label lang="EN">Click sound</label>
+    <label lang="HU">Kattintás hangja</label>
+  </labels>
+  <labels key="WIDGET_PROP_POSITION">
+    <label lang="EN">Position</label>
+    <label lang="HU">Pozíció</label>
+  </labels>
+  <labels key="WIDGET_PROP_DIMENSIONS">
+    <label lang="EN">Dimensions</label>
+    <label lang="HU">Méretek</label>
+  </labels>
+  <labels key="WIDGET_PROP_TEXT_FIELD">
+    <label lang="EN">Text field</label>
+    <label lang="HU">Szövegmező</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON_OBJECT">
+    <label lang="EN">Icon object</label>
+    <label lang="HU">Ikonobjektum</label>
+  </labels>
+  <labels key="WIDGET_PROP_REACT_ENABLED">
+    <label lang="EN">Reactions</label>
+    <label lang="HU">Reakciók</label>
+  </labels>
+  <labels key="WIDGET_PROP_HIT_USER">
+    <label lang="EN">User of the hits</label>
+    <label lang="HU">A reakciók felhasználója</label>
+  </labels>
+  <labels key="WIDGET_PROP_HIT_EMOJI">
+    <label lang="EN">Emoji of the hits</label>
+    <label lang="HU">A reakciók emojija</label>
+  </labels>
+  <labels key="WIDGET_PROP_HITS">
+    <label lang="EN">Number of the hits</label>
+    <label lang="HU">A reakciók száma</label>
+  </labels>
+  <labels key="WIDGET_PROP_HIT_LIST">
+    <label lang="EN">The hits themselves</label>
+    <label lang="HU">A reakciók egyenként</label>
+  </labels>
+  <labels key="WIDGET_PROP_EMOJI_TYPES_BY_HITS">
+    <label lang="EN">Emojis by hits</label>
+    <label lang="HU">Emojik reakciószám szerint</label>
+  </labels>
+  <labels key="WIDGET_PROP_PICKER">
+    <label lang="EN">Emoji picker</label>
+    <label lang="HU">Emojiválasztó</label>
+  </labels>
+  <labels key="WIDGET_PROP_CONTENT_DIMENSIONS">
+    <label lang="EN">Content dimensions</label>
+    <label lang="HU">A tartalom méretei</label>
+  </labels>
+  <labels key="WIDGET_PROP_DISPATCHER">
+    <label lang="EN">Event dispatcher</label>
+    <label lang="HU">Eseményküldő</label>
+  </labels>
+  <labels key="WIDGET_PROP_TO_BE_VISIBLE">
+    <label lang="EN">Scrolling</label>
+    <label lang="HU">Görgetés</label>
+  </labels>
+  <labels key="WIDGET_PROP_WIDTH">
+    <label lang="EN">Width</label>
+    <label lang="HU">Szélesség</label>
+  </labels>
+  <labels key="WIDGET_PROP_HEIGHT">
+    <label lang="EN">Height</label>
+    <label lang="HU">Magasság</label>
+  </labels>
+  <labels key="WIDGET_PROP_LAST_EVENT">
+    <label lang="EN">Last event</label>
+    <label lang="HU">Utolsó esemény</label>
+  </labels>
+  <labels key="WIDGET_PROP_TEXT">
+    <label lang="EN">Text</label>
+    <label lang="HU">Szöveg</label>
+  </labels>
+  <labels key="WIDGET_PROP_APPEND_TEXT">
+    <label lang="EN">Text to append</label>
+    <label lang="HU">Hozzáfűzendő szöveg</label>
+  </labels>
+  <labels key="WIDGET_PROP_HTML">
+    <label lang="EN">Html text</label>
+    <label lang="HU">Html szöveg</label>
+  </labels>
+  <labels key="WIDGET_PROP_WORD_WRAP">
+    <label lang="EN">Word wrapping</label>
+    <label lang="HU">Sortörés</label>
+  </labels>
+  <labels key="WIDGET_PROP_RESIZABLE">
+    <label lang="EN">Resizable</label>
+    <label lang="HU">Átméretezhető</label>
+  </labels>
+  <labels key="WIDGET_PROP_SCROLLING">
+    <label lang="EN">Being scrolled</label>
+    <label lang="HU">Éppen görgetik</label>
+  </labels>
+  <labels key="WIDGET_PROP_AT_BOTTOM">
+    <label lang="EN">At the bottom</label>
+    <label lang="HU">A legalján</label>
+  </labels>
+  <labels key="WIDGET_PROP_HINT">
+    <label lang="EN">Hint</label>
+    <label lang="HU">Súgószöveg</label>
+  </labels>
+  <labels key="WIDGET_PROP_PASSWORD">
+    <label lang="EN">Password</label>
+    <label lang="HU">Jelszó</label>
+  </labels>
+  <labels key="WIDGET_PROP_LETTER_CASE">
+    <label lang="EN">Letter case</label>
+    <label lang="HU">Kis- és nagybetűk</label>
+  </labels>
+  <labels key="WIDGET_PROP_RESTRICT">
+    <label lang="EN">Allowed characters</label>
+    <label lang="HU">Engedett karakterek</label>
+  </labels>
+  <labels key="WIDGET_PROP_MIN_CHARS">
+    <label lang="EN">Minimum length</label>
+    <label lang="HU">Minimális hossz</label>
+  </labels>
+  <labels key="WIDGET_PROP_MAX_CHARS">
+    <label lang="EN">Maximum length</label>
+    <label lang="HU">Maximális hossz</label>
+  </labels>
+  <labels key="WIDGET_PROP_LONG_ENOUGH">
+    <label lang="EN">Long enough</label>
+    <label lang="HU">Elég hosszú</label>
+  </labels>
+  <labels key="WIDGET_PROP_AUTO_COMPLETE">
+    <label lang="EN">Auto completion</label>
+    <label lang="HU">Automatikus kiegészítés</label>
+  </labels>
+  <labels key="WIDGET_PROP_FOCUS">
+    <label lang="EN">Focus</label>
+    <label lang="HU">Fókusz</label>
+  </labels>
+  <labels key="WIDGET_PROP_CUSTOM_EVENT">
+    <label lang="EN">Custom event</label>
+    <label lang="HU">Egyéni esemény</label>
+  </labels>
+  <labels key="WIDGET_PROP_BUTTON_VISIBLE">
+    <label lang="EN">Button visible</label>
+    <label lang="HU">Gomb látható</label>
+  </labels>
+  <labels key="WIDGET_PROP_CONTENT_SPRITE">
+    <label lang="EN">Content sprite</label>
+    <label lang="HU">Tartalom sprite</label>
+  </labels>
+  <labels key="WIDGET_PROP_ROLL_OUT">
+    <label lang="EN">Roll out</label>
+    <label lang="HU">Egér elhagyása</label>
+  </labels>
+  <labels key="WIDGET_PROP_SHAPE_TYPE">
+    <label lang="EN">Shape type</label>
+    <label lang="HU">Alakzat típusa</label>
+  </labels>
+  <labels key="WIDGET_PROP_URL">
+    <label lang="EN">Web address</label>
+    <label lang="HU">Webcím</label>
+  </labels>
+  <labels key="WIDGET_PROP_POST_DATA">
+    <label lang="EN">Data of that address</label>
+    <label lang="HU">A cím adatai</label>
+  </labels>
+  <labels key="WIDGET_PROP_BUTTONS">
+    <label lang="EN">Buttons</label>
+    <label lang="HU">Gombok</label>
+  </labels>
+  <labels key="WIDGET_PROP_BUTTON_INDEX">
+    <label lang="EN">Index of the button</label>
+    <label lang="HU">A gomb indexe</label>
+  </labels>
+  <labels key="WIDGET_PROP_ACTIVE_INDEX">
+    <label lang="EN">Active index</label>
+    <label lang="HU">Aktív index</label>
+  </labels>
+  <labels key="WIDGET_PROP_ACTIVE_LABEL">
+    <label lang="EN">Active label</label>
+    <label lang="HU">Aktív felirat</label>
+  </labels>
+  <labels key="WIDGET_PROP_INDEX_BY_LABEL">
+    <label lang="EN">Index by label</label>
+    <label lang="HU">Index felirat szerint</label>
+  </labels>
+  <labels key="WIDGET_PROP_BUTTON_ICON">
+    <label lang="EN">Icon of the button</label>
+    <label lang="HU">A gomb ikonja</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON_IF_NOT_ACTIVE">
+    <label lang="EN">Icon if not active</label>
+    <label lang="HU">Ikon, ha nem aktív</label>
+  </labels>
+  <labels key="WIDGET_PROP_ON">
+    <label lang="EN">Switched on</label>
+    <label lang="HU">Bekapcsolva</label>
+  </labels>
+  <labels key="WIDGET_PROP_OBJECT_STATE">
+    <label lang="EN">State of the object</label>
+    <label lang="HU">Az objektum állapota</label>
+  </labels>
+  <labels key="WIDGET_PROP_STATE_ON">
+    <label lang="EN">Name of the on state</label>
+    <label lang="HU">A bekapcsolt állapot neve</label>
+  </labels>
+  <labels key="WIDGET_PROP_STATE_OFF">
+    <label lang="EN">Name of the off state</label>
+    <label lang="HU">A kikapcsolt állapot neve</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON_ON">
+    <label lang="EN">Icon of the on state</label>
+    <label lang="HU">A bekapcsolt állapot ikonja</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON_OFF">
+    <label lang="EN">Icon of the off state</label>
+    <label lang="HU">A kikapcsolt állapot ikonja</label>
+  </labels>
+  <labels key="WIDGET_PROP_LABEL_ON">
+    <label lang="EN">Label of the on state</label>
+    <label lang="HU">A bekapcsolt állapot felirata</label>
+  </labels>
+  <labels key="WIDGET_PROP_LABEL_OFF">
+    <label lang="EN">Label of the off state</label>
+    <label lang="HU">A kikapcsolt állapot felirata</label>
+  </labels>
+  <labels key="WIDGET_PROP_DRIVEN_SETTERS">
+    <label lang="EN">Setters driven by the state</label>
+    <label lang="HU">Az állapot vezérelte beállítók</label>
+  </labels>
+  <labels key="WIDGET_PROP_RGB_COLOR">
+    <label lang="EN">Rgb color</label>
+    <label lang="HU">Rgb szín</label>
+  </labels>
+  <labels key="WIDGET_PROP_OPENED">
+    <label lang="EN">Opened</label>
+    <label lang="HU">Nyitva</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTED_DATE">
+    <label lang="EN">Selected date</label>
+    <label lang="HU">Kiválasztott dátum</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTED_DATE_OBJECT">
+    <label lang="EN">The date object of it</label>
+    <label lang="HU">A dátumobjektuma</label>
+  </labels>
+  <labels key="WIDGET_PROP_DISPLAYED_DATE">
+    <label lang="EN">Displayed date</label>
+    <label lang="HU">Megjelenített dátum</label>
+  </labels>
+  <labels key="WIDGET_PROP_DATE_FORMAT">
+    <label lang="EN">Date format</label>
+    <label lang="HU">Dátumformátum</label>
+  </labels>
+  <labels key="WIDGET_PROP_HOURS_AND_MINUTES">
+    <label lang="EN">Hours and minutes</label>
+    <label lang="HU">Óra és perc</label>
+  </labels>
+  <labels key="WIDGET_PROP_STATIC_CONTENT">
+    <label lang="EN">Static content</label>
+    <label lang="HU">Állandó tartalom</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEMS">
+    <label lang="EN">Items</label>
+    <label lang="HU">Elemek</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEM_INDEX">
+    <label lang="EN">Index of one item</label>
+    <label lang="HU">Egy elem indexe</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEM_VALUES">
+    <label lang="EN">Values of the items</label>
+    <label lang="HU">Az elemek értékei</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEM_ICONS">
+    <label lang="EN">Icons of the items</label>
+    <label lang="HU">Az elemek ikonjai</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEM_TABCNTS">
+    <label lang="EN">Indentations of the items</label>
+    <label lang="HU">Az elemek behúzásai</label>
+  </labels>
+  <labels key="WIDGET_PROP_ITEM_OF_INDEX">
+    <label lang="EN">The item of that index</label>
+    <label lang="HU">Az adott indexű elem</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTED_INDEX">
+    <label lang="EN">Selected index</label>
+    <label lang="HU">Kiválasztott index</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTED_VALUE">
+    <label lang="EN">Selected value</label>
+    <label lang="HU">Kiválasztott érték</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTION">
+    <label lang="EN">Selection</label>
+    <label lang="HU">Kijelölés</label>
+  </labels>
+  <labels key="WIDGET_PROP_START_INDEX">
+    <label lang="EN">First displayed item</label>
+    <label lang="HU">Az első megjelenített elem</label>
+  </labels>
+  <labels key="WIDGET_PROP_NUM_OF_ELEMENTS">
+    <label lang="EN">Displayed elements</label>
+    <label lang="HU">Megjelenített elemek</label>
+  </labels>
+  <labels key="WIDGET_PROP_ALWAYS_DISPATCH">
+    <label lang="EN">Event without a change</label>
+    <label lang="HU">Esemény változás nélkül</label>
+  </labels>
+  <labels key="WIDGET_PROP_MULTIPLE">
+    <label lang="EN">More than one item</label>
+    <label lang="HU">Egynél több elem</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAN_BE_EMPTY">
+    <label lang="EN">Can be empty</label>
+    <label lang="HU">Lehet üres</label>
+  </labels>
+  <labels key="WIDGET_PROP_BACKGROUND_COLOR">
+    <label lang="EN">Background color</label>
+    <label lang="HU">Háttérszín</label>
+  </labels>
+  <labels key="WIDGET_PROP_BACKGROUND_ENABLED">
+    <label lang="EN">Background picker</label>
+    <label lang="HU">Háttérválasztó</label>
+  </labels>
+  <labels key="WIDGET_PROP_LINE_COLOR">
+    <label lang="EN">Line color</label>
+    <label lang="HU">Vonalszín</label>
+  </labels>
+  <labels key="WIDGET_PROP_LINE_ENABLED">
+    <label lang="EN">Line picker</label>
+    <label lang="HU">Vonalválasztó</label>
+  </labels>
+  <labels key="WIDGET_PROP_LINE_THICKNESS">
+    <label lang="EN">Line thickness</label>
+    <label lang="HU">Vonalvastagság</label>
+  </labels>
+  <labels key="WIDGET_PROP_LINE_THICKNESS_ENABLED">
+    <label lang="EN">Thickness potmeter</label>
+    <label lang="HU">Vastagságcsúszka</label>
+  </labels>
+  <labels key="WIDGET_PROP_DRAW">
+    <label lang="EN">Drawing</label>
+    <label lang="HU">Rajzolás</label>
+  </labels>
+  <labels key="WIDGET_PROP_DRAW_ENABLED">
+    <label lang="EN">Drawing switcher</label>
+    <label lang="HU">Rajzoláskapcsoló</label>
+  </labels>
+  <labels key="WIDGET_PROP_UNDO_ENABLED">
+    <label lang="EN">Undoing button</label>
+    <label lang="HU">Visszavonó gomb</label>
+  </labels>
+  <labels key="WIDGET_PROP_REDO_ENABLED">
+    <label lang="EN">Redoing button</label>
+    <label lang="HU">Ismétlő gomb</label>
+  </labels>
+  <labels key="WIDGET_PROP_CLEAR_ENABLED">
+    <label lang="EN">Clearing button</label>
+    <label lang="HU">Törlőgomb</label>
+  </labels>
+  <labels key="WIDGET_PROP_CONTENT_EMPTY">
+    <label lang="EN">Empty content</label>
+    <label lang="HU">Üres tartalom</label>
+  </labels>
+  <labels key="WIDGET_PROP_MOVEMENTS">
+    <label lang="EN">Movements</label>
+    <label lang="HU">Mozdulatok</label>
+  </labels>
+  <labels key="WIDGET_PROP_UNDONE_MOVEMENTS">
+    <label lang="EN">Undone movements</label>
+    <label lang="HU">Visszavont mozdulatok</label>
+  </labels>
+  <labels key="WIDGET_PROP_CANVAS">
+    <label lang="EN">Drawable area</label>
+    <label lang="HU">Rajzterület</label>
+  </labels>
+  <labels key="WIDGET_PROP_CANVAS_IMAGE">
+    <label lang="EN">Png image</label>
+    <label lang="HU">Png kép</label>
+  </labels>
+  <labels key="WIDGET_PROP_RESIZE_POSSIBLE">
+    <label lang="EN">Resizing</label>
+    <label lang="HU">Átméretezés</label>
+  </labels>
+  <labels key="WIDGET_PROP_WATCH_TYPE">
+    <label lang="EN">Kind of the watch</label>
+    <label lang="HU">Az óra fajtája</label>
+  </labels>
+  <labels key="WIDGET_PROP_WATCH_SECS">
+    <label lang="EN">Seconds</label>
+    <label lang="HU">Másodpercek</label>
+  </labels>
+  <labels key="WIDGET_PROP_WATCH_FRAME_X">
+    <label lang="EN">Left edge of the watch</label>
+    <label lang="HU">Az óra bal széle</label>
+  </labels>
+  <labels key="WIDGET_PROP_RATE">
+    <label lang="EN">Rate</label>
+    <label lang="HU">Értékelés</label>
+  </labels>
+  <labels key="WIDGET_PROP_READONLY">
+    <label lang="EN">Read only</label>
+    <label lang="HU">Csak olvasható</label>
+  </labels>
+  <labels key="WIDGET_PROP_NUM_OF_STARS">
+    <label lang="EN">Number of the stars</label>
+    <label lang="HU">A csillagok száma</label>
+  </labels>
+  <labels key="WIDGET_PROP_MIN_VALUE">
+    <label lang="EN">Minimum value</label>
+    <label lang="HU">Legkisebb érték</label>
+  </labels>
+  <labels key="WIDGET_PROP_MAX_VALUE">
+    <label lang="EN">Maximum value</label>
+    <label lang="HU">Legnagyobb érték</label>
+  </labels>
+  <labels key="WIDGET_PROP_INC_VALUE">
+    <label lang="EN">Increment value</label>
+    <label lang="HU">Lépésköz</label>
+  </labels>
+  <labels key="WIDGET_PROP_DECIMAL_PRECISION">
+    <label lang="EN">Decimal precision</label>
+    <label lang="HU">Tizedesjegyek</label>
+  </labels>
+  <labels key="WIDGET_PROP_CUR_VALUE">
+    <label lang="EN">Current value</label>
+    <label lang="HU">Aktuális érték</label>
+  </labels>
+  <labels key="WIDGET_PROP_XML">
+    <label lang="EN">Xml</label>
+    <label lang="HU">Xml</label>
+  </labels>
+  <labels key="WIDGET_PROP_SELECTED_ITEM">
+    <label lang="EN">Selected item</label>
+    <label lang="HU">Kiválasztott elem</label>
+  </labels>
+  <labels key="WIDGET_PROP_PANEL_ELEMENTS">
+    <label lang="EN">Elements of the panel</label>
+    <label lang="HU">A panel elemei</label>
+  </labels>
+  <labels key="WIDGET_PROP_LABEL_OBJECT">
+    <label lang="EN">Label object</label>
+    <label lang="HU">Feliratobjektum</label>
+  </labels>
+  <labels key="WIDGET_PROP_ICON_SIZE">
+    <label lang="EN">Size of the drawing</label>
+    <label lang="HU">A rajzolat mérete</label>
+  </labels>
+  <labels key="WIDGET_PROP_DRAWING">
+    <label lang="EN">Drawing</label>
+    <label lang="HU">Rajzolat</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND">
+    <label lang="EN">Sound</label>
+    <label lang="HU">Hang</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_NAME">
+    <label lang="EN">Name of the sound</label>
+    <label lang="HU">A hang neve</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_SAMPLE">
+    <label lang="EN">Start at the second</label>
+    <label lang="HU">Kezdés másodperce</label>
+  </labels>
+  <labels key="WIDGET_PROP_PLAYING">
+    <label lang="EN">Playing</label>
+    <label lang="HU">Szól</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_LENGTH_MILLIS">
+    <label lang="EN">Length in milliseconds</label>
+    <label lang="HU">Hossz ezredmásodpercben</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_LENGTH_BYTES">
+    <label lang="EN">Length in bytes</label>
+    <label lang="HU">Hossz bájtban</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_MAX_SECS">
+    <label lang="EN">Length in seconds</label>
+    <label lang="HU">Hossz másodpercben</label>
+  </labels>
+  <labels key="WIDGET_PROP_IMAGE_URL">
+    <label lang="EN">Url of the picture</label>
+    <label lang="HU">A kép url-je</label>
+  </labels>
+  <labels key="WIDGET_PROP_PICTURE">
+    <label lang="EN">Picture</label>
+    <label lang="HU">Kép</label>
+  </labels>
+  <labels key="WIDGET_PROP_LOADING">
+    <label lang="EN">Loading</label>
+    <label lang="HU">Betöltés alatt</label>
+  </labels>
+  <labels key="WIDGET_PROP_BITMAP_DIMENSIONS">
+    <label lang="EN">Dimensions of the picture</label>
+    <label lang="HU">A kép méretei</label>
+  </labels>
+  <labels key="WIDGET_PROP_BOX_DIMENSIONS">
+    <label lang="EN">Dimensions of the box</label>
+    <label lang="HU">A keret méretei</label>
+  </labels>
+  <labels key="WIDGET_PROP_FIT_TO_BOX">
+    <label lang="EN">Fitting to the box</label>
+    <label lang="HU">Kerethez igazítás</label>
+  </labels>
+  <labels key="WIDGET_PROP_FRAME">
+    <label lang="EN">Frame</label>
+    <label lang="HU">Keret</label>
+  </labels>
+  <labels key="WIDGET_PROP_IN_SQUARE">
+    <label lang="EN">In a square</label>
+    <label lang="HU">Négyzetben</label>
+  </labels>
+  <labels key="WIDGET_PROP_FULLSCREEN">
+    <label lang="EN">Fullscreen</label>
+    <label lang="HU">Teljes képernyő</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTER_LIST">
+    <label lang="EN">List of the chapters</label>
+    <label lang="HU">A fejezetek listája</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_DEVICE">
+    <label lang="EN">Camera device</label>
+    <label lang="HU">Kameraeszköz</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_MICROPHONE">
+    <label lang="EN">Microphone device</label>
+    <label lang="HU">Mikrofoneszköz</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_VIDEO_MUTED">
+    <label lang="EN">The picture is muted</label>
+    <label lang="HU">A kép némítva van</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_SOUND_MUTED">
+    <label lang="EN">The microphone is muted</label>
+    <label lang="HU">A mikrofon némítva van</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_SOUND_VOLUME">
+    <label lang="EN">Gain of the microphone</label>
+    <label lang="HU">A mikrofon erősítése</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_ATTACHED">
+    <label lang="EN">Camera is grabbed</label>
+    <label lang="HU">A kamera meg van fogva</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_RESOLUTION">
+    <label lang="EN">Aspect ratio</label>
+    <label lang="HU">Oldalarány</label>
+  </labels>
+  <labels key="WIDGET_PROP_RESOLUTION_FIXED">
+    <label lang="EN">The aspect ratio is fixed</label>
+    <label lang="HU">Az oldalarány kötött</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_WIDTH">
+    <label lang="EN">Width of the picture</label>
+    <label lang="HU">A kép szélessége</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_FPS">
+    <label lang="EN">Frames per second</label>
+    <label lang="HU">Képkocka per másodperc</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_QUALITY">
+    <label lang="EN">Quality of the picture</label>
+    <label lang="HU">A kép minősége</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_BLUR">
+    <label lang="EN">Blur of the picture</label>
+    <label lang="HU">A kép elmosása</label>
+  </labels>
+  <labels key="WIDGET_PROP_CAMERA_COLORS">
+    <label lang="EN">Color channels</label>
+    <label lang="HU">Színcsatornák</label>
+  </labels>
+  <labels key="WIDGET_PROP_SETTINGS">
+    <label lang="EN">Settings panel</label>
+    <label lang="HU">Beállítópanel</label>
+  </labels>
+  <labels key="WIDGET_PROP_PICTURE_BYTES">
+    <label lang="EN">Bytes of the photo</label>
+    <label lang="HU">A fénykép bájtjai</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTERS">
+    <label lang="EN">Chapters of the video</label>
+    <label lang="HU">A videó fejezetei</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTER_INDEX">
+    <label lang="EN">Index of the chapter</label>
+    <label lang="HU">A fejezet sorszáma</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTER_NAME">
+    <label lang="EN">Name of the chapter</label>
+    <label lang="HU">A fejezet neve</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTER_URL">
+    <label lang="EN">Url of the chapter</label>
+    <label lang="HU">A fejezet url-je</label>
+  </labels>
+  <labels key="WIDGET_PROP_CHAPTER_SECS">
+    <label lang="EN">Length of the chapter</label>
+    <label lang="HU">A fejezet hossza</label>
+  </labels>
+  <labels key="WIDGET_PROP_TOTAL_SECS">
+    <label lang="EN">Length of the whole video</label>
+    <label lang="HU">A teljes videó hossza</label>
+  </labels>
+  <labels key="WIDGET_PROP_PROGRESS_SECS">
+    <label lang="EN">Played so far</label>
+    <label lang="HU">Eddig lejátszva</label>
+  </labels>
+  <labels key="WIDGET_PROP_PAUSED">
+    <label lang="EN">Paused</label>
+    <label lang="HU">Szüneteltetve</label>
+  </labels>
+  <labels key="WIDGET_PROP_AUTO_CONTINUE">
+    <label lang="EN">Automatic continuation</label>
+    <label lang="HU">Automatikus folytatás</label>
+  </labels>
+  <labels key="WIDGET_PROP_VIDEO_DIMENSIONS">
+    <label lang="EN">Dimensions of the picture</label>
+    <label lang="HU">A kép méretei</label>
+  </labels>
+  <labels key="WIDGET_PROP_PREVIEW">
+    <label lang="EN">Preview picture</label>
+    <label lang="HU">Előnézeti kép</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_VOLUME">
+    <label lang="EN">Volume of the sound</label>
+    <label lang="HU">A hang erőssége</label>
+  </labels>
+  <labels key="WIDGET_PROP_SOUND_MUTED">
+    <label lang="EN">The sound is muted</label>
+    <label lang="HU">A hang el van hallgattatva</label>
+  </labels>
+  <labels key="WIDGET_PROP_MIN_DW">
+    <label lang="EN">Smallest width</label>
+    <label lang="HU">A legkisebb szélesség</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_LOWEST_DEPTH">
+    <label lang="EN">To the lowest</label>
+    <label lang="HU">Legalulra</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_HIGHEST_DEPTH">
+    <label lang="EN">To the highest</label>
+    <label lang="HU">Legfelülre</label>
+  </labels>
+  <labels key="WIDGET_ACTION_UPDATE_CXY">
+    <label lang="EN">Update</label>
+    <label lang="HU">Frissítés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_DIMENSIONS">
+    <label lang="EN">Set 200 x 200</label>
+    <label lang="HU">200 x 200 beállítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ADD_HIT">
+    <label lang="EN">Add</label>
+    <label lang="HU">Hozzáadás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_HIT">
+    <label lang="EN">Remove</label>
+    <label lang="HU">Eltávolítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLEAR_HITS">
+    <label lang="EN">Clear</label>
+    <label lang="HU">Törlés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_OPEN_PICKER">
+    <label lang="EN">Open</label>
+    <label lang="HU">Megnyitás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLOSE_PICKER">
+    <label lang="EN">Close</label>
+    <label lang="HU">Bezárás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_DISPATCHER">
+    <label lang="EN">To this object</label>
+    <label lang="HU">Erre az objektumra</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_BE_VISIBLE">
+    <label lang="EN">To be visible</label>
+    <label lang="HU">Legyen látható</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_BOTTOM">
+    <label lang="EN">To the bottom</label>
+    <label lang="HU">A legaljára</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_UPPER_CASE">
+    <label lang="EN">To upper case</label>
+    <label lang="HU">Nagybetűsítés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_LOWER_CASE">
+    <label lang="EN">To lower case</label>
+    <label lang="HU">Kisbetűsítés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TO_FOCUS">
+    <label lang="EN">To focus</label>
+    <label lang="HU">Fókuszba</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ROLL_OUT">
+    <label lang="EN">Roll out</label>
+    <label lang="HU">Elhagyás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_POST_DATA">
+    <label lang="EN">Set the example data</label>
+    <label lang="HU">Példaadatok beállítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ADD_BUTTON">
+    <label lang="EN">Add</label>
+    <label lang="HU">Hozzáadás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_BUTTON">
+    <label lang="EN">Remove</label>
+    <label lang="HU">Eltávolítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_ALL_BUTTONS">
+    <label lang="EN">Remove all</label>
+    <label lang="HU">Mind eltávolítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ACTIVATE">
+    <label lang="EN">Activate</label>
+    <label lang="HU">Aktiválás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_ICON_IF_NOT_ACTIVE">
+    <label lang="EN">Set</label>
+    <label lang="HU">Beállítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CALL_THEM">
+    <label lang="EN">Call them</label>
+    <label lang="HU">Meghívás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ADD_ITEM">
+    <label lang="EN">Add</label>
+    <label lang="HU">Hozzáadás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_ITEM">
+    <label lang="EN">Remove</label>
+    <label lang="HU">Törlés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_ALL_ITEMS">
+    <label lang="EN">Remove all</label>
+    <label lang="HU">Mind törlése</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REFRESH_ITEM">
+    <label lang="EN">Refresh</label>
+    <label lang="HU">Frissítés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SELECT">
+    <label lang="EN">Select</label>
+    <label lang="HU">Kijelölés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_DESELECT">
+    <label lang="EN">Deselect</label>
+    <label lang="HU">Kijelölés levétele</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLEAR_SELECTION">
+    <label lang="EN">Clear</label>
+    <label lang="HU">Törlés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_START_INDEX">
+    <label lang="EN">Scroll to it</label>
+    <label lang="HU">Odagörgetés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REPOS_STATIC_CONTENT">
+    <label lang="EN">Reposition</label>
+    <label lang="HU">Újrarendezés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_UNDO">
+    <label lang="EN">Undo it</label>
+    <label lang="HU">Visszavonás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REDO">
+    <label lang="EN">Redo it</label>
+    <label lang="HU">Ismétlés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLEAR">
+    <label lang="EN">Clear it</label>
+    <label lang="HU">Törlés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_READ_IMAGE">
+    <label lang="EN">Read it</label>
+    <label lang="HU">Kiolvasás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_CONTENT_DIMENSIONS">
+    <label lang="EN">Set 240 x 160</label>
+    <label lang="HU">240 x 160 beállítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_OPEN">
+    <label lang="EN">Open</label>
+    <label lang="HU">Megnyitás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLOSE">
+    <label lang="EN">Close</label>
+    <label lang="HU">Bezárás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ADD_ELEMENT">
+    <label lang="EN">Add</label>
+    <label lang="HU">Hozzáadás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_ELEMENT">
+    <label lang="EN">Remove</label>
+    <label lang="HU">Eltávolítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_REMOVE_ALL_ELEMENTS">
+    <label lang="EN">Remove all</label>
+    <label lang="HU">Mind eltávolítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_DEST_BITMAP_DATA">
+    <label lang="EN">Free it up</label>
+    <label lang="HU">Felszabadítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_PLAY">
+    <label lang="EN">Play</label>
+    <label lang="HU">Lejátszás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_PAUSE">
+    <label lang="EN">Pause</label>
+    <label lang="HU">Szünet</label>
+  </labels>
+  <labels key="WIDGET_ACTION_STOP">
+    <label lang="EN">Stop</label>
+    <label lang="HU">Leállítás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_PREV_CHAPTER">
+    <label lang="EN">Previous chapter</label>
+    <label lang="HU">Előző fejezet</label>
+  </labels>
+  <labels key="WIDGET_ACTION_NEXT_CHAPTER">
+    <label lang="EN">Next chapter</label>
+    <label lang="HU">Következő fejezet</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_CHAPTERS">
+    <label lang="EN">Set the chapters</label>
+    <label lang="HU">Fejezetek beállítása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CLEAR_CHAPTERS">
+    <label lang="EN">Drop the chapters</label>
+    <label lang="HU">Fejezetek eldobása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_LOAD">
+    <label lang="EN">Load</label>
+    <label lang="HU">Betöltés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SET_EMBEDDED">
+    <label lang="EN">Embedded picture</label>
+    <label lang="HU">Beágyazott kép</label>
+  </labels>
+  <labels key="WIDGET_ACTION_ATTACH">
+    <label lang="EN">Grab</label>
+    <label lang="HU">Megfogás</label>
+  </labels>
+  <labels key="WIDGET_ACTION_DETACH">
+    <label lang="EN">Release</label>
+    <label lang="HU">Elengedés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_TAKE_PICTURE">
+    <label lang="EN">Take a photo</label>
+    <label lang="HU">Fényképezés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SHOW_PICTURE">
+    <label lang="EN">Show the photo</label>
+    <label lang="HU">Fénykép mutatása</label>
+  </labels>
+  <labels key="WIDGET_ACTION_RESET">
+    <label lang="EN">Reset</label>
+    <label lang="HU">Visszarendezés</label>
+  </labels>
+  <labels key="WIDGET_ACTION_SEND_REQUEST">
+    <label lang="EN">Send the request</label>
+    <label lang="HU">Kérés küldése</label>
+  </labels>
+  <labels key="WIDGET_ACTION_CALL_METHOD">
+    <label lang="EN">Call the method</label>
+    <label lang="HU">Metódus hívása</label>
+  </labels>
+  <labels key="WIDGET_TAB_CODE">
+    <label lang="EN">Code</label>
+    <label lang="HU">Kód</label>
+  </labels>
+  <labels key="WIDGET_ACTION_COPY">
+    <label lang="EN">Copy</label>
+    <label lang="HU">Másolás</label>
+  </labels>
+  <labels key="WIDGET_CODE_COPIED">
+    <label lang="EN">The code is on the clipboard.</label>
+    <label lang="HU">A kód a vágólapon van.</label>
+  </labels>
+  <!-- The texts of the two widgets demonstrating the communication of the application. -->
+  <labels key="WIDGET_WEB_DESC_URLREQUEST">
+    <label lang="EN">This widget talks to the http servers of this application: the button below sends one single GET request to the apiworks address of the server standing in use at the moment, through the UrlRequest manager, and the answer that comes back is displayed under that button. Those servers stand in one group of the connections, app1 and app2, and a request that fails on one of them is repeated on another one silently, so the answer of the group arrives either way: the row above tells which server has answered it. The three dots stand in the place of that answer while the request is on its way, so the answer replacing them is the proof that the http communication of this application works. The setup of that group stands in this very application, in the UrlRequestManagerDemo: the group is built there under one single key and one connection of it is added for every server the ServerManager holds, with the url of that server and the format its answer is read in, so every setting of the http communication of this application stands in that one single place. That group follows the ServerManager from then on: a server that has just been put in front of the users is added to it and one that has been taken away is dropped, the machine in use there is the connection every request is sent on, and the manager steps onto another one of them as soon as that one fails.</label>
+    <label lang="HU">Ez a widget az alkalmazás http szervereivel beszél: az alábbi gomb egyetlen GET kérést küld az éppen használt szerver apiworks címére az UrlRequest kezelőjén keresztül, a visszaérkező választ pedig a gomb alatt jeleníti meg. Ezek a szerverek egyetlen kapcsolatcsoportban állnak, az app1 és az app2, és az egyikükön elakadt kérést a kezelő csendben megismétli egy másikon, így a csoport válasza mindenképpen megérkezik: a fenti sor megmutatja, melyik szerver válaszolt rá. A három pont addig áll a válasz helyén, amíg a kérés útközben van, így az azt felváltó válasz a bizonyíték arra, hogy az alkalmazás http kommunikációja működik. Ennek a csoportnak a példa beállítása magában ebben az alkalmazásban áll, az UrlRequestManagerDemo osztályban: a csoport ott épül fel egyetlen kulcs alatt, és minden szerverhez egy kapcsolat kerül bele, amit a ServerManager tart, a szerver címével és azzal a formátummal együtt, amiben a válaszát olvassuk, így az alkalmazás http kommunikációjának minden beállítása ezen az egyetlen helyen áll. A csoport ettől kezdve a ServerManagert követi: egy éppen a felhasználók elé állított szerver bekerül bele, egy elvett pedig kikerül belőle, az éppen használt gép az a kapcsolat, amelyen minden kérés elmegy, és a kezelő azonnal egy másikra lép át, amint az elakad.</label>
+  </labels>
+  <labels key="WIDGET_WEB_DESC_NETCONNECTION">
+    <label lang="EN">This widget talks to the rtmp servers of this application: the connection to the group of them is opened by the NetConnection manager as soon as this widget is built and it is closed again when this widget is closed, and the state of it stands right under these lines. Those servers are app1 and app2, one connection of them stands open at a time, and when that one fails the manager opens another one silently: the row of the server tells which one of them is carrying the connection at the moment. The button below calls the callAppWorks method of the server on that very connection, as many times as it is pressed while the connection is open. The three dots stand there while the call is on its way, so the answer replacing them is the proof that the rtmp communication of this application works. The setup of that group stands in this very application, in the NetConnectionManagerDemo: the group is built there under one single key and one connection of it is added for every server the ServerManager holds, with the rtmp url of that server, the client object of the connection and the parameters of the connecting, so every setting of the rtmp communication of this application stands in that one single place. That group follows the ServerManager from then on: a server that has just been put in front of the users is added to it and one that has been taken away is dropped, the machine in use there is the one the connection is opened to, and the manager opens it to another one of them as soon as that one fails.</label>
+    <label lang="HU">Ez a widget az alkalmazás rtmp szervereivel beszél: a szerverek csoportjához tartozó kapcsolatot a NetConnection kezelője nyitja meg, amint ez a widget felépül, és akkor zárja le, amikor ezt a widgetet bezárják, az állapota pedig közvetlenül ezen sorok alatt áll. Ezek a szerverek az app1 és az app2, egyszerre egy kapcsolat áll nyitva közülük, és ha az elakad, a kezelő csendben megnyit egy másikat: a szerver sora megmutatja, melyikük viszi éppen a kapcsolatot. Az alábbi gomb a szerver callAppWorks metódusát hívja meg ugyanazon a kapcsolaton, annyiszor, ahányszor megnyomják, amíg a kapcsolat nyitva van. A három pont addig áll ott, amíg a hívás útközben van, így az azt felváltó válasz a bizonyíték arra, hogy az alkalmazás rtmp kommunikációja működik. Ennek a csoportnak a példa beállítása magában ebben az alkalmazásban áll, a NetConnectionManagerDemo osztályban: a csoport ott épül fel egyetlen kulcs alatt, és minden szerverhez egy kapcsolat kerül bele, amit a ServerManager tart, a szerver rtmp címével, a kapcsolat kliens objektumával és a csatlakozás paramétereivel együtt, így az alkalmazás rtmp kommunikációjának minden beállítása ezen az egyetlen helyen áll. A csoport ettől kezdve a ServerManagert követi: egy éppen a felhasználók elé állított szerver bekerül bele, egy elvett pedig kikerül belőle, az éppen használt gép az, amelyikhez a kapcsolat megnyílik, és a kezelő azonnal egy másikhoz nyitja meg, amint az elakad.</label>
+  </labels>
+  <labels key="WIDGET_WEB_ANSWER">
+    <label lang="EN">The answer of the server:</label>
+    <label lang="HU">A szerver válasza:</label>
+  </labels>
+  <labels key="WIDGET_WEB_FAILED">
+    <label lang="EN">The request has failed.</label>
+    <label lang="HU">A kérés nem sikerült.</label>
+  </labels>
+  <labels key="WIDGET_WEB_STATE">
+    <label lang="EN">The state of the connection:</label>
+    <label lang="HU">A kapcsolat állapota:</label>
+  </labels>
+  <labels key="WIDGET_WEB_CONNECTING">
+    <label lang="EN">connecting..</label>
+    <label lang="HU">kapcsolódás..</label>
+  </labels>
+  <labels key="WIDGET_WEB_CONNECTED">
+    <label lang="EN">connected</label>
+    <label lang="HU">kapcsolódott</label>
+  </labels>
+  <labels key="WIDGET_WEB_NOTCONNECTED">
+    <label lang="EN">not connected</label>
+    <label lang="HU">nincs kapcsolat</label>
+  </labels>
+  <labels key="WIDGET_WEB_SERVER">
+    <label lang="EN">The server in use:</label>
+    <label lang="HU">A használt szerver:</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_WOOD_DARK">
+    <label lang="EN">Dark wood</label>
+    <label lang="HU">Sötét faerezet</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_WOOD_LIGHT">
+    <label lang="EN">Light wood</label>
+    <label lang="HU">Világos faerezet</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_PAPER">
+    <label lang="EN">Vintage paper</label>
+    <label lang="HU">Antik papír</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_LEATHER">
+    <label lang="EN">Cream leather</label>
+    <label lang="HU">Krémszínű bőr</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_METAL">
+    <label lang="EN">Brushed metal</label>
+    <label lang="HU">Csiszolt fém</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_SLATE">
+    <label lang="EN">Dark slate</label>
+    <label lang="HU">Sötét pala</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_AUTUMN">
+    <label lang="EN">Autumn park</label>
+    <label lang="HU">Őszi park</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_SUNSET">
+    <label lang="EN">Sunset</label>
+    <label lang="HU">Naplemente</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_LAKE">
+    <label lang="EN">Lake shore</label>
+    <label lang="HU">Tópart</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_GRASS">
+    <label lang="EN">Fresh grass</label>
+    <label lang="HU">Friss pázsit</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_GARDEN">
+    <label lang="EN">Ornamental garden</label>
+    <label lang="HU">Díszkert</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_FLOWERS">
+    <label lang="EN">Orange flowers</label>
+    <label lang="HU">Narancs virágok</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_TECHBLUE">
+    <label lang="EN">Blue technology</label>
+    <label lang="HU">Kék technológia</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_TECHPANEL">
+    <label lang="EN">Machine panel</label>
+    <label lang="HU">Géppanel</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_SMOKE">
+    <label lang="EN">Red smoke</label>
+    <label lang="HU">Vörös füst</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_CLOUDS">
+    <label lang="EN">Above the clouds</label>
+    <label lang="HU">Felhők felett</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_POND">
+    <label lang="EN">Water lilies</label>
+    <label lang="HU">Tavirózsák</label>
+  </labels>
+  <labels key="DISPLAYING_STYLE_WAVES">
+    <label lang="EN">Pink waves</label>
+    <label lang="HU">Rózsaszín hullámok</label>
+  </labels>
+</labelgroup>

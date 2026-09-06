@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The properties configuration of the KissAs3Dm application.
+
+  It only carries the values of this application that differ from the ones the framework
+  gives them in KissAs3FwPropertiesConfig.xml: every key that is missing from here keeps
+  the framework value, or the default coded into the PropertiesConfig class.
+
+  To override any of those, add a value element here with the key of that value. The
+  list of the available keys is the KissAs3FwPropertiesConfig.xml of the framework:
+
+    <value key="applicationName">The name of this application</value>
+
+  This file is embedded and applied by PropertiesConfigDemo, so overriding a framework
+  default only means writing a line into this xml, no code has to be touched.
+-->
+<config name="PropertiesConfig">
+  <value key="applicationVersion">3.0</value>
+  <value key="applicationReleaseDate">2026-08-29</value>
+  <value key="deviceIdStoreName">KissAs3DmDeviceId</value>
+  <value key="deviceIdSecret">the secret of KissAs3Dm, every application writes its own one</value>
+</config>

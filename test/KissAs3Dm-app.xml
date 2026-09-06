@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/51.2">
+  <id>com.kisscodesystems.KissAs3DmUnitTest</id>
+  <name>KissAs3Dm unit tests</name>
+  <versionNumber>1.0.0</versionNumber>
+  <filename>KissAs3Dm</filename>
+  <initialWindow>
+    <content>ApplicationUnitTestDemo.swf</content>
+    <visible>true</visible>
+    <!-- the very window the demo application is built and tested in -->
+    <width>1600</width>
+    <height>1000</height>
+  </initialWindow>
+</application>
