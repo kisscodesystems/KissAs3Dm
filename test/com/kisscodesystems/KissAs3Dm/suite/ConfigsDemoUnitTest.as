@@ -42,12 +42,13 @@ package com.kisscodesystems.KissAs3Dm.suite
     // config of it overrides: the framework starts a camera at 640 pixels
     private static const CAMERA_WIDTH_INI:int = 480;
     // the values the dynamics config of this application overrides: the framework
-    // calculates the font size from the size of the stage while it stands at zero
-    private static const APP_FONT_SIZE:int = 16;
+    // calculates the font size from the size of the stage while it stands at zero, and
+    // this application asks for that calculation as well, so its xml keeps the zero
+    private static const APP_FONT_SIZE:int = 0;
     private static const APP_LINE_THICKNESS:int = 1;
     // the version of this application, the one value of it that is written down twice:
     // the properties config carries it and the connections of the servers send it over
-    private static const APPLICATION_VERSION:String = "2.1";
+    private static const APPLICATION_VERSION:String = "2.2";
     /**
      * Constructs the suite.
      * @param applicationRef the main application reference
@@ -140,6 +141,10 @@ package com.kisscodesystems.KissAs3Dm.suite
       const config:DynamicsConfigDemo = new DynamicsConfigDemo(application);
       assertEquals("the font size this application is started with", APP_FONT_SIZE
         , config.getAppFontSize());
+      // and that zero really is the marker of the calculated size: the texts of this
+      // application stand on the size belonging to the current size of its stage
+      assertEquals("the size of the texts this application is started with"
+        , application.calcFontSizeFromStageSize(), int(config.getTextFormatBright().size));
       assertEquals("the line thickness this application is started with", APP_LINE_THICKNESS
         , config.getAppLineThickness());
       // every style of this application is described by this config, and the panel of the

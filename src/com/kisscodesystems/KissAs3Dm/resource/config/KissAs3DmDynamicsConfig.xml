@@ -13,10 +13,16 @@
   and wears the colors taken from it, so overwriting any of those here would only make
   this application start in an appearance no displaying style of it describes.
 
+  The appFontSize is left on zero on purpose: a zero font size is the marker of the
+  calculated one, so this application starts with the size the framework takes from the
+  dimensions of the stage and it follows every later size of that stage as well. Every
+  displaying style of this application is a copy of the default one, so all of them
+  start with that very automatic size.
+
   These are the starting values only, the user can change them later on the settings
   panel of the running application.
 -->
 <config name="DynamicsConfig">
-  <value key="appFontSize">16</value>
+  <value key="appFontSize">0</value>
   <value key="appLineThickness">1</value>
 </config>
