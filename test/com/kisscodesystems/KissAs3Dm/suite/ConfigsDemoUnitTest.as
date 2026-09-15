@@ -34,12 +34,15 @@ package com.kisscodesystems.KissAs3Dm.suite
   import com.kisscodesystems.KissAs3Dm.config.PropertiesConfigDemo;
   import com.kisscodesystems.KissAs3Dm.enum.EnumDisplayingStylesDemo;
   import com.kisscodesystems.KissAs3Fw.Application;
+  import com.kisscodesystems.KissAs3Fw.config.ComponentsConfig;
+  import com.kisscodesystems.KissAs3Fw.enum.EnumCameraResolutions;
   import com.kisscodesystems.KissAs3Ut.BaseUnitTest;
   import com.kisscodesystems.KissAs3Ut.UnitTestReport;
   public class ConfigsDemoUnitTest extends BaseUnitTest
   {
     // the width a camera of this application is started at, the one value the components
-    // config of it overrides: the framework starts a camera at 640 pixels
+    // config of it overrides: the framework starts a camera at 640 pixels, a picture that
+    // does not fit the widget of a camera of this application in mobile mode
     private static const CAMERA_WIDTH_INI:int = 480;
     // the values the dynamics config of this application overrides: the framework
     // calculates the font size from the size of the stage while it stands at zero, and
@@ -113,19 +116,28 @@ package com.kisscodesystems.KissAs3Dm.suite
     }
     /**
      * The components config of this application: the one value the xml of it overrides
-     * arrives, and it stands inside the range of the framework it belongs to.
+     * arrives, and the width a camera is started at stands inside the range of the aspect
+     * ratio it belongs to.
      */
     private function runComponentsConfigTests():void
     {
       const config:ComponentsConfigDemo = new ComponentsConfigDemo(application);
       assertEquals("the width a camera of this application is started at", CAMERA_WIDTH_INI
         , config.getCameraWidthIni());
-      assertTrue("that width is not below the smallest one the framework allows"
-        , config.getCameraWidthIni() >= config.getCameraWidthMin());
-      assertTrue("that width is not above the largest one the framework allows"
-        , config.getCameraWidthIni() <= config.getCameraWidthMax());
-      assertEquals("that width stands on a step of the framework", 0
-        , (config.getCameraWidthIni() - config.getCameraWidthMin()) % config.getCameraWidthInc());
+      const frameworkConfig:ComponentsConfig = new ComponentsConfig(application);
+      assertTrue("that width is narrower than the one of the framework"
+        , config.getCameraWidthIni() < frameworkConfig.getCameraWidthIni());
+      frameworkConfig.destroy();
+      // a brand new camera stands in the four by three ratio, so the starting width of it
+      // has to be one of the widths a camera device really works in that very ratio in
+      const resolution:String = EnumCameraResolutions.CAMERA_RESOLUTION_43();
+      assertTrue("that width is not below the smallest one of the television ratio"
+        , config.getCameraWidthIni() >= config.getCameraWidthMin(resolution));
+      assertTrue("that width is not above the largest one of the television ratio"
+        , config.getCameraWidthIni() <= config.getCameraWidthMax(resolution));
+      assertEquals("that width stands on a step of the television ratio", 0
+        , (config.getCameraWidthIni() - config.getCameraWidthMin(resolution))
+          % config.getCameraWidthInc(resolution));
       // the frames of that camera are not written into the xml of this application, so
       // that value is the one of the framework
       assertTrue("the frames of a camera of this application is a positive value"

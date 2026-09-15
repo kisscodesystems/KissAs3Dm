@@ -1013,12 +1013,13 @@ package com.kisscodesystems.KissAs3Dm
       application.trace("<QuickUIDemo createCamera> cameraFilterAlpha: " + cameraFilterAlpha, 3);
       camera.resetSettings();
       // the width is asked for after the resetting on purpose: that call takes every
-      // setting of this camera back to the initial one of the configuration, so the
-      // smallest picture has to be asked for after it and not before it. This demo
-      // displays every component on one single screen, and the smallest width a camera
-      // can be asked for is 480 of the framework, the very one the config xml of this
-      // application starts a camera at as well
-      camera.setCameraWidth(getComponentsConfig().getCameraWidthMin());
+      // setting of this camera back to the initial one of the configuration, so a width
+      // of its own has to be asked for after it and not before it. This demo displays
+      // every component on one single screen, so the narrowest picture would suit it, but
+      // the settings panel of a camera is as wide as the widest row of it whatever that
+      // picture is: a camera that is narrower than that panel shows a part of every row
+      // only, so the starting width of the configuration is the one asked for here
+      camera.setCameraWidth(getComponentsConfig().getCameraWidthIni());
       const cameraWidth:int = camera.getCameraWidth();
       const cameraHeight:int = camera.getCameraHeight();
       application.trace("<QuickUIDemo createCamera> cameraWidth: " + cameraWidth, 3);

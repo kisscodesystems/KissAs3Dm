@@ -92,6 +92,8 @@
         <string>UIStatusBarStyleBlackOpaque</string> 
         <key>NSCameraUsageDescription</key>
         <string>Take a photo using your device to save and upload.</string>
+        <key>NSMicrophoneUsageDescription</key>
+        <string>Hear the loudness of your microphone while the camera is in use.</string>
         <key>NSPhotoLibraryUsageDescription</key>
         <string>Upload your photo.</string>
         <key>NSPhotoLibraryAddUsageDescription</key>
