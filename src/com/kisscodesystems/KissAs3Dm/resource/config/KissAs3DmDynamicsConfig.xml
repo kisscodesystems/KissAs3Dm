@@ -18,6 +18,11 @@
   dimensions of the stage and it follows every later size of that stage as well. Every
   displaying style of this application is a copy of the default one, so all of them
   start with that very automatic size.
+  The QuickUIDemo is the one application of this project that overwrites that zero with
+  a real size on itself: it stands on hand written coordinates, so the texts of it have
+  to keep the size those coordinates were measured with. It does that in the
+  initializeDynamicsConfig of it and not here, because this very xml is the one both
+  applications of this project read.
 
   These are the starting values only, the user can change them later on the settings
   panel of the running application.
