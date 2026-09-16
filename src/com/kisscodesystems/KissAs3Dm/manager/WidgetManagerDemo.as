@@ -18,6 +18,8 @@
  * - so a picked menu item needs no branching at all: the widget of it is built of
  *   the class standing by that header
  * - a widget is built only once: a menu item of an open widget only steps onto it
+ * - building one takes long enough to be told about, so it is done behind the box of
+ *   the framework telling that it is being done: see the runWithLoading
  */
 package com.kisscodesystems.KissAs3Dm.manager
 {
@@ -99,17 +101,46 @@ package com.kisscodesystems.KissAs3Dm.manager
         application.trace("<WidgetManagerDemo openWidget> there is no middleground to open a widget on!", 6);
         return;
       }
-      var widget:Widget = application.getMiddleground().getWidgets().getWidgetByHeader(header);
+      const widget:Widget = application.getMiddleground().getWidgets().getWidgetByHeader(header);
       if (widget == null)
       {
-        widget = createWidget(header);
-        if (widget == null)
+        // a widget of this application displays one whole component of the framework with
+        // every setting of it, so building one takes long enough to be told about: it is
+        // done behind the box telling that it is being done, and that box is closed when
+        // the new widget is standing on the display list. Stepping onto a widget that is
+        // open already is no such work at all, that one is done right here
+        application.runWithLoading(function():void
         {
-          application.trace("<WidgetManagerDemo openWidget> there is no widget of the header " + header + "!", 6);
-          return;
-        }
-        application.addWidget(application.getMiddleground().getActiveWidgetContainer(), widget);
+          openNewWidget(header);
+        });
+        return;
       }
+      application.getMiddleground().getWidgets().goToTheWidget(widget);
+    }
+    /**
+     * Builds the widget of the given header, puts it into the active widget container of
+     * this application and steps onto it. This is the whole work of the opening of a
+     * widget that is not open yet, the one the box of the framework covers.
+     * @param header the header of the widget to be opened, an EnumWidgetsDemo value
+     */
+    private function openNewWidget(header:String):void
+    {
+      application.trace("<WidgetManagerDemo openNewWidget> called.", 4);
+      application.trace("<WidgetManagerDemo openNewWidget> header: " + header, 3);
+      // this work begins a moment after it has been asked for, so the layer of the
+      // widgets is asked for again instead of being remembered
+      if (application.getMiddleground() == null)
+      {
+        application.trace("<WidgetManagerDemo openNewWidget> there is no middleground to open a widget on!", 6);
+        return;
+      }
+      const widget:Widget = createWidget(header);
+      if (widget == null)
+      {
+        application.trace("<WidgetManagerDemo openNewWidget> there is no widget of the header " + header + "!", 6);
+        return;
+      }
+      application.addWidget(application.getMiddleground().getActiveWidgetContainer(), widget);
       application.getMiddleground().getWidgets().goToTheWidget(widget);
     }
     /**
