@@ -197,6 +197,12 @@ package com.kisscodesystems.KissAs3Dm.widget
       resolutionVAL.setLabel(exampleCamera.getCameraResolution());
       resolutionFixedOBJ.setOn(exampleCamera.getResolutionFixed(), false);
       resolutionFixedVAL.setLabel(getYesNoKey(exampleCamera.getResolutionFixed()));
+      // the widths a camera works in belong to its aspect ratio, so this row follows every
+      // change of that ratio: see Camera.applyWidthRangeOfResolution
+      const resolution:String = exampleCamera.getCameraResolution();
+      widthOBJ.setMinMaxIncValues(application.getComponentsConfig().getCameraWidthMin(resolution)
+        , application.getComponentsConfig().getCameraWidthMax(resolution)
+        , application.getComponentsConfig().getCameraWidthInc(resolution));
       widthOBJ.setCurValue(exampleCamera.getCameraWidth(), false);
       widthVAL.setLabel(exampleCamera.getCameraWidth() + " x " + exampleCamera.getCameraHeight());
       fpsOBJ.setCurValue(exampleCamera.getCameraFps(), false);
@@ -339,9 +345,10 @@ package com.kisscodesystems.KissAs3Dm.widget
       resolutionFixedOBJ = createSwitcher(cellIndex + 1, exampleCamera.getResolutionFixed());
       resolutionFixedVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_CAMERA_WIDTH());
-      widthOBJ = createPotmeter(cellIndex + 1, application.getComponentsConfig().getCameraWidthMin()
-          , application.getComponentsConfig().getCameraWidthMax()
-          , application.getComponentsConfig().getCameraWidthInc());
+      widthOBJ = createPotmeter(cellIndex + 1
+          , application.getComponentsConfig().getCameraWidthMin(exampleCamera.getCameraResolution())
+          , application.getComponentsConfig().getCameraWidthMax(exampleCamera.getCameraResolution())
+          , application.getComponentsConfig().getCameraWidthInc(exampleCamera.getCameraResolution()));
       widthVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_CAMERA_FPS());
       fpsOBJ = createPotmeter(cellIndex + 1, application.getComponentsConfig().getCameraFpsMin()
@@ -450,10 +457,6 @@ package com.kisscodesystems.KissAs3Dm.widget
     private function getResolutionCodeName():String
     {
       application.trace("<" + this + " CameraWidget getResolutionCodeName> called.", 4);
-      if (exampleCamera.getCameraResolution() == EnumCameraResolutions.CAMERA_RESOLUTION_11())
-      {
-        return "CAMERA_RESOLUTION_11";
-      }
       if (exampleCamera.getCameraResolution() == EnumCameraResolutions.CAMERA_RESOLUTION_169())
       {
         return "CAMERA_RESOLUTION_169";

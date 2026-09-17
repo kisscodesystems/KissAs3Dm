@@ -21,6 +21,8 @@
  *   working examples of the usage of the components
  * - it shows the components themselves only: the application built of them is the
  *   com.kisscodesystems.KissAs3Dm.ApplicationDemo
+ * - the font size of it is a fixed one and not the calculated size the rest of this
+ *   project starts with: the components stand on hand written coordinates here
  * - the tracing is switched off while the components are built and it is switched
  *   back on at the end, otherwise the log of one single frame would be unreadable
  */
@@ -100,6 +102,13 @@ package com.kisscodesystems.KissAs3Dm
      * 8: spare
      * 9: no logging
      */
+    // the font size every component of this application is displayed with. It is a real
+    // size and not the zero of the demo configuration xml: this application places every
+    // component of the ui package on one single screen with hand written coordinates, so
+    // the size of the texts in it has to stay the very same one those coordinates were
+    // measured with, whatever the dimensions of the stage are. The application built of
+    // the same components - the ApplicationDemo - keeps that zero and follows the stage.
+    private const APP_FONT_SIZE:int = 16;
     // the number of the sample items the two list objects are filled up with
     private const LIST_SAMPLE_ITEMS:int = 10;
     [Embed(source = "resource/others/privacyPolicyEN", mimeType = "application/octet-stream")]
@@ -210,12 +219,15 @@ package com.kisscodesystems.KissAs3Dm
       componentsConfig = new ComponentsConfigDemo(this);
     }
     /**
-     * The dynamics config of this application replaces the one of the framework.
+     * The dynamics config of this application replaces the one of the framework, and the
+     * font size of it is a fixed one: the demo configuration xml asks for the calculated
+     * size with a zero, and this application overwrites that very value on itself alone.
      */
     override protected function initializeDynamicsConfig():void
     {
       application.trace("<QuickUIDemo initializeDynamicsConfig> called.", 4);
       dynamicsConfig = new DynamicsConfigDemo(this);
+      dynamicsConfig.setAppFontSize(APP_FONT_SIZE);
     }
     /**
      * The label manager of this application replaces the one of the framework.
@@ -1013,12 +1025,13 @@ package com.kisscodesystems.KissAs3Dm
       application.trace("<QuickUIDemo createCamera> cameraFilterAlpha: " + cameraFilterAlpha, 3);
       camera.resetSettings();
       // the width is asked for after the resetting on purpose: that call takes every
-      // setting of this camera back to the initial one of the configuration, so the
-      // smallest picture has to be asked for after it and not before it. This demo
-      // displays every component on one single screen, and the smallest width a camera
-      // can be asked for is 480 of the framework, the very one the config xml of this
-      // application starts a camera at as well
-      camera.setCameraWidth(getComponentsConfig().getCameraWidthMin());
+      // setting of this camera back to the initial one of the configuration, so a width
+      // of its own has to be asked for after it and not before it. This demo displays
+      // every component on one single screen, so the narrowest picture would suit it, but
+      // the settings panel of a camera is as wide as the widest row of it whatever that
+      // picture is: a camera that is narrower than that panel shows a part of every row
+      // only, so the starting width of the configuration is the one asked for here
+      camera.setCameraWidth(getComponentsConfig().getCameraWidthIni());
       const cameraWidth:int = camera.getCameraWidth();
       const cameraHeight:int = camera.getCameraHeight();
       application.trace("<QuickUIDemo createCamera> cameraWidth: " + cameraWidth, 3);

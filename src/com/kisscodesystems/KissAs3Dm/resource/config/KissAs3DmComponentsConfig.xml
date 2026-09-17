@@ -16,10 +16,13 @@
 -->
 <config name="ComponentsConfig">
   <!--
-    The framework starts a camera at 640 pixels, and both demos of this application
-    display that camera among many other components on one single screen, so the smallest
-    picture the framework allows, 480 pixels, is the one they start it at. That value
-    keeps the 160 pixel steps of the cameraWidthInc of the framework as well.
+    The framework starts a camera at 640 pixels, and both demos of this application display
+    that camera among many other components on one single screen: the widget of the camera
+    is about 528 pixels wide inside in mobile mode, so a 640 pixel picture does not fit in
+    it at all - it pushes the rows of the properties of that widget into a strip of a
+    couple of lines and takes a hundred pixels of every one of them out of reach. 480 is
+    the widest four by three mode of the framework that fits, and it is one of the fixed
+    presets of an iphone as well.
   -->
   <value key="cameraWidthIni">480</value>
 </config>

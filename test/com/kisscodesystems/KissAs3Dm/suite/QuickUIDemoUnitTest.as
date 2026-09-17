@@ -69,6 +69,11 @@ package com.kisscodesystems.KissAs3Dm.suite
     // standing there. The tracer of the framework is not one of them: that one is built
     // of flash primitives, so it is no object of this kind at all.
     private static const NUM_OF_COMPONENTS:int = 29;
+    // the font size this application is displayed with, the very value the
+    // initializeDynamicsConfig of it gives its config. It is not the zero of the
+    // KissAs3DmDynamicsConfig.xml: the components of this screen stand on hand written
+    // coordinates, so the texts in them keep one single size.
+    private static const APP_FONT_SIZE:int = 16;
     /**
      * Constructs the suite.
      * @param applicationRef the main application reference
@@ -91,6 +96,7 @@ package com.kisscodesystems.KissAs3Dm.suite
     override public function run():void
     {
       runSizeTests();
+      runFontSizeTests();
       runComponentTests();
       runPlacementTests();
     }
@@ -118,6 +124,24 @@ package com.kisscodesystems.KissAs3Dm.suite
         , dw, application.getDw());
       assertEquals("the height of this application can not be set with the pair of them"
         , dh, application.getDh());
+    }
+    /**
+     * The font size of this application is a fixed one: it is the size its own
+     * initializeDynamicsConfig asks for, every text of it really stands on that very
+     * size, and the size of the stage does not move it at all.
+     */
+    private function runFontSizeTests():void
+    {
+      assertEquals("the font size this application is configured with", APP_FONT_SIZE
+        , application.getDynamicsConfig().getAppFontSize());
+      assertEquals("the size every text of this application is displayed with"
+        , APP_FONT_SIZE, application.getFontSizeInUse());
+      // a fixed size is not calculated of the dimensions of the stage: the application
+      // built of the very same components - the ApplicationDemo - is the one following
+      // those dimensions, with the zero of the configuration xml of this project
+      application.setFontSizeFromStage();
+      assertEquals("that size is not taken from the dimensions of the stage"
+        , APP_FONT_SIZE, application.getFontSizeInUse());
     }
     /**
      * One of every component of the ui package stands on this application, and no more of
