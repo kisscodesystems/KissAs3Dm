@@ -135,14 +135,16 @@ package com.kisscodesystems.KissAs3Dm.widget
     /**
      * Registers the listener of every element of this widget, and the one of the example
      * lister as well: that lister dispatches its changed event every time another leaf item
-     * has been selected on it, and the opening and the closing of the branches walked
-     * through to reach that item report nothing at all.
+     * has been selected on it, and its opened and closed events every time a branch of it
+     * has been opened or closed, which moves the item the displaying starts from.
      */
     override protected function addListenersToElements():void
     {
       application.trace("<" + this + " XmlListerWidget addListenersToElements> called.", 4);
       super.addListenersToElements();
       exampleXmlLister.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), exampleXmlListerChanged);
+      exampleXmlLister.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_OPENED(), exampleXmlListerChanged);
+      exampleXmlLister.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CLOSED(), exampleXmlListerChanged);
       xmlOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), xmlChanged);
       numOfElementsOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), numOfElementsChanged);
       setStartIndexOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CLICK(), setStartIndexClick);
@@ -255,8 +257,8 @@ package com.kisscodesystems.KissAs3Dm.widget
     }
     /**
      * Displays every value again after another leaf item has been selected on the example
-     * lister.
-     * @param e the changed event of that lister
+     * lister, or after a branch of it has been opened or closed.
+     * @param e the changed, the opened or the closed event of that lister
      */
     private function exampleXmlListerChanged(e:Event):void
     {

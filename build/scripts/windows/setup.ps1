@@ -36,7 +36,7 @@ if ($LICENSE_FILE -eq '')
 }
 
 # Specify your project specific values:
-$SWF_BACKGROUND_COLOR = '0xffffff'
+$SWF_BACKGROUND_COLOR = '0xeeeedd'
 $SWF_FRAME_RATE = '15'
 $SWF_HEIGHT = '1000'
 $SWF_SCRIPT_LIMIT = '1000'

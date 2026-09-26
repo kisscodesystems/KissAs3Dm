@@ -58,6 +58,14 @@ package com.kisscodesystems.KissAs3Dm
       }
     }
     /**
+     * The properties config of the demo applications with the keeping of the state
+     * switched off, so no run restores what an earlier one has left behind.
+     */
+    override protected function initializePropertiesConfig():void
+    {
+      propertiesConfig = new PropertiesConfigUnitTestDemo(this);
+    }
+    /**
      * Runs the suites of the reference application on the first frame, when every
      * component of it stands where it is placed.
      * @param e the enter frame event

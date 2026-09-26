@@ -181,6 +181,11 @@ package com.kisscodesystems.KissAs3Dm.widget
     {
       application.trace("<" + this + " CameraWidget displayEveryCurrentValue> called.", 4);
       super.displayEveryCurrentValue();
+      // the devices of the machine are read again by that camera when its settings panel is
+      // opened and when it is attached, and a mobile device answers none of them before the
+      // permission of it, so the items of both pickers follow those lists as well
+      refreshDevicesOfPicker(deviceOBJ, exampleCamera.getCameraDevices());
+      refreshDevicesOfPicker(microphoneOBJ, exampleCamera.getMicrophoneDevices());
       deviceOBJ.setSelectedIndex(exampleCamera.getSelectedDeviceIndex(), false);
       deviceVAL.setLabel(getDeviceText());
       videoMutedOBJ.setOn(exampleCamera.isVideoMuted(), false);
@@ -197,6 +202,12 @@ package com.kisscodesystems.KissAs3Dm.widget
       resolutionVAL.setLabel(exampleCamera.getCameraResolution());
       resolutionFixedOBJ.setOn(exampleCamera.getResolutionFixed(), false);
       resolutionFixedVAL.setLabel(getYesNoKey(exampleCamera.getResolutionFixed()));
+      // the widths a camera works in belong to its aspect ratio, so this row follows every
+      // change of that ratio: see Camera.applyWidthRangeOfResolution
+      const resolution:String = exampleCamera.getCameraResolution();
+      widthOBJ.setMinMaxIncValues(application.getComponentsConfig().getCameraWidthMin(resolution)
+        , application.getComponentsConfig().getCameraWidthMax(resolution)
+        , application.getComponentsConfig().getCameraWidthInc(resolution));
       widthOBJ.setCurValue(exampleCamera.getCameraWidth(), false);
       widthVAL.setLabel(exampleCamera.getCameraWidth() + " x " + exampleCamera.getCameraHeight());
       fpsOBJ.setCurValue(exampleCamera.getCameraFps(), false);
@@ -283,6 +294,25 @@ package com.kisscodesystems.KissAs3Dm.widget
       return getImportsCode(imports) + code;
     }
     /**
+     * Gives the given devices to the given picker as its items, but only when that picker
+     * holds another list: a new list of items drops the selection of that picker, and the
+     * caller selects the device of the camera right after this.
+     * @param listPicker the picker of the camera or of the microphone devices
+     * @param devices the names of those devices, the array is emptied here
+     */
+    private function refreshDevicesOfPicker(listPicker:ListPicker, devices:Array):void
+    {
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> called.", 4);
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> listPicker: " + listPicker, 3);
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> devices: " + devices, 3);
+      const values:Array = listPicker.getArrayValues();
+      if (values == null || values.join("\n") != devices.join("\n"))
+      {
+        listPicker.setArrays(devices.concat(), devices.concat());
+      }
+      devices.splice(0);
+    }
+    /**
      * Builds the rows of the devices of the camera: the picker of the camera devices of
      * this machine and the muting of the picture, the picker of the microphone devices of
      * it with the muting and the gain of the sound, and the two links grabbing and
@@ -339,9 +369,10 @@ package com.kisscodesystems.KissAs3Dm.widget
       resolutionFixedOBJ = createSwitcher(cellIndex + 1, exampleCamera.getResolutionFixed());
       resolutionFixedVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_CAMERA_WIDTH());
-      widthOBJ = createPotmeter(cellIndex + 1, application.getComponentsConfig().getCameraWidthMin()
-          , application.getComponentsConfig().getCameraWidthMax()
-          , application.getComponentsConfig().getCameraWidthInc());
+      widthOBJ = createPotmeter(cellIndex + 1
+          , application.getComponentsConfig().getCameraWidthMin(exampleCamera.getCameraResolution())
+          , application.getComponentsConfig().getCameraWidthMax(exampleCamera.getCameraResolution())
+          , application.getComponentsConfig().getCameraWidthInc(exampleCamera.getCameraResolution()));
       widthVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_CAMERA_FPS());
       fpsOBJ = createPotmeter(cellIndex + 1, application.getComponentsConfig().getCameraFpsMin()
@@ -450,10 +481,6 @@ package com.kisscodesystems.KissAs3Dm.widget
     private function getResolutionCodeName():String
     {
       application.trace("<" + this + " CameraWidget getResolutionCodeName> called.", 4);
-      if (exampleCamera.getCameraResolution() == EnumCameraResolutions.CAMERA_RESOLUTION_11())
-      {
-        return "CAMERA_RESOLUTION_11";
-      }
       if (exampleCamera.getCameraResolution() == EnumCameraResolutions.CAMERA_RESOLUTION_169())
       {
         return "CAMERA_RESOLUTION_169";

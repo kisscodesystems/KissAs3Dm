@@ -242,6 +242,14 @@ package com.kisscodesystems.KissAs3Dm.enum
       return "XmlLister";
     }
     /**
+     * Returns the header of the scrolling probe widget. It belongs to no component: it
+     * measures how smoothly a content of many objects can be scrolled.
+     */
+    public static function SCROLLINGPROBE():String
+    {
+      return "ScrollingProbe";
+    }
+    /**
      * Returns the header of the widget of the UrlRequest manager.
      */
     public static function URLREQUEST():String

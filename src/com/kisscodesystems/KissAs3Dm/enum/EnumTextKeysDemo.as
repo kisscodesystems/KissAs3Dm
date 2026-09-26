@@ -368,6 +368,13 @@ package com.kisscodesystems.KissAs3Dm.enum
       return "[WIDGETINFO_NETCONNECTION]";
     }
     /**
+     * Returns the text key of the WIDGETINFO_SCROLLINGPROBE label.
+     */
+    public static function WIDGETINFO_SCROLLINGPROBE():String
+    {
+      return "[WIDGETINFO_SCROLLINGPROBE]";
+    }
+    /**
      * Returns the text key of the WIDGET_EXAMPLE_TEXT label.
      */
     public static function WIDGET_EXAMPLE_TEXT():String
@@ -590,6 +597,55 @@ package com.kisscodesystems.KissAs3Dm.enum
     public static function WIDGET_EXAMPLE_SOUND_NAME():String
     {
       return "[WIDGET_EXAMPLE_SOUND_NAME]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_RUN label.
+     */
+    public static function WIDGET_PROBE_RUN():String
+    {
+      return "[WIDGET_PROBE_RUN]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_BENCHMARK label.
+     */
+    public static function WIDGET_PROBE_BENCHMARK():String
+    {
+      return "[WIDGET_PROBE_BENCHMARK]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_MANUAL label.
+     */
+    public static function WIDGET_PROBE_MANUAL():String
+    {
+      return "[WIDGET_PROBE_MANUAL]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_NONE label.
+     */
+    public static function WIDGET_PROBE_NONE():String
+    {
+      return "[WIDGET_PROBE_NONE]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_RUNNING label.
+     */
+    public static function WIDGET_PROBE_RUNNING():String
+    {
+      return "[WIDGET_PROBE_RUNNING]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_NOTHING label.
+     */
+    public static function WIDGET_PROBE_NOTHING():String
+    {
+      return "[WIDGET_PROBE_NOTHING]";
+    }
+    /**
+     * Returns the text key of the WIDGET_PROBE_RESULT label.
+     */
+    public static function WIDGET_PROBE_RESULT():String
+    {
+      return "[WIDGET_PROBE_RESULT]";
     }
     /**
      * Returns the text key of the WIDGET_HINT_TEXT label.

@@ -17,6 +17,8 @@
  * - the pictures of the picker of the urls are the sample files of the site of this
  *   framework, one of every usual resolution, so the shrinking into the box and the
  *   loading of a real picture can be tried on all of them
+ * - the example picture loads the sample of the average resolution right away, so a
+ *   real loading is what the one opening this widget sees first
  * - the picture embedded into this application is offered as well, so a picture the
  *   application already holds is seen without a loading at all
  * - the rows of the reactions are the ones of the base class this component shares
@@ -58,6 +60,9 @@ package com.kisscodesystems.KissAs3Dm.widget
     // the milliseconds the loading of the example picture is delayed by: a real loading
     // is demonstrated by it, so the one using this application sees that it is on its way
     private var loadDelay:int = 500;
+    // the index of the resolution picked and loaded when this widget opens: the middle
+    // one of them, the average size of a picture
+    private var defaultIndex:int = 3;
     // the resolutions the picker of the urls offers, and the url of the picture belonging
     // to every one of them
     private var resolutionsARR:Array = null;
@@ -134,9 +139,9 @@ package com.kisscodesystems.KissAs3Dm.widget
     }
     /**
      * Builds the example picture of this widget: it stands inside a box of a square, it
-     * carries a frame, it can be resized by hand and opened in fullscreen, and the picture
-     * embedded into this application is displayed in it right away, so this widget holds
-     * something to be looked at without a single loading.
+     * carries a frame, it can be resized by hand and opened in fullscreen, and the sample
+     * picture of the average resolution is loaded into it right away, the same one the
+     * picker of the urls stands on.
      */
     override protected function createExampleElement():void
     {
@@ -148,7 +153,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       exampleImage.setFullscreenEnabled(true);
       exampleImage.setResizable(true);
       exampleImage.setDwh(boxINI, boxINI);
-      setEmbeddedPicture();
+      exampleImage.loadUrl(urlsARR[defaultIndex], loadDelay);
     }
     /**
      * Builds every row of this widget: the ones of the Image component itself, the ones
@@ -307,7 +312,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       application.trace("<" + this + " ImageWidget createPictureRows> called.", 4);
       var cellIndex:int = createRow(EnumTextKeysDemo.WIDGET_PROP_IMAGE_URL());
       urlOBJ = createListPicker(cellIndex + 1, resolutionsARR.concat(), urlsARR.concat());
-      urlOBJ.setSelectedIndex(1, false);
+      urlOBJ.setSelectedIndex(defaultIndex, false);
       urlVAL = createValueLabel(cellIndex + 2);
       cellIndex = createRow(EnumTextKeysDemo.WIDGET_PROP_PICTURE());
       loadOBJ = createLink(cellIndex + 1, EnumTextKeysDemo.WIDGET_ACTION_LOAD());
@@ -764,6 +769,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       boxINC = 0;
       boxINI = 0;
       loadDelay = 0;
+      defaultIndex = 0;
       resolutionsARR = null;
       urlsARR = null;
       exampleImage = null;

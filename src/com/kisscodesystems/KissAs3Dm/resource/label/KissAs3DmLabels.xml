@@ -203,6 +203,10 @@
     <label lang="EN">The NetConnection manager carries the rtmp communication of the application: it opens the socket connections that stay alive, calls the methods of the server on them and hands the results back to the caller. It knows no address of any server by itself either: an application extending this framework builds the connections of its own, with the client object, the parameters of the connecting and the handlers of the status and of the errors of them, and those settings are kept, so the very same connection can be opened again whenever it is needed.&#10;&#10;The connections stand in groups the same way the http ones do, one group per application, and the connections of a group are the servers that application stands on. One connection of a group is open at a time, the default one of it, and the methods of that group are called on it. When it fails, the manager opens another server of the very same group silently and that server becomes the default one, so the one using the application sees a connection that has been standing all along. It stops once every server of the group has failed to take that connection, so a group that can not be reached at all is left alone instead of being knocked on for ever, and a connection that stands makes every server of the group one to be tried again. The status messages of the streams the connections carry are named here one by one, so the objects playing or publishing a stream can follow what happens to it, and every connection can be closed one by one, by groups or all of them at once.</label>
     <label lang="HU">A NetConnection kezelője viszi az alkalmazás rtmp kommunikációját: megnyitja az életben maradó socket kapcsolatokat, meghívja rajtuk a szerver metódusait, és az eredményeket visszaadja a hívónak. Magától ez sem ismeri egyetlen szerver címét sem: a keretrendszert kiterjesztő alkalmazás építi fel a saját kapcsolatait, a kliens objektummal, a csatlakozás paramétereivel, valamint a státuszuk és a hibáik kezelőivel együtt, ezeket a beállításokat pedig megőrzi, így ugyanaz a kapcsolat bármikor újra megnyitható.&#10;&#10;A kapcsolatok ugyanúgy csoportokban állnak, mint a http-sek, alkalmazásonként egy csoportban, és egy csoport kapcsolatai azok a szerverek, amelyeken az az alkalmazás áll. Egy csoportból egyszerre egy kapcsolat van nyitva, az alapértelmezett, és annak a csoportnak a metódusait azon hívja meg. Amikor az elakad, a kezelő csendben megnyit egy másik szervert ugyanabból a csoportból, és az lesz az alapértelmezett, így az alkalmazást használó olyan kapcsolatot lát, amely mindvégig állt. Akkor áll meg, ha a csoport minden szervere elakadt ezzel a kapcsolattal, így az egyáltalán el nem érhető csoportot békén hagyja ahelyett, hogy örökké zörgetné, egy álló kapcsolat pedig a csoport minden szerverét újra próbálhatóvá teszi. A kapcsolatok által vitt streamek státuszüzenetei egyenként meg vannak nevezve itt, így a streamet lejátszó vagy közvetítő objektumok követni tudják, mi történik vele, minden kapcsolat pedig lezárható egyenként, csoportonként vagy egyszerre az összes.</label>
   </labels>
+  <labels key="WIDGETINFO_SCROLLINGPROBE">
+    <label lang="EN">The ScrollingProbe is not a component: it measures how smoothly a content holding many objects can be scrolled on the device it is running on. It holds 200 objects, ten of every kind of the components of this framework: labels, text boxes and areas, text inputs, buttons, switchers, pickers, list and date panels, potmeters, raters, watches, icons, images, sound players, video players and boards, mixed with each other.&#10;&#10;The button at the top runs the benchmark: the content is scrolled to its end and back at a constant speed, at 60 frames per second, and the frames that really have been drawn are counted meanwhile. Every scrolling by hand is measured the same way, from its first move to the end of its glide. The result tells the average number of the frames per second, the frame rate the application asked for, the slowest frame and how many frames were slower than 25 milliseconds.&#10;&#10;In mobile mode the widget layer is the one being scrolled instead of the content of this widget, so the benchmark scrolls that one, the very one a finger would scroll there.</label>
+    <label lang="HU">A ScrollingProbe nem komponens: azt méri, milyen simán görgethető egy sok objektumot tartalmazó tartalom azon az eszközön, amelyen fut. 200 objektumot tartalmaz, a keretrendszer minden komponensfajtájából tízet: feliratokat, szövegdobozokat és -területeket, szövegbeviteli mezőket, gombokat, kapcsolókat, választókat, lista- és dátumpaneleket, potmétereket, értékelőket, órákat, ikonokat, képeket, hang- és videólejátszókat és táblákat, egymással vegyesen.&#10;&#10;A felül álló gomb futtatja a mérést: a tartalom állandó sebességgel a végéig és vissza görgetődik, másodpercenként 60 képkockával, közben pedig megszámolja, hány képkocka rajzolódott ki valóban. Minden kézi görgetést ugyanígy mér, az első mozdulatától a siklás végéig. Az eredmény megmutatja a másodpercenkénti képkockák átlagos számát, az alkalmazás által kért képkockasebességet, a leglassabb képkockát, és hogy hány képkocka volt lassabb 25 ezredmásodpercnél.&#10;&#10;Mobil módban nem ennek a widgetnek a tartalma görgetődik, hanem a widgetek rétege, ezért a mérés azt görgeti, éppen azt, amelyet ott az ujj is görgetne.</label>
+  </labels>
   <!-- The texts of the rows the widgets demonstrate the properties of a component in. -->
   <labels key="WIDGET_EXAMPLE_TEXT">
     <label lang="EN">This is an example label.</label>
@@ -331,6 +335,34 @@
   <labels key="WIDGET_EXAMPLE_SOUND_NAME">
     <label lang="EN">My embedded sample sound</label>
     <label lang="HU">A beágyazott példahangom</label>
+  </labels>
+  <labels key="WIDGET_PROBE_RUN">
+    <label lang="EN">Run the benchmark</label>
+    <label lang="HU">Mérés indítása</label>
+  </labels>
+  <labels key="WIDGET_PROBE_BENCHMARK">
+    <label lang="EN">Benchmark:</label>
+    <label lang="HU">Mérés:</label>
+  </labels>
+  <labels key="WIDGET_PROBE_MANUAL">
+    <label lang="EN">Last scrolling by hand:</label>
+    <label lang="HU">Utolsó kézi görgetés:</label>
+  </labels>
+  <labels key="WIDGET_PROBE_NONE">
+    <label lang="EN">not measured yet</label>
+    <label lang="HU">még nincs mérés</label>
+  </labels>
+  <labels key="WIDGET_PROBE_RUNNING">
+    <label lang="EN">measuring...</label>
+    <label lang="HU">mérés folyamatban...</label>
+  </labels>
+  <labels key="WIDGET_PROBE_NOTHING">
+    <label lang="EN">there is nothing to scroll</label>
+    <label lang="HU">nincs mit görgetni</label>
+  </labels>
+  <labels key="WIDGET_PROBE_RESULT">
+    <label lang="EN">{0} frames/s (asked: {1}), slowest frame: {2} ms, {3} of {4} frames slower than {5} ms</label>
+    <label lang="HU">{0} képkocka/s (kért: {1}), leglassabb képkocka: {2} ms, {4} képkockából {3} lassabb {5} ms-nál</label>
   </labels>
   <labels key="WIDGET_HINT_TEXT">
     <label lang="EN">Type and press enter</label>
