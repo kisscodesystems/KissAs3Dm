@@ -51,7 +51,7 @@ package com.kisscodesystems.KissAs3Dm.suite
     private static const APP_LINE_THICKNESS:int = 1;
     // the version of this application, the one value of it that is written down twice:
     // the properties config carries it and the connections of the servers send it over
-    private static const APPLICATION_VERSION:String = "2.2";
+    private static const APPLICATION_VERSION:String = "2.3";
     /**
      * Constructs the suite.
      * @param applicationRef the main application reference

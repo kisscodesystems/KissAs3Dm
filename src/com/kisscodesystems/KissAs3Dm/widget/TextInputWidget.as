@@ -42,6 +42,8 @@ package com.kisscodesystems.KissAs3Dm.widget
   import com.kisscodesystems.KissAs3Fw.ui.TextInput;
   import com.kisscodesystems.KissAs3Fw.ui.TextLabel;
   import flash.events.Event;
+  import flash.events.FocusEvent;
+  import flash.events.MouseEvent;
   public class TextInputWidget extends PropertyWidget
   {
     // the restrictions the picker of the characters offers, the very strings a flash text
@@ -147,13 +149,22 @@ package com.kisscodesystems.KissAs3Dm.widget
      * Registers the listener of every element of this widget, and the one of the example
      * input as well: that input dispatches its changed event when the editing of it has
      * been finished, so the text that has been typed and the element that has been picked
-     * from the list of the completion both arrive here.
+     * from the list of the completion both arrive here. The text of it changes while it is
+     * being typed as well, it is emptied by the icon of the deleting, and the focus comes
+     * and goes by the clicks of the one using this application: those are followed by the
+     * rows of the text and of the focus, but they are no last event of that input at all.
      */
     override protected function addListenersToElements():void
     {
       application.trace("<" + this + " TextInputWidget addListenersToElements> called.", 4);
       super.addListenersToElements();
       exampleTextInput.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), exampleTextInputChanged);
+      exampleTextInput.getBaseEventDispatcher().addEventListener(Event.CHANGE, exampleTextInputFollowed);
+      exampleTextInput.getBaseEventDispatcher().addEventListener(MouseEvent.CLICK, exampleTextInputFollowed);
+      // the focus events are not passed on by that input: they bubble up from the text
+      // field standing in it, so they are listened to on the input itself
+      exampleTextInput.addEventListener(FocusEvent.FOCUS_IN, exampleTextInputFollowed);
+      exampleTextInput.addEventListener(FocusEvent.FOCUS_OUT, exampleTextInputFollowed);
       labelOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), labelChanged);
       hintOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), hintChanged);
       passwordOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), passwordChanged);
@@ -318,6 +329,19 @@ package com.kisscodesystems.KissAs3Dm.widget
       setLastEvent(e.type);
     }
     /**
+     * Displays every value again after the text of the example input has been typed or
+     * emptied, or after it has taken or lost the focus. The last event is left alone: none
+     * of these is an event of that input, only the finished editing is.
+     * @param e the change event, the click event of the icon of the deleting or the focus
+     *          event of that input
+     */
+    private function exampleTextInputFollowed(e:Event):void
+    {
+      application.trace("<" + this + " TextInputWidget exampleTextInputFollowed> called.", 4);
+      application.trace("<" + this + " TextInputWidget exampleTextInputFollowed> e: " + e, 3);
+      displayEveryCurrentValue();
+    }
+    /**
      * Gives the text of the input of the label row to the example input.
      * @param e the changed event of that input
      */
@@ -465,6 +489,8 @@ package com.kisscodesystems.KissAs3Dm.widget
     {
       application.trace("<" + this + " TextInputWidget destroy> called.", 4);
       application.trace("<" + this + " TextInputWidget destroy> 1: unregister every event listener added to a dispatcher other than local_var.getBaseEventDispatcher().", 3);
+      exampleTextInput.removeEventListener(FocusEvent.FOCUS_IN, exampleTextInputFollowed);
+      exampleTextInput.removeEventListener(FocusEvent.FOCUS_OUT, exampleTextInputFollowed);
       application.trace("<" + this + " TextInputWidget destroy> 2: stopImmediatePropagation, bitmapData.dispose(), array.splice(0), etc.", 3);
       application.trace("<" + this + " TextInputWidget destroy> 3: calling the super destroy.", 3);
       // the step 4 is logged before the super destroy on purpose: that one clears the

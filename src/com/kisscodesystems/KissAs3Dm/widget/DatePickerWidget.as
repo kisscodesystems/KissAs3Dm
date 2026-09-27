@@ -118,8 +118,9 @@ package com.kisscodesystems.KissAs3Dm.widget
     /**
      * Registers the listener of every element of this widget, and the ones of the example
      * picker as well: that picker dispatches its changed event on every selection, the one
-     * of the row of the date among them, and its opened and closed events when its panel is
-     * opened and closed.
+     * of the row of the date among them, its stepped event when the open panel has moved the
+     * selected date by its arrows or by its pickers of the hours and of the minutes, and its
+     * opened and closed events when its panel is opened and closed.
      */
     override protected function addListenersToElements():void
     {
@@ -128,6 +129,9 @@ package com.kisscodesystems.KissAs3Dm.widget
       exampleDatePicker.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), exampleDatePickerChanged);
       exampleDatePicker.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_OPENED(), exampleDatePickerChanged);
       exampleDatePicker.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CLOSED(), exampleDatePickerChanged);
+      // the arrows and the pickers of the hours and of the minutes of the open panel move
+      // the selected date as well, and those steps are reported by an event of their own
+      exampleDatePicker.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_STEPPED(), exampleDatePickerChanged);
       selectedDateOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), selectedDateChanged);
       dateFormatOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), dateFormatChanged);
       hoursAndMinutesOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), hoursAndMinutesChanged);
@@ -148,6 +152,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       displayedDateVAL.setLabel(getTextOrNone(exampleDatePicker.getDisplayedDate()));
       textVAL.setLabel(getTextOrNone(exampleDatePicker.getText()));
       dateFormatVAL.setLabel(exampleDatePicker.getDateFormat());
+      hoursAndMinutesOBJ.setOn(exampleDatePicker.getHoursAndMinutes(), false);
       hoursAndMinutesVAL.setLabel(getYesNoKey(exampleDatePicker.getHoursAndMinutes()));
       openedVAL.setLabel(getYesNoKey(exampleDatePicker.isOpened()));
       const formatIndex:int = dateFormatOBJ.getArrayValues().indexOf(exampleDatePicker.getDateFormat());

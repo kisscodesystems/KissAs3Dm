@@ -53,7 +53,7 @@ package com.kisscodesystems.KissAs3Dm.widget
   public class BoardWidget extends PropertyWidget
   {
     // the dimensions the example board is built with, and the range of the two rows of them
-    private var exampleDw:int = 420;
+    private var exampleDw:int = 500;
     private var exampleDh:int = 300;
     private var widthMIN:int = 240;
     private var widthMAX:int = 700;

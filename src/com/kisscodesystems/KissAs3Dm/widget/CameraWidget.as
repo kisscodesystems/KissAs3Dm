@@ -181,6 +181,11 @@ package com.kisscodesystems.KissAs3Dm.widget
     {
       application.trace("<" + this + " CameraWidget displayEveryCurrentValue> called.", 4);
       super.displayEveryCurrentValue();
+      // the devices of the machine are read again by that camera when its settings panel is
+      // opened and when it is attached, and a mobile device answers none of them before the
+      // permission of it, so the items of both pickers follow those lists as well
+      refreshDevicesOfPicker(deviceOBJ, exampleCamera.getCameraDevices());
+      refreshDevicesOfPicker(microphoneOBJ, exampleCamera.getMicrophoneDevices());
       deviceOBJ.setSelectedIndex(exampleCamera.getSelectedDeviceIndex(), false);
       deviceVAL.setLabel(getDeviceText());
       videoMutedOBJ.setOn(exampleCamera.isVideoMuted(), false);
@@ -287,6 +292,25 @@ package com.kisscodesystems.KissAs3Dm.widget
       }
       code += getSpriteStateCode();
       return getImportsCode(imports) + code;
+    }
+    /**
+     * Gives the given devices to the given picker as its items, but only when that picker
+     * holds another list: a new list of items drops the selection of that picker, and the
+     * caller selects the device of the camera right after this.
+     * @param listPicker the picker of the camera or of the microphone devices
+     * @param devices the names of those devices, the array is emptied here
+     */
+    private function refreshDevicesOfPicker(listPicker:ListPicker, devices:Array):void
+    {
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> called.", 4);
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> listPicker: " + listPicker, 3);
+      application.trace("<" + this + " CameraWidget refreshDevicesOfPicker> devices: " + devices, 3);
+      const values:Array = listPicker.getArrayValues();
+      if (values == null || values.join("\n") != devices.join("\n"))
+      {
+        listPicker.setArrays(devices.concat(), devices.concat());
+      }
+      devices.splice(0);
     }
     /**
      * Builds the rows of the devices of the camera: the picker of the camera devices of

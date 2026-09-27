@@ -118,6 +118,29 @@ package com.kisscodesystems.KissAs3Dm.manager
       application.getMiddleground().getWidgets().goToTheWidget(widget);
     }
     /**
+     * Opens every widget of the given headers, in the given order, and steps onto the last
+     * one of them. The whole row is built behind one single box of the framework telling
+     * that it is being done, so the widgets stand in the order they have been given in.
+     * @param headers the headers of the widgets to be opened, EnumWidgetsDemo values
+     */
+    public function openWidgets(headers:Array):void
+    {
+      application.trace("<WidgetManagerDemo openWidgets> called.", 4);
+      application.trace("<WidgetManagerDemo openWidgets> headers: " + headers, 3);
+      if (headers == null || headers.length == 0)
+      {
+        return;
+      }
+      const headersToOpen:Array = headers.concat();
+      application.runWithLoading(function():void
+      {
+        for (var i:int = 0; i < headersToOpen.length; i++)
+        {
+          openNewWidget(headersToOpen[i]);
+        }
+      });
+    }
+    /**
      * Builds the widget of the given header, puts it into the active widget container of
      * this application and steps onto it. This is the whole work of the opening of a
      * widget that is not open yet, the one the box of the framework covers.
@@ -132,6 +155,14 @@ package com.kisscodesystems.KissAs3Dm.manager
       if (application.getMiddleground() == null)
       {
         application.trace("<WidgetManagerDemo openNewWidget> there is no middleground to open a widget on!", 6);
+        return;
+      }
+      // this work begins a moment after it has been asked for, and another work may have
+      // opened the very same widget in the meantime: it is only stepped onto then
+      const openWidget:Widget = application.getMiddleground().getWidgets().getWidgetByHeader(header);
+      if (openWidget != null)
+      {
+        application.getMiddleground().getWidgets().goToTheWidget(openWidget);
         return;
       }
       const widget:Widget = createWidget(header);
