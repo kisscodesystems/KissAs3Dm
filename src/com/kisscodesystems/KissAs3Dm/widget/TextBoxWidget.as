@@ -161,7 +161,9 @@ package com.kisscodesystems.KissAs3Dm.widget
     /**
      * Registers the listener of every element of this widget, and the ones of the example
      * box as well: that box forwards the top reached and the bottom reached events of its
-     * own scroll, and the one using this application reaches both of those ends by hand.
+     * own scroll, and the one using this application reaches both of those ends by hand. It
+     * forwards the content y changed event of that scroll as well, the one the leaving of
+     * the bottom is told by.
      */
     override protected function addListenersToElements():void
     {
@@ -169,6 +171,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       super.addListenersToElements();
       exampleTextBox.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_TOP_REACHED(), exampleTextBoxScrolled);
       exampleTextBox.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_BOTTOM_REACHED(), exampleTextBoxScrolled);
+      exampleTextBox.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CONTENT_CY_CHANGED(), exampleTextBoxMoved);
       labelOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), labelChanged);
       appendTextOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), appendTextChanged);
       htmlOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), htmlChanged);
@@ -428,6 +431,22 @@ package com.kisscodesystems.KissAs3Dm.widget
       application.trace("<" + this + " TextBoxWidget exampleTextBoxScrolled> called.", 4);
       application.trace("<" + this + " TextBoxWidget exampleTextBoxScrolled> e: " + e, 3);
       setLastEvent(e.type);
+    }
+    /**
+     * Displays every value again when the example box has been scrolled onto or away from
+     * its bottom. That box reports every single step of its scrolling, so the values are
+     * displayed only when the answer of the bottom has really changed, and such a step is
+     * no last event of it either.
+     * @param e the content y changed event of that box
+     */
+    private function exampleTextBoxMoved(e:Event):void
+    {
+      application.trace("<" + this + " TextBoxWidget exampleTextBoxMoved> called.", 0);
+      application.trace("<" + this + " TextBoxWidget exampleTextBoxMoved> e: " + e, 0);
+      if (atBottomVAL.getLabel() != getYesNoKey(exampleTextBox.getAtBottom()))
+      {
+        displayEveryCurrentValue();
+      }
     }
     /**
      * Destroys this object and frees up everything. Every element of this widget stands

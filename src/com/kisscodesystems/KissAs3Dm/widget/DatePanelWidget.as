@@ -108,14 +108,18 @@ package com.kisscodesystems.KissAs3Dm.widget
     }
     /**
      * Registers the listener of every element of this widget, and the one of the example
-     * panel as well: that panel dispatches its changed event when a day has been clicked on
-     * it, and only then.
+     * panel as well: that panel dispatches its changed event when a day or the current date
+     * has been picked on it, and its stepped event when the selected date has been moved by
+     * its arrows or by its pickers of the hours and of the minutes.
      */
     override protected function addListenersToElements():void
     {
       application.trace("<" + this + " DatePanelWidget addListenersToElements> called.", 4);
       super.addListenersToElements();
       exampleDatePanel.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), exampleDatePanelChanged);
+      // the arrows and the pickers of the hours and of the minutes of that panel move the
+      // selected date as well, and those steps are reported by an event of their own
+      exampleDatePanel.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_STEPPED(), exampleDatePanelChanged);
       selectedDateOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), selectedDateChanged);
       dateFormatOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), dateFormatChanged);
       hoursAndMinutesOBJ.getBaseEventDispatcher().addEventListener(EnumEvents.EVENT_CHANGED(), hoursAndMinutesChanged);
@@ -134,6 +138,7 @@ package com.kisscodesystems.KissAs3Dm.widget
       selectedDateObjectVAL.setLabel(getShortTextOrNone("" + exampleDatePanel.getSelectedDateObject()));
       displayedDateVAL.setLabel(getTextOrNone(exampleDatePanel.getDisplayedDate()));
       dateFormatVAL.setLabel(exampleDatePanel.getDateFormat());
+      hoursAndMinutesOBJ.setOn(exampleDatePanel.getHoursAndMinutes(), false);
       hoursAndMinutesVAL.setLabel(getYesNoKey(exampleDatePanel.getHoursAndMinutes()));
       const formatIndex:int = dateFormatOBJ.getArrayValues().indexOf(exampleDatePanel.getDateFormat());
       if (formatIndex > -1)

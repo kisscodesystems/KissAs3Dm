@@ -21,6 +21,9 @@
  *   as a failure by the runner of the suites
  * - the suites are run on the first frame, when the stage and every layer of the
  *   application are already there
+ * - the one value this application changes is the pause of the loading alert, see
+ *   com.kisscodesystems.KissAs3Dm.ComponentsConfigUnitTestDemo: with that pause on, no
+ *   widget would be built within the frame the suites are run in
  * - the components themselves are checked by the suites of the framework, see
  *   com.kisscodesystems.KissAs3Fw.ApplicationUnitTest: this run checks what this
  *   application makes of them
@@ -39,6 +42,7 @@ package com.kisscodesystems.KissAs3Dm
   import com.kisscodesystems.KissAs3Dm.suite.ConfigsDemoUnitTest;
   import com.kisscodesystems.KissAs3Dm.suite.EnumsDemoUnitTest;
   import com.kisscodesystems.KissAs3Dm.suite.ManagersDemoUnitTest;
+  import com.kisscodesystems.KissAs3Dm.suite.WidgetRowsDemoUnitTest;
   import com.kisscodesystems.KissAs3Dm.suite.WidgetsDemoUnitTest;
   import com.kisscodesystems.KissAs3Ut.UnitTestRunner;
   import flash.events.Event;
@@ -78,6 +82,22 @@ package com.kisscodesystems.KissAs3Dm
       runner.run(getSuites());
     }
     /**
+     * The properties config of the demo application with the keeping of the state switched
+     * off, so no run restores the widgets an earlier one has left open.
+     */
+    override protected function initializePropertiesConfig():void
+    {
+      propertiesConfig = new PropertiesConfigUnitTestDemo(this);
+    }
+    /**
+     * The components config of the demo application with the pause of the loading alert
+     * switched off, so every widget is built as soon as it is asked for.
+     */
+    override protected function initializeComponentsConfig():void
+    {
+      componentsConfig = new ComponentsConfigUnitTestDemo(this);
+    }
+    /**
      * Returns every suite of this run, in the order they have to be run in.
      */
     private function getSuites():Array
@@ -92,6 +112,9 @@ package com.kisscodesystems.KissAs3Dm
       suitesArray.push(new ManagersDemoUnitTest(this, runner.getReport()));
       // the application itself: the layers, the menu and the state it is started in
       suitesArray.push(new ApplicationDemoUnitTest(this, runner.getReport()));
+      // the rows of a few property widgets following their example objects: every widget
+      // opened there is closed again, so the widget suite below finds none of them open
+      suitesArray.push(new WidgetRowsDemoUnitTest(this, runner.getReport()));
       // the widgets come last: that suite opens every one of them, so it is the heaviest
       // of this run and it leaves the application with no widget open at all
       suitesArray.push(new WidgetsDemoUnitTest(this, runner.getReport()));

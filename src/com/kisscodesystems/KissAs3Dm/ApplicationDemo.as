@@ -25,6 +25,10 @@
  *   widget come later, into the createElements of that widget
  * - the components themselves are shown one by one by the
  *   com.kisscodesystems.KissAs3Dm.QuickUIDemo
+ * - it keeps its open widgets in the state of the framework (see Application.saveState):
+ *   an application that has been killed in the background opens them again on its next
+ *   start, the one gone to the last time is the one stepped onto, and the welcome widget
+ *   is only opened by itself when there is no widget to open again
  */
 package com.kisscodesystems.KissAs3Dm
 {
@@ -51,6 +55,7 @@ package com.kisscodesystems.KissAs3Dm
   import com.kisscodesystems.KissAs3Fw.enum.EnumOkCancel;
   import com.kisscodesystems.KissAs3Fw.enum.EnumOrientations;
   import com.kisscodesystems.KissAs3Fw.enum.EnumSounds;
+  import com.kisscodesystems.KissAs3Fw.ui.Widget;
   import flash.events.ContextMenuEvent;
   import flash.events.Event;
   public class ApplicationDemo extends Application
@@ -74,6 +79,8 @@ package com.kisscodesystems.KissAs3Dm
     private const WIDGET_TO_OPEN:String = EnumWidgetsDemo.WELCOME();
     // this object may reach the stage more than once, so the content is built once
     private var contentCreated:Boolean = false;
+    // the key this class keeps the headers of its open widgets under in the state
+    private const STATE_WIDGETS:String = "ApplicationDemo.widgets";
     /**
      * Constructs the demo application.
      */
@@ -159,6 +166,43 @@ package com.kisscodesystems.KissAs3Dm
       inisettingofapplicationname();
       inicontextmenuitems();
       inicreationofthewholecontent();
+    }
+    /**
+     * Puts the headers of the open widgets into the state, the one gone to at the end.
+     * @param state the object the values are put into
+     */
+    override protected function collectState(state:Object):void
+    {
+      application.trace("<ApplicationDemo collectState> called.", 4);
+      application.trace("<ApplicationDemo collectState> state: " + state, 3);
+      super.collectState(state);
+      if (getMiddleground() == null)
+      {
+        return;
+      }
+      const headers:Array = getMiddleground().getWidgets().getWidgetHeaders();
+      const actualWidget:Widget = getMiddleground().getWidgets().getActualWidget();
+      if (actualWidget != null && headers.indexOf(actualWidget.getWidgetHeader()) > -1)
+      {
+        headers.splice(headers.indexOf(actualWidget.getWidgetHeader()), 1);
+        headers.push(actualWidget.getWidgetHeader());
+      }
+      state[STATE_WIDGETS] = headers;
+    }
+    /**
+     * Opens every widget kept in the state again, the one gone to the last time is the one
+     * stepped onto at the end.
+     * @param state the object the values are read from
+     */
+    override protected function applyState(state:Object):void
+    {
+      application.trace("<ApplicationDemo applyState> called.", 4);
+      application.trace("<ApplicationDemo applyState> state: " + state, 3);
+      super.applyState(state);
+      if (hasWidgetsInState(state))
+      {
+        WidgetManagerDemo(getWidgetManager()).openWidgets(state[STATE_WIDGETS]);
+      }
     }
     /**
      * The properties config of this application replaces the one of the framework.
@@ -422,8 +466,23 @@ package com.kisscodesystems.KissAs3Dm
     private function createContent():void
     {
       application.trace("<ApplicationDemo createContent> called.", 4);
-      WidgetManagerDemo(getWidgetManager()).openWidget(WIDGET_TO_OPEN);
+      // the widgets of a state kept on the device are opened on the first frame, and the
+      // widget of the start would push itself in front of them: it is left out then
+      if (!getPropertiesConfig().getStateKeepingEnabled() || !hasWidgetsInState(getStateManager().readState()))
+      {
+        WidgetManagerDemo(getWidgetManager()).openWidget(WIDGET_TO_OPEN);
+      }
       getSoundManager().playSound(EnumSoundsDemo.signal());
+    }
+    /**
+     * Tells whether the given state holds any widget to be opened again.
+     * @param state the object of the values kept, or null
+     */
+    private function hasWidgetsInState(state:Object):Boolean
+    {
+      application.trace("<ApplicationDemo hasWidgetsInState> called.", 4);
+      application.trace("<ApplicationDemo hasWidgetsInState> state: " + state, 3);
+      return state != null && state[STATE_WIDGETS] is Array && (state[STATE_WIDGETS] as Array).length > 0;
     }
     /**
      * An item of the context menu that is handled here has been clicked, so an alert

@@ -25,6 +25,9 @@
  * - a picked menu item opens the widget of it: this application hands that over to the
  *   widget manager of it, and the widget of the item picked here is closed again, so this
  *   suite leaves the application with the very widget it has found open
+ * - the state of this application holds the headers of its open widgets, the one gone to
+ *   at the end, and restoring that state opens the missing ones again: the saving and the
+ *   restoring are called directly, the test application keeps no state by itself
  */
 package com.kisscodesystems.KissAs3Dm.suite
 {
@@ -68,6 +71,7 @@ package com.kisscodesystems.KissAs3Dm.suite
       runStartingStateTests();
       runContextMenuTests();
       runMenuSelectTests();
+      runStateTests();
     }
     /**
      * The three layers of the framework stand on this application.
@@ -250,6 +254,48 @@ package com.kisscodesystems.KissAs3Dm.suite
         , application.getMiddleground().getWidgets().getWidgetByHeader(header));
       assertEquals("the number of the widgets after that closing", 1
         , application.getMiddleground().getWidgets().getNumOfAllWidgets());
+    }
+    /**
+     * The state of this application holds the headers of its open widgets, the one gone
+     * to at the end, and restoring it opens the missing ones again. The application is
+     * left with the very widget it has been found with, and with no state on the device.
+     */
+    private function runStateTests():void
+    {
+      const welcome:Widget = application.getMiddleground().getWidgets().getWidgetByHeader(
+        EnumWidgetsDemo.WELCOME());
+      assertTrue("the actual widget is the welcome one"
+        , welcome != null && welcome == application.getMiddleground().getWidgets().getActualWidget());
+      application.saveState();
+      assertEquals("the state holds the header of the one open widget", EnumWidgetsDemo.WELCOME()
+        , String(stateWidgets()));
+      const header:String = EnumWidgetsDemo.TEXTLABEL();
+      application.handleMenuSelect(header);
+      application.getMiddleground().getWidgets().goToTheWidget(welcome);
+      application.saveState();
+      assertEquals("the widget gone to stands at the end of the headers of the state"
+        , header + "," + EnumWidgetsDemo.WELCOME(), String(stateWidgets()));
+      application.closeWidget(application.getMiddleground().getWidgets().getWidgetByHeader(header));
+      application.restoreState();
+      assertNotNull("the widget of the state is opened again"
+        , application.getMiddleground().getWidgets().getWidgetByHeader(header));
+      assertEquals("an open widget of the state is not opened twice", 2
+        , application.getMiddleground().getWidgets().getNumOfAllWidgets());
+      assertTrue("the widget gone to the last time is the actual one again"
+        , welcome == application.getMiddleground().getWidgets().getActualWidget());
+      application.closeWidget(application.getMiddleground().getWidgets().getWidgetByHeader(header));
+      application.getStateManager().clearState();
+      assertEquals("the number of the widgets after the state tests", 1
+        , application.getMiddleground().getWidgets().getNumOfAllWidgets());
+    }
+    /**
+     * Returns the headers of the widgets kept in the state on the device, null when there
+     * is no state at all.
+     */
+    private function stateWidgets():Array
+    {
+      const state:Object = application.getStateManager().readState();
+      return state == null ? null : state["ApplicationDemo.widgets"] as Array;
     }
     /**
      * Frees everything this suite holds.
