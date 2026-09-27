@@ -57,8 +57,7 @@ package com.kisscodesystems.KissAs3Dm
           , EnumWidgetsDemo.CAMERA(), EnumWidgetsDemo.BOARD()
           , EnumWidgetsDemo.WATCH(), EnumWidgetsDemo.RATER()
           , EnumWidgetsDemo.POTMETER(), EnumWidgetsDemo.XMLLISTER()
-          , EnumWidgetsDemo.MORE(), EnumWidgetsDemo.SCROLLINGPROBE()
-          , EnumWidgetsDemo.URLREQUEST()
+          , EnumWidgetsDemo.MORE(), EnumWidgetsDemo.URLREQUEST()
           , EnumWidgetsDemo.NETCONNECTION()];
     }
     /**

@@ -345,12 +345,10 @@ package com.kisscodesystems.KissAs3Dm
           + topicOfTheMenu(EnumTextKeysDemo.MENU_OTHERS()
               , [EnumWidgetsDemo.BOARD(), EnumWidgetsDemo.WATCH()
               , EnumWidgetsDemo.RATER(), EnumWidgetsDemo.POTMETER()
-              , EnumWidgetsDemo.XMLLISTER(), EnumWidgetsDemo.MORE()
-              , EnumWidgetsDemo.SCROLLINGPROBE()]
+              , EnumWidgetsDemo.XMLLISTER(), EnumWidgetsDemo.MORE()]
               , [EnumIconsDemo.board(), EnumIcons.watch()
               , EnumIcons.starfull(), EnumIcons.potmeter()
-              , EnumIconsDemo.xmllister(), EnumIcons.more()
-              , EnumIcons.downarrow()])
+              , EnumIconsDemo.xmllister(), EnumIcons.more()])
           + topicOfTheMenu(EnumTextKeysDemo.MENU_WEB()
               , [EnumWidgetsDemo.URLREQUEST(), EnumWidgetsDemo.NETCONNECTION()]
               , [EnumIcons.refresharrow(), EnumIcons.lightning()])

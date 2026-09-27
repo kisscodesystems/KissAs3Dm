@@ -44,7 +44,6 @@ package com.kisscodesystems.KissAs3Dm.manager
   import com.kisscodesystems.KissAs3Dm.widget.NetConnectionWidget;
   import com.kisscodesystems.KissAs3Dm.widget.PotmeterWidget;
   import com.kisscodesystems.KissAs3Dm.widget.RaterWidget;
-  import com.kisscodesystems.KissAs3Dm.widget.ScrollingProbeWidget;
   import com.kisscodesystems.KissAs3Dm.widget.SoundPlayerWidget;
   import com.kisscodesystems.KissAs3Dm.widget.SwitcherWidget;
   import com.kisscodesystems.KissAs3Dm.widget.TextAreaWidget;
@@ -216,7 +215,6 @@ package com.kisscodesystems.KissAs3Dm.manager
       widgetClasses[EnumWidgetsDemo.CONTENTSINGLE()] = ContentSingleWidget;
       widgetClasses[EnumWidgetsDemo.CONTENTMULTIPLE()] = ContentMultipleWidget;
       widgetClasses[EnumWidgetsDemo.MORE()] = MoreWidget;
-      widgetClasses[EnumWidgetsDemo.SCROLLINGPROBE()] = ScrollingProbeWidget;
       widgetClasses[EnumWidgetsDemo.WIDGET()] = WidgetWidget;
       widgetClasses[EnumWidgetsDemo.APPLICATION()] = ApplicationWidget;
       widgetClasses[EnumWidgetsDemo.ICON()] = IconWidget;
